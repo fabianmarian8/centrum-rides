@@ -25,7 +25,7 @@ const ContactSection = () => {
           <CardContent className="space-y-6">
             <div className="text-center">
               <div className="text-5xl md:text-6xl font-black text-gradient-gold mb-4">
-                📞 +421 905 123 456
+                📞 +421919040118
               </div>
               <p className="text-lg text-muted-foreground">
                 Hovoriť: English
@@ -43,7 +43,7 @@ const ContactSection = () => {
                 "
                 asChild
               >
-                <a href="tel:+421905123456">
+                <a href="tel:+421919040118">
                   🚁 OKAMŽITÉ VYZDVIHNUTIE
                 </a>
               </Button>
@@ -58,8 +58,8 @@ const ContactSection = () => {
                 "
                 asChild
               >
-                <a href="sms:+421905123456">
-                  💬 SMS REZERVÁCIA
+                <a href="https://wa.me/421919040118">
+                  💬 WHATSAPP REZERVÁCIA
                 </a>
               </Button>
             </div>

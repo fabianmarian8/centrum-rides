@@ -75,14 +75,14 @@ const PricingSection = () => {
                   "
                   asChild
                 >
-                  <a href="tel:+421905123456">
+                  <a href="tel:+421919040118">
                     📞 REZERVOVAŤ OKAMŽITE
                   </a>
                 </Button>
 
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">
-                    Alebo pošlite SMS na: <span className="text-secondary font-bold">+421 905 123 456</span>
+                    Alebo napíšte na WhatsApp: <span className="text-secondary font-bold">+421919040118</span>
                   </p>
                 </div>
               </div>
@@ -141,14 +141,14 @@ const PricingSection = () => {
                   "
                   asChild
                 >
-                  <a href="tel:+421905123456">
+                  <a href="tel:+421919040118">
                     📞 REZERVOVAŤ OKAMŽITE
                   </a>
                 </Button>
 
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">
-                    Alebo pošlite SMS na: <span className="text-secondary font-bold">+421 905 123 456</span>
+                    Alebo napíšte na WhatsApp: <span className="text-secondary font-bold">+421919040118</span>
                   </p>
                 </div>
               </div>
