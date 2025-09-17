@@ -53,7 +53,7 @@ const PricingSection = () => {
                   "✅ Čakací čas zahrnutý (až 30 min)",
                   "✅ Garantovaná spiatočná cesta",
                   "✅ Prémiové vozidlo",
-                  "✅ Vodič hovoriaci po anglicky/španielsky",
+                  "✅ Vodič hovoriaci iba po anglicky",
                   "✅ Bezpečnostné overenie NATO",
                   "✅ Diskrétna služba 24/7"
                 ].map((feature, index) => (
@@ -119,7 +119,7 @@ const PricingSection = () => {
                   "✅ Čakací čas zahrnutý (až 30 min)",
                   "✅ Garantovaná spiatočná cesta",
                   "✅ Prémiové vozidlo",
-                  "✅ Vodič hovoriaci po anglicky/španielsky",
+                  "✅ Vodič hovoriaci iba po anglicky",
                   "✅ Bezpečnostné overenie NATO",
                   "✅ Diskrétna služba 24/7"
                 ].map((feature, index) => (
