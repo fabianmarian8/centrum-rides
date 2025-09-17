@@ -35,7 +35,7 @@ const PricingSection = () => {
             <div className="pt-8">
               <div className="text-5xl font-black text-secondary mb-2">€40</div>
               <h3 className="text-2xl font-bold text-foreground">Základňa → Mesto</h3>
-              <p className="text-muted-foreground">Jednosmerná preprava do Banskej Bystrice alebo Zvolena</p>
+              <p className="text-muted-foreground">Jednosmerná preprava do Zvolena</p>
             </div>
           </CardHeader>
 
