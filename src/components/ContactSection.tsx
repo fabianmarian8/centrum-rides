@@ -28,7 +28,7 @@ const ContactSection = () => {
                 📞 +421 905 123 456
               </div>
               <p className="text-lg text-muted-foreground">
-                Hovoriť: Slovenčina • English • Español
+                Hovoriť: English
               </p>
             </div>
 
