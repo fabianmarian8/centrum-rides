@@ -13,80 +13,148 @@ const PricingSection = () => {
           Špecializované ceny pre španielsky vojenský personál
         </p>
 
-        <Card className="
-          relative max-w-lg mx-auto bg-card/50 backdrop-blur-md 
-          border-2 border-secondary overflow-hidden
-          hover-military
-        ">
-          <Badge 
-            className="
-              absolute -top-2 -right-12 bg-primary text-primary-foreground 
-              px-8 py-1 rotate-45 origin-center font-bold
-            "
-          >
-            NAJPOPULÁRNEJŠIE
-          </Badge>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <Card className="
+            relative bg-card/50 backdrop-blur-md 
+            border-2 border-secondary overflow-hidden
+            hover-military
+          ">
+            <Badge 
+              className="
+                absolute -top-2 -right-12 bg-primary text-primary-foreground 
+                px-8 py-1 rotate-45 origin-center font-bold
+              "
+            >
+              NAJPOPULÁRNEJŠIE
+            </Badge>
 
-          <CardHeader className="relative">
-            <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-secondary to-secondary/70 rounded-full flex items-center justify-center">
-              <span className="text-secondary-foreground font-black text-2xl">€</span>
-            </div>
-            
-            <div className="pt-8">
-              <div className="text-5xl font-black text-secondary mb-2">€40</div>
-              <h3 className="text-2xl font-bold text-foreground">Základňa → Mesto</h3>
-              <p className="text-muted-foreground">Jednosmerná preprava do Zvolena</p>
-            </div>
-          </CardHeader>
+            <CardHeader className="relative">
+              <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-secondary to-secondary/70 rounded-full flex items-center justify-center">
+                <span className="text-secondary-foreground font-black text-2xl">€</span>
+              </div>
+              
+              <div className="pt-8">
+                <div className="text-5xl font-black text-secondary mb-2">€40</div>
+                <h3 className="text-2xl font-bold text-foreground">Základňa → Zvolen</h3>
+                <p className="text-muted-foreground">Jednosmerná preprava do Zvolena</p>
+              </div>
+            </CardHeader>
 
-          <CardContent className="space-y-4">
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-6">
-              <p className="text-primary font-bold text-lg">
-                🔥 48 španielskych vojakov si rezervovalo tento týždeň!
-              </p>
-            </div>
-
-            <div className="text-left space-y-3">
-              {[
-                "✅ 25% vojenská zľava už aplikovaná",
-                "✅ Čakací čas zahrnutý (až 30 min)",
-                "✅ Garantovaná spiatočná cesta",
-                "✅ Prémiové vozidlo",
-                "✅ Vodič hovoriaci po anglicky/španielsky",
-                "✅ Bezpečnostné overenie NATO",
-                "✅ Diskrétna služba 24/7"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <span className="text-secondary">{feature.split(' ')[0]}</span>
-                  <span className="text-foreground">{feature.substring(2)}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 space-y-4">
-              <Button 
-                size="lg" 
-                className="
-                  w-full bg-gradient-to-r from-primary to-primary-glow 
-                  hover:from-primary-glow hover:to-primary 
-                  text-primary-foreground font-bold py-4 text-lg
-                  rounded-full shadow-xl hover-military
-                "
-                asChild
-              >
-                <a href="tel:+421905123456">
-                  📞 REZERVOVAŤ OKAMŽITE
-                </a>
-              </Button>
-
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground">
-                  Alebo pošlite SMS na: <span className="text-secondary font-bold">+421 905 123 456</span>
+            <CardContent className="space-y-4">
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-6">
+                <p className="text-primary font-bold text-lg">
+                  🔥 48 španielskych vojakov si rezervovalo tento týždeň!
                 </p>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+
+              <div className="text-left space-y-3">
+                {[
+                  "✅ 25% vojenská zľava už aplikovaná",
+                  "✅ Čakací čas zahrnutý (až 30 min)",
+                  "✅ Garantovaná spiatočná cesta",
+                  "✅ Prémiové vozidlo",
+                  "✅ Vodič hovoriaci po anglicky/španielsky",
+                  "✅ Bezpečnostné overenie NATO",
+                  "✅ Diskrétna služba 24/7"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <span className="text-secondary">{feature.split(' ')[0]}</span>
+                    <span className="text-foreground">{feature.substring(2)}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 space-y-4">
+                <Button 
+                  size="lg" 
+                  className="
+                    w-full bg-gradient-to-r from-primary to-primary-glow 
+                    hover:from-primary-glow hover:to-primary 
+                    text-primary-foreground font-bold py-4 text-lg
+                    rounded-full shadow-xl hover-military
+                  "
+                  asChild
+                >
+                  <a href="tel:+421905123456">
+                    📞 REZERVOVAŤ OKAMŽITE
+                  </a>
+                </Button>
+
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Alebo pošlite SMS na: <span className="text-secondary font-bold">+421 905 123 456</span>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="
+            relative bg-card/50 backdrop-blur-md 
+            border-2 border-primary overflow-hidden
+            hover-military
+          ">
+            <CardHeader className="relative">
+              <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
+                <span className="text-primary-foreground font-black text-2xl">€</span>
+              </div>
+              
+              <div className="pt-8">
+                <div className="text-5xl font-black text-primary mb-2">€65</div>
+                <h3 className="text-2xl font-bold text-foreground">Základňa → B. Bystrica</h3>
+                <p className="text-muted-foreground">Jednosmerná preprava do Banskej Bystrice</p>
+              </div>
+            </CardHeader>
+
+            <CardContent className="space-y-4">
+              <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-4 mb-6">
+                <p className="text-secondary font-bold text-lg">
+                  🔥 35 španielskych vojakov si rezervovalo tento týždeň!
+                </p>
+              </div>
+
+              <div className="text-left space-y-3">
+                {[
+                  "✅ 25% vojenská zľava už aplikovaná",
+                  "✅ Čakací čas zahrnutý (až 30 min)",
+                  "✅ Garantovaná spiatočná cesta",
+                  "✅ Prémiové vozidlo",
+                  "✅ Vodič hovoriaci po anglicky/španielsky",
+                  "✅ Bezpečnostné overenie NATO",
+                  "✅ Diskrétna služba 24/7"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <span className="text-secondary">{feature.split(' ')[0]}</span>
+                    <span className="text-foreground">{feature.substring(2)}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 space-y-4">
+                <Button 
+                  size="lg" 
+                  className="
+                    w-full bg-gradient-to-r from-secondary to-secondary/80 
+                    hover:from-secondary/80 hover:to-secondary 
+                    text-secondary-foreground font-bold py-4 text-lg
+                    rounded-full shadow-xl hover-military
+                  "
+                  asChild
+                >
+                  <a href="tel:+421905123456">
+                    📞 REZERVOVAŤ OKAMŽITE
+                  </a>
+                </Button>
+
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Alebo pošlite SMS na: <span className="text-secondary font-bold">+421 905 123 456</span>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           {[
