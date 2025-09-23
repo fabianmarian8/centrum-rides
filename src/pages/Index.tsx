@@ -1,4 +1,3 @@
-import UrgencyBar from '@/components/UrgencyBar';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -7,10 +6,8 @@ import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <UrgencyBar />
-      
-      <main className="pt-16"> {/* Padding for fixed urgency bar */}
+    <div className="min-h-screen bg-background">      
+      <main>
         <HeroSection />
         <FeaturesSection />
         <TestimonialsSection />

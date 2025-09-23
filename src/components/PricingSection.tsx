@@ -7,10 +7,10 @@ const PricingSection = () => {
     <section className="py-20 px-6 bg-gradient-to-b from-muted to-background">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
-          Cenník misií
+          Cenník služieb
         </h2>
         <p className="text-xl text-muted-foreground mb-12">
-          Špecializované ceny pre španielsky vojenský personál
+          Profesionálne ceny pre španielsky vojenský personál
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -41,11 +41,6 @@ const PricingSection = () => {
             </CardHeader>
 
             <CardContent className="space-y-4">
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-6">
-                <p className="text-primary font-bold text-lg">
-                  🔥 48 španielskych vojakov si rezervovalo tento týždeň!
-                </p>
-              </div>
 
               <div className="text-left space-y-3">
                 {[
@@ -76,7 +71,7 @@ const PricingSection = () => {
                   asChild
                 >
                   <a href="tel:+421919040118">
-                    📞 REZERVOVAŤ OKAMŽITE
+                    📞 Rezervovať
                   </a>
                 </Button>
 
@@ -107,11 +102,6 @@ const PricingSection = () => {
             </CardHeader>
 
             <CardContent className="space-y-4">
-              <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-4 mb-6">
-                <p className="text-secondary font-bold text-lg">
-                  🔥 35 španielskych vojakov si rezervovalo tento týždeň!
-                </p>
-              </div>
 
               <div className="text-left space-y-3">
                 {[
@@ -142,7 +132,7 @@ const PricingSection = () => {
                   asChild
                 >
                   <a href="tel:+421919040118">
-                    📞 REZERVOVAŤ OKAMŽITE
+                    📞 Rezervovať
                   </a>
                 </Button>
 

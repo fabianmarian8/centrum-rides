@@ -18,24 +18,18 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
       
       <div className="relative z-10 max-w-4xl px-6">
-        <div className="inline-block bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-full text-sm font-bold mb-6 military-pulse">
-          🇪🇸 EXKLUZÍVNE PRE ŠPANIELSKY VOJENSKÝ PERSONÁL
+        <div className="inline-block bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-full text-sm font-bold mb-6">
+          🇪🇸 PRE ŠPANIELSKY VOJENSKÝ PERSONÁL
         </div>
         
-        <h1 className="text-6xl md:text-8xl font-black mb-6 text-gradient-military drop-shadow-2xl">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient-military drop-shadow-2xl">
           TaxiForce
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-3xl mx-auto font-medium">
-          Prémiová prepravná služba pre španielsky vojenský personál<br />
-          <span className="text-secondary font-bold">Bezpečne • Spoľahlivo • Diskrétne • 24/7</span>
+        <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-3xl mx-auto">
+          Profesionálna prepravná služba pre španielsky vojenský personál<br />
+          <span className="text-secondary font-semibold">Bezpečne • Spoľahlivo • Diskrétne • 24/7</span>
         </p>
-        
-        <div className="bg-primary/20 backdrop-blur-md border border-secondary/30 rounded-xl p-4 mb-8 military-pulse">
-          <p className="text-secondary font-bold text-lg">
-            ⚡ Len 15 miest dostupných tento týždeň - Rezervujte si svoje miesto teraz!
-          </p>
-        </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
@@ -43,13 +37,13 @@ const HeroSection = () => {
             className="
               bg-gradient-to-r from-primary to-primary-glow 
               hover:from-primary-glow hover:to-primary 
-              text-primary-foreground px-8 py-4 text-lg font-bold 
-              rounded-full shadow-xl hover-military
+              text-primary-foreground px-8 py-4 text-lg font-semibold 
+              rounded-full shadow-xl
             "
             asChild
           >
-            <a href="tel:+421905123456">
-              📞 VOLAJTE TERAZ
+            <a href="tel:+421919040118">
+              📞 Volať teraz
             </a>
           </Button>
           
@@ -59,7 +53,7 @@ const HeroSection = () => {
             className="
               bg-background/10 border-2 border-secondary text-secondary 
               hover:bg-secondary hover:text-secondary-foreground
-              px-8 py-4 text-lg font-bold rounded-full backdrop-blur-md
+              px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-md
               transition-all duration-300
             "
             asChild

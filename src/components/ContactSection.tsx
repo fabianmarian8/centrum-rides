@@ -12,14 +12,13 @@ const ContactSection = () => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-military">
-            Pripravení na nasadenie?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Nenechajte prepravu byť vašim nepriateľom. Pridajte sa k 200+ španielskym vojenským pracovníkom, ktorí dôverujú TaxiForce.
-          </p>
-        </div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
+          Kontakt a rezervácie
+        </h2>
+        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Kontaktujte nás pre okamžité vyzdvihnutie alebo rezervujte dopredu.<br />
+          Naši profesionálni vodiči sú k dispozícii 24/7.
+        </p>
 
         <Card className="bg-card/50 backdrop-blur-md border border-secondary/30 p-8 mb-8">
           <CardContent className="space-y-6">
@@ -44,7 +43,7 @@ const ContactSection = () => {
                 asChild
               >
                 <a href="tel:+421919040118">
-                  🚁 OKAMŽITÉ VYZDVIHNUTIE
+                  📞 Zavolať teraz
                 </a>
               </Button>
               
@@ -59,7 +58,7 @@ const ContactSection = () => {
                 asChild
               >
                 <a href="https://wa.me/421919040118">
-                  💬 WHATSAPP REZERVÁCIA
+                  💬 WhatsApp rezervácia
                 </a>
               </Button>
             </div>
@@ -67,20 +66,20 @@ const ContactSection = () => {
         </Card>
 
         <div className="bg-primary/10 backdrop-blur-md border border-primary/30 rounded-xl p-6 mb-8">
-          <p className="text-lg font-bold text-primary mb-4">
-            🚨 KRITICKÁ MISIA: Zavolajte do 2 hodín pre garantované vyzdvihnutie dnes večer!
+          <p className="text-lg font-semibold text-primary mb-4">
+            📱 Dostupné 24/7 pre vaše prepravné potreby
           </p>
           <div className="flex justify-center gap-4 text-sm">
             <span className="text-secondary font-medium">⏰ Dostupné 24/7</span>
             <span className="text-muted-foreground">•</span>
             <span className="text-secondary font-medium">🔒 Diskrétne</span>
             <span className="text-muted-foreground">•</span>
-            <span className="text-secondary font-medium">⚡ Rýchle</span>
+            <span className="text-secondary font-medium">⚡ Profesionálne</span>
           </div>
         </div>
 
         <div className="text-center space-y-4">
-          <h3 className="text-2xl font-bold text-secondary">Prečo čakať?</h3>
+          <h3 className="text-2xl font-bold text-secondary">Naše výhody</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
             {[
               { icon: "🛡️", text: "NATO bezpečnosť" },
