@@ -3,11 +3,11 @@ import heroImage from '@/assets/hero-military.jpg';
 
 const HeroSection = () => {
   return (
-    <section 
+    <section
       className="relative min-h-screen flex items-center justify-center text-center bg-hero-pattern"
       style={{
         backgroundImage: `
-          linear-gradient(rgba(196, 28, 36, 0.8), rgba(255, 196, 0, 0.6)),
+          linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
           url(${heroImage})
         `,
         backgroundSize: 'cover',
@@ -15,53 +15,100 @@ const HeroSection = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
-      
-      <div className="relative z-10 max-w-4xl px-6">
-        <div className="inline-block bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-full text-sm font-bold mb-6">
-          🇪🇸 PRE ŠPANIELSKY VOJENSKÝ PERSONÁL
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+
+      <div className="relative z-10 max-w-5xl px-6 py-20">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <span className="bg-gradient-to-r from-primary to-secondary px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide shadow-lg">
+            🇪🇸 Base Training Area Lešť → Zvolen / Banská Bystrica
+          </span>
+          <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-xs sm:text-sm font-semibold backdrop-blur">
+            Overené NATO • Diskrétne 24/7
+          </span>
         </div>
-        
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient-military drop-shadow-2xl">
-          TaxiForce
+
+        <h1 className="text-4xl md:text-6xl xl:text-7xl font-black mb-6 text-gradient-military drop-shadow-2xl leading-tight">
+          TaxiForce Military Transfers
         </h1>
-        
-        <p className="text-xl md:text-2xl mb-8 text-foreground/90 max-w-3xl mx-auto">
-          Profesionálna prepravná služba pre španielsky vojenský personál<br />
-          <span className="text-secondary font-semibold">Bezpečne • Spoľahlivo • Diskrétne • 24/7</span>
+
+        <p className="text-lg md:text-2xl mb-10 text-foreground/90 max-w-3xl mx-auto leading-relaxed">
+          Prémiová preprava pre španielsky vojenský personál na Slovensku. Rýchle transfery zo základne Lešť do Zvolena a Banskej Bystrice, bezpečné návraty späť.
+          <br className="hidden md:block" />
+          <span className="text-secondary font-semibold">Servicio disponible también en español bajo požiadavke.</span>
         </p>
 
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left text-sm sm:text-base">
+          {[{
+            title: 'Priemerný čas príchodu',
+            value: '30 – 40 minút',
+            note: 'Non-stop dispečing so stálym stanovišťom pri Lešti',
+          },
+          {
+            title: 'Kapacita jedného vozidla',
+            value: '4 pasažieri',
+            note: 'Luxusné SUV alebo business sedan',
+          },
+          {
+            title: 'Rezervácie',
+            value: 'Telefonicky alebo WhatsApp',
+            note: '+421 919 040 118',
+          }].map((item, index) => (
+            <div
+              key={item.title}
+              className="bg-black/30 border border-secondary/20 rounded-xl p-4 sm:p-5 backdrop-blur hover:border-secondary/40 transition-all duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <p className="text-secondary text-xs uppercase tracking-wide mb-1">{item.title}</p>
+              <p className="text-xl font-bold text-foreground">{item.value}</p>
+              <p className="text-muted-foreground text-sm">{item.note}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="
-              bg-gradient-to-r from-primary to-primary-glow 
-              hover:from-primary-glow hover:to-primary 
-              text-primary-foreground px-8 py-4 text-lg font-semibold 
+              bg-gradient-to-r from-primary to-primary-glow
+              hover:from-primary-glow hover:to-primary
+              text-primary-foreground px-8 py-4 text-lg font-semibold
               rounded-full shadow-xl
             "
             asChild
           >
             <a href="tel:+421919040118">
-              📞 Volať teraz
+              📞 Zavolať TaxiForce
             </a>
           </Button>
-          
-          <Button 
-            variant="outline" 
+
+          <Button
+            variant="outline"
             size="lg"
             className="
-              bg-background/10 border-2 border-secondary text-secondary 
-              hover:bg-secondary hover:text-secondary-foreground
+              bg-[#25D366] text-white
+              hover:bg-[#1DA851] hover:text-white
+              border-0
               px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-md
-              transition-all duration-300
+              transition-all duration-300 shadow-lg
             "
             asChild
           >
-            <a href="#booking">
-              Rezervovať online
+            <a href="https://wa.me/421919040118">
+              💬 WhatsApp rezervácia
             </a>
           </Button>
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
+            <span>🛡️</span> <span>NATO security cleared drivers</span>
+          </div>
+          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
+            <span>🗺️</span> <span>Door-to-door medzi mestom a základňou</span>
+          </div>
+          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
+            <span>🇪🇸</span> <span>Španielska komunita: odporúčané podniky</span>
+          </div>
         </div>
       </div>
     </section>
