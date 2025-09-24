@@ -1,59 +1,16 @@
+import { featuresContent } from '@/content/home';
 import { Card, CardContent } from '@/components/ui/card';
 import militaryBadge from '@/assets/military-badge.jpg';
 import restaurantImage from '@/assets/restaurant-bb.jpg';
 import taxiImage from '@/assets/taxi-military.jpg';
 import cityImage from '@/assets/banska-bystrica-night.jpg';
 
-const features = [
-  {
-    icon: '🚐',
-    title: 'Priame spojenie Lešť → Zvolen / Banská Bystrica',
-    description:
-      'Monitorujeme pohyb jednotiek a koordinujeme vyzdvihnutia priamo pri bráne základne. Typická cesta trvá 30 – 40 minút do Zvolena a 45 minút do Banskej Bystrice.',
-    image: taxiImage,
-    badge: 'Non-stop dispečing',
-  },
-  {
-    icon: '🛡️',
-    title: 'Bezpečnostné štandardy NATO',
-    description:
-      'Všetci vodiči sú preverení, zmluvne viazaní mlčanlivosťou a poznajú protokoly pre služobné aj voľnočasové presuny.',
-    image: militaryBadge,
-    badge: 'Security cleared',
-  },
-  {
-    icon: '🍻',
-    title: 'Lokálne odporúčania pre španielsku jednotku',
-    description:
-      'Od tapas barov po nočné kluby – pripravili sme partnerský zoznam bezpečných a overených miest v oboch mestách.',
-    image: restaurantImage,
-    badge: 'Insider tips',
-  },
-  {
-    icon: '🌙',
-    title: 'Operácie 24/7 vrátane neskorých návratov',
-    description:
-      'Služba pokrýva nočné vychádzky aj skoré ranné presuny na cvičenia. Transfer plánujeme podľa itinerára jednotky bez skrytých príplatkov.',
-    image: cityImage,
-    badge: 'Night ready',
-  },
-  {
-    icon: '🇪🇸',
-    title: 'Komunikácia v angličtine + základná španielčina',
-    description:
-      'Dispečing rozumie vojenským termínom, vodiči sú pripravení komunikovať v angličtine a najčastejších frázach po španielsky.',
-    image: null,
-    badge: 'Language support',
-  },
-  {
-    icon: '🔁',
-    title: 'Garancia spiatočného spojenia',
-    description:
-      'Vopred rezervované časy odchodu späť na základňu. V prípade zmeny rozkazov bezplatne upravíme itinerár.',
-    image: null,
-    badge: 'Flexible',
-  },
-];
+const featureImages: Record<string, string> = {
+  taxiImage,
+  militaryBadge,
+  restaurantImage,
+  cityImage,
+};
 
 const FeaturesSection = () => {
   return (
@@ -69,7 +26,7 @@ const FeaturesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {featuresContent.map((feature, index) => (
             <Card
               key={feature.title}
               className="
@@ -89,7 +46,7 @@ const FeaturesSection = () => {
                 {feature.image && (
                   <div
                     className="w-full h-32 bg-cover bg-center rounded-lg border border-secondary/20"
-                    style={{ backgroundImage: `url(${feature.image})` }}
+                    style={{ backgroundImage: `url(${featureImages[feature.image]})` }}
                   />
                 )}
 

@@ -1,3 +1,4 @@
+import { heroContent } from '@/content/home';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
 
@@ -19,40 +20,32 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-5xl px-6 py-20">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <span className="bg-gradient-to-r from-primary to-secondary px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide shadow-lg">
-            🇪🇸 Base Training Area Lešť → Zvolen / Banská Bystrica
-          </span>
-          <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-xs sm:text-sm font-semibold backdrop-blur">
-            Overené NATO • Diskrétne 24/7
-          </span>
+          {heroContent.badgeLines.map((badge) => (
+            <span
+              key={badge.text}
+              className={
+                badge.variant === 'primary'
+                  ? 'bg-gradient-to-r from-primary to-secondary px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide shadow-lg'
+                  : 'bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-xs sm:text-sm font-semibold backdrop-blur'
+              }
+            >
+              {badge.text}
+            </span>
+          ))}
         </div>
 
         <h1 className="text-4xl md:text-6xl xl:text-7xl font-black mb-6 text-gradient-military drop-shadow-2xl leading-tight">
-          TaxiForce Military Transfers
+          {heroContent.title}
         </h1>
 
         <p className="text-lg md:text-2xl mb-10 text-foreground/90 max-w-3xl mx-auto leading-relaxed">
-          Prémiová preprava pre španielsky vojenský personál na Slovensku. Rýchle transfery zo základne Lešť do Zvolena a Banskej Bystrice, bezpečné návraty späť.
+          {heroContent.description}
           <br className="hidden md:block" />
-          <span className="text-secondary font-semibold">Servicio disponible también en español bajo požiadavke.</span>
+          <span className="text-secondary font-semibold">{heroContent.bilingualNote}</span>
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left text-sm sm:text-base">
-          {[{
-            title: 'Priemerný čas príchodu',
-            value: '30 – 40 minút',
-            note: 'Non-stop dispečing so stálym stanovišťom pri Lešti',
-          },
-          {
-            title: 'Kapacita jedného vozidla',
-            value: '4 pasažieri',
-            note: 'Luxusné SUV alebo business sedan',
-          },
-          {
-            title: 'Rezervácie',
-            value: 'Telefonicky alebo WhatsApp',
-            note: '+421 919 040 118',
-          }].map((item, index) => (
+          {heroContent.stats.map((item, index) => (
             <div
               key={item.title}
               className="bg-black/30 border border-secondary/20 rounded-xl p-4 sm:p-5 backdrop-blur hover:border-secondary/40 transition-all duration-300"
@@ -100,15 +93,14 @@ const HeroSection = () => {
         </div>
 
         <div className="mt-12 flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-muted-foreground">
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
-            <span>🛡️</span> <span>NATO security cleared drivers</span>
-          </div>
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
-            <span>🗺️</span> <span>Door-to-door medzi mestom a základňou</span>
-          </div>
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2">
-            <span>🇪🇸</span> <span>Španielska komunita: odporúčané podniky</span>
-          </div>
+          {heroContent.sellingPoints.map((point) => (
+            <div
+              key={point.text}
+              className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-4 py-2"
+            >
+              <span>{point.icon}</span> <span>{point.text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { seoContent } from '@/content/home';
+
 const SeoContentSection = () => {
   return (
     <section className="py-20 px-6 bg-background">
@@ -11,26 +13,12 @@ const SeoContentSection = () => {
           </p>
         </header>
 
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-secondary">Profesionalita so zameraním na NATO misie</h3>
-          <p>
-            Naše vozidlá spĺňajú prísne požiadavky na technický stav a sú vybavené na dlhé presuny aj nočné návraty. Každý vodič je preverovaný, má skúsenosti s medzinárodnými jednotkami a rozumie vojenskej terminológii. Služba je prispôsobená potrebám španielskeho kontingentu a rešpektuje režim utajenia.
-          </p>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-secondary">Pokrytie pre Zvolen aj Banskú Bystricu</h3>
-          <p>
-            Najčastejšie zabezpečujeme transfery na Zvolenský zámok, námestie vo Zvolene, Europa SC, OC Terminal, reštaurácie v centre Banskej Bystrice a populárne podniky ako Ministry of Fun, Klub 77 či Bar Murgaš. Po dohode vieme zabezpečiť aj výlety do Tatier alebo Budapešti.
-          </p>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-secondary">SEO a online viditeľnosť</h3>
-          <p>
-            TaxiForce sa zameriava na kľúčové frázy ako <strong>taxi Lešť Zvolen</strong>, <strong>vojenské taxi Slovensko</strong>, <strong>transport Spanish Army Slovakia</strong> a <strong>Lešť Banská Bystrica transfer</strong>. Vďaka optimalizovanému obsahu, recenziám a rýchlemu kontaktu získate spoľahlivého partnera pre logistiku medzinárodných jednotiek na Slovensku.
-          </p>
-        </section>
+        {seoContent.map((block) => (
+          <section key={block.heading} className="space-y-4">
+            <h3 className="text-2xl font-semibold text-secondary">{block.heading}</h3>
+            <p>{block.paragraph}</p>
+          </section>
+        ))}
       </article>
     </section>
   );

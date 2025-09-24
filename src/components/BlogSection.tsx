@@ -1,29 +1,6 @@
+import { blogPosts } from '@/content/home';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
-const posts = [
-  {
-    title: 'Sprievodca mestom Zvolen pre španielskych vojakov',
-    excerpt:
-      'Objavte historické centrum so Zvolenským zámkom, odporúčané kaviarne na námestí a miesta, kde sa bezpečne stretnete s kolegami po službe.',
-    tags: ['Mesto Zvolen', 'Voľný čas'],
-    date: 'apríl 2024',
-  },
-  {
-    title: 'Top bary a nočný život v Banskej Bystrici',
-    excerpt:
-      'Od Ministry of Fun po klub 77 – harmonogram vstupov, odporúčania na rezervácie stolov a tipy, ako sa dostať späť na základňu načas.',
-    tags: ['Banská Bystrica', 'Nočný život'],
-    date: 'máj 2024',
-  },
-  {
-    title: 'Overené reštaurácie so španielskym friendly servisom',
-    excerpt:
-      'Kde ochutnať kvalitné steaky, kde podávajú tapas inšpirované menu a ktoré podniky ponúkajú skoré raňajky pred návratom do Lešti.',
-    tags: ['Gastronómia', 'Partneri'],
-    date: 'jún 2024',
-  },
-];
 
 const BlogSection = () => {
   return (
@@ -37,7 +14,7 @@ const BlogSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {blogPosts.map((post) => (
             <Card
               key={post.title}
               className="bg-card/60 border border-secondary/30 backdrop-blur hover:border-secondary/60 transition-all duration-300 hover-military"

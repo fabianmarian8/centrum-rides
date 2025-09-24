@@ -1,31 +1,5 @@
+import { faqs } from '@/content/home';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-
-const faqs = [
-  {
-    question: 'Ako rýchlo viete prísť na základňu Lešť?',
-    answer:
-      'Štandardný čas príchodu je 30 – 40 minút od potvrdenia objednávky. Počas veľkých cvičení máme pripravené posilové vozidlá.',
-    translation: '¿Cuánto tardan en llegar a la base de Lešť? — El tiempo habitual de llegada es de 30 a 40 minutos tras la confirmación, incluso durante maniobras.',
-  },
-  {
-    question: 'Je možné zaplatiť kartou alebo faktúrou?',
-    answer:
-      'Momentálne akceptujeme výhradne hotovosť v eurách, potvrdenie o úhrade vystavíme priamo vodičom. Mesačný prehľad jázd pripravíme na požiadanie.',
-    translation: '¿Se puede pagar con tarjeta o por factura? — Actualmente solo aceptamos efectivo en euros; el chofer entrega el recibo y podemos preparar un resumen mensual si lo necesitan.',
-  },
-  {
-    question: 'Čo ak sa zmení program jednotky?',
-    answer:
-      'Sme v kontakte s dôstojníkmi pre logistiku. Transfer presunieme bez poplatku, vodič zostáva v pohotovosti v meste.',
-    translation: '¿Qué pasa si cambia el horario? — Coordinamos con logística y ajustamos la vuelta sin coste adicional.',
-  },
-  {
-    question: 'Ako účtujete čakanie počas večere alebo nočného programu?',
-    answer:
-      'Čakanie je spoplatnené sumou 15 € za každých začatých 30 minút. Vodič zostáva v blízkosti podniku a koordinuje presný čas návratu.',
-    translation: '¿Cómo cobran la espera durante la cena o la noche? — La espera cuesta 15 € por cada 30 minutos iniciados, con el conductor listo cerca del local para coordinar la vuelta.',
-  },
-];
 
 const FaqSection = () => {
   return (
