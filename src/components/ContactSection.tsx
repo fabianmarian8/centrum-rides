@@ -29,6 +29,12 @@ const ContactSection = () => {
               <p className="text-lg text-muted-foreground">
                 Hovoriť: English
               </p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Priemerný čas príchodu vozidla je 30 – 40 minút.
+              </p>
+              <p className="text-sm font-semibold text-secondary mt-1">
+                Platba je možná len v hotovosti v eurách.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -46,14 +52,13 @@ const ContactSection = () => {
                   📞 Zavolať teraz
                 </a>
               </Button>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
                 size="lg"
                 className="
-                  border-2 border-secondary text-secondary 
-                  hover:bg-secondary hover:text-secondary-foreground
-                  font-bold py-4 rounded-full backdrop-blur-md
+                  bg-[#25D366] text-white
+                  hover:bg-[#1ebe5d]
+                  font-bold py-4 rounded-full shadow-xl
                 "
                 asChild
               >
