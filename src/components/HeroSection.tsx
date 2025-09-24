@@ -40,8 +40,8 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left text-sm sm:text-base">
           {[{
             title: 'Priemerný čas príchodu',
-            value: '8 minút',
-            note: 'Non-stop dispečing priamo na základni',
+            value: '30 – 40 minút',
+            note: 'Non-stop dispečing potvrdzuje dostupnosť v reálnom čase',
           },
           {
             title: 'Kapacita jedného vozidla',
@@ -49,9 +49,9 @@ const HeroSection = () => {
             note: 'Luxusné SUV alebo business sedan',
           },
           {
-            title: 'Rezervácie',
-            value: 'Telefonicky alebo WhatsApp',
-            note: '+421 919 040 118',
+            title: 'Platba',
+            value: 'Len v hotovosti',
+            note: 'Prosíme pripraviť si sumu pred odjazdom',
           }].map((item, index) => (
             <div
               key={item.title}
@@ -82,13 +82,12 @@ const HeroSection = () => {
           </Button>
 
           <Button
-            variant="outline"
             size="lg"
             className="
-              bg-background/40 border-2 border-secondary text-secondary
-              hover:bg-secondary hover:text-secondary-foreground
-              px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-md
-              transition-all duration-300
+              bg-[#25D366] text-white
+              hover:bg-[#1ebe5d]
+              px-8 py-4 text-lg font-semibold rounded-full
+              shadow-xl transition-all duration-300
             "
             asChild
           >

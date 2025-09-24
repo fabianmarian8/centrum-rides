@@ -5,12 +5,12 @@ const routes = [
   {
     title: 'Lešť → Zvolen',
     duration: '35 min',
-    highlights: ['Priamy vstup cez vojenskú bránu', 'Čakáme počas večere až 60 min', 'Odporúčané bary: Quadra, Retro'],
+    highlights: ['Priamy vstup cez vojenskú bránu', 'Koordinácia vyzdvihnutia bez zbytočného čakania', 'Odporúčané bary: Quadra, Retro'],
   },
   {
     title: 'Lešť → Banská Bystrica',
     duration: '50 min',
-    highlights: ['Transfer na Námestie SNP a Europa Shopping Center', 'Koordinácia s nočnými klubmi Ministry, Klub 77', 'Dohodnuté návraty na presný čas'],
+    highlights: ['Transfer na Námestie SNP a Europa Shopping Center', 'Koordinácia s nočnými klubmi Ministry, Klub 77', 'Platba výlučne v hotovosti pri nástupe'],
   },
 ];
 

@@ -39,7 +39,7 @@ const PricingSection = () => {
             <CardContent className="space-y-4">
 
               <div className="text-left space-y-3">
-                {["✅ 25% vojenská zľava už aplikovaná", "✅ Čakací čas zahrnutý (až 30 min)", "✅ Garantovaná spiatočná cesta", "✅ Prémiové vozidlo", "✅ Vodič hovoriaci iba po anglicky", "✅ Bezpečnostné overenie NATO", "✅ Diskrétna služba 24/7"].map((feature, index) => <div key={index} className="flex items-center gap-3">
+                {["✅ 25% vojenská zľava už aplikovaná", "✅ Priemerný čas príchodu 30 – 40 min podľa dostupnosti", "✅ Garantovaná spiatočná cesta", "✅ Prémiové vozidlo", "✅ Vodič hovoriaci iba po anglicky", "✅ Bezpečnostné overenie NATO", "✅ Platba výlučne v hotovosti"].map((feature, index) => <div key={index} className="flex items-center gap-3">
                     <span className="text-secondary">{feature.split(' ')[0]}</span>
                     <span className="text-foreground">{feature.substring(2)}</span>
                   </div>)}
@@ -86,7 +86,7 @@ const PricingSection = () => {
             <CardContent className="space-y-4">
 
               <div className="text-left space-y-3">
-                {["✅ 25% vojenská zľava už aplikovaná", "✅ Čakací čas zahrnutý (až 30 min)", "✅ Garantovaná spiatočná cesta", "✅ Prémiové vozidlo", "✅ Vodič hovoriaci iba po anglicky", "✅ Bezpečnostné overenie NATO", "✅ Diskrétna služba 24/7"].map((feature, index) => <div key={index} className="flex items-center gap-3">
+                {["✅ 25% vojenská zľava už aplikovaná", "✅ Priemerný čas príchodu 30 – 40 min podľa dostupnosti", "✅ Garantovaná spiatočná cesta", "✅ Prémiové vozidlo", "✅ Vodič hovoriaci iba po anglicky", "✅ Bezpečnostné overenie NATO", "✅ Platba výlučne v hotovosti"].map((feature, index) => <div key={index} className="flex items-center gap-3">
                     <span className="text-secondary">{feature.split(' ')[0]}</span>
                     <span className="text-foreground">{feature.substring(2)}</span>
                   </div>)}
@@ -122,4 +122,5 @@ const PricingSection = () => {
       </div>
     </section>;
 };
+
 export default PricingSection;

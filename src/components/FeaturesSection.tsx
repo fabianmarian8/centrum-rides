@@ -9,7 +9,7 @@ const features = [
     icon: '🚐',
     title: 'Priame spojenie Lešť → Zvolen / Banská Bystrica',
     description:
-      'Monitorujeme pohyb jednotiek a koordinujeme vyzdvihnutia priamo pri bráne základne. Typická cesta trvá 30 – 45 minút.',
+      'Monitorujeme pohyb jednotiek a koordinujeme vyzdvihnutia priamo pri bráne základne. Vozidlo štandardne dorazí do 30 – 40 minút.',
     image: taxiImage,
     badge: 'Non-stop dispečing',
   },
@@ -33,9 +33,17 @@ const features = [
     icon: '🌙',
     title: 'Operácie 24/7 vrátane neskorých návratov',
     description:
-      'Služba pokrýva nočné vychádzky aj skoré ranné presuny na cvičenia. Čakací čas do 30 minút je zahrnutý v cene.',
+      'Služba pokrýva nočné vychádzky aj skoré ranné presuny na cvičenia. Čakanie sa dohodne individuálne podľa tarify.',
     image: cityImage,
     badge: 'Night ready',
+  },
+  {
+    icon: '💶',
+    title: 'Platba výlučne v hotovosti',
+    description:
+      'Fakturácia je jednoduchá a transparentná – platíte pri nástupe v eurách, bez možnosti kartovej platby.',
+    image: null,
+    badge: 'Payment info',
   },
   {
     icon: '🇪🇸',
@@ -44,14 +52,6 @@ const features = [
       'Dispečing rozumie vojenským termínom, vodiči sú pripravení komunikovať v angličtine a najčastejších frázach po španielsky.',
     image: null,
     badge: 'Language support',
-  },
-  {
-    icon: '🔁',
-    title: 'Garancia spiatočného spojenia',
-    description:
-      'Vopred rezervované časy odchodu späť na základňu. V prípade zmeny rozkazov bezplatne upravíme itinerár.',
-    image: null,
-    badge: 'Flexible',
   },
 ];
 
