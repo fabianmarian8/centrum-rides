@@ -29,32 +29,32 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-muted/40 via-background to-muted/40">
-      <div className="max-w-6xl mx-auto space-y-12">
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient-gold">Blog TaxiForce</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+    <section className="py-14 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-muted/40 via-background to-muted/40">
+      <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">Blog TaxiForce</h2>
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Aktuálne tipy pre voľný čas v mestách Zvolen a Banská Bystrica vrátane barov, reštaurácií a kultúrnych zastávok.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {posts.map((post) => (
             <Card
               key={post.title}
               className="bg-card/60 backdrop-blur border border-secondary/20 hover:border-secondary/50 transition-all duration-300"
             >
-              <CardHeader className="space-y-2">
-                <span className="text-xs uppercase tracking-wide text-secondary">{post.city}</span>
-                <CardTitle className="text-xl text-foreground">{post.title}</CardTitle>
-                <span className="text-xs text-muted-foreground">{post.readTime}</span>
+              <CardHeader className="space-y-1.5 sm:space-y-2">
+                <span className="text-[10px] sm:text-xs uppercase tracking-wide text-secondary">{post.city}</span>
+                <CardTitle className="text-sm sm:text-xl text-foreground">{post.title}</CardTitle>
+                <span className="text-[10px] sm:text-xs text-muted-foreground">{post.readTime}</span>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <CardContent className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-muted-foreground">
                 <p>{post.excerpt}</p>
                 <ul className="space-y-1">
                   {post.highlights.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="text-secondary">•</span>
+                      <span className="text-secondary text-xs sm:text-base">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
