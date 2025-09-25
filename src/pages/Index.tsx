@@ -7,13 +7,12 @@ import PricingSection from '@/components/PricingSection';
 import FaqSection from '@/components/FaqSection';
 import SeoContentSection from '@/components/SeoContentSection';
 import ContactSection from '@/components/ContactSection';
-import BlogSection from '@/components/BlogSection';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Navigation from '@/components/Navigation';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <LanguageSwitcher />
+      <Navigation />
       <main>
         <HeroSection />
         <FeaturesSection />
@@ -23,7 +22,6 @@ const Index = () => {
         <TestimonialsSection />
         <FaqSection />
         <SeoContentSection />
-        <BlogSection />
         <ContactSection />
       </main>
     </div>
