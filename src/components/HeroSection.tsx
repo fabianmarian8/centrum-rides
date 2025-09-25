@@ -8,7 +8,7 @@ const translations = {
     serviceBadge: 'NATO vetted • Discreet 24/7',
     heading: 'TaxiForce Military Transfers',
     description:
-      'Premium transport dedicated to Spanish military personnel stationed in Slovakia. Fast transfers from the Slavia 1 call point at Lešť base to Zvolen and Banská Bystrica with safe returns back to duty.',
+      'Premium transport dedicated to Spanish military personnel stationed in Slovakia. Fast transfers from Slavia 1 at Lešť base to Zvolen and Banská Bystrica with safe returns back to duty.',
     descriptionHighlight: 'Service available in English and Spanish on request.',
     stats: [
       {
@@ -40,7 +40,7 @@ const translations = {
     serviceBadge: 'Aprobado por la OTAN • Discreto 24/7',
     heading: 'TaxiForce Traslados Militares',
     description:
-      'Transporte premium dedicado al personal militar español destacado en Eslovaquia. Traslados rápidos desde el punto de llamada Slavia 1 de la base de Lešť a Zvolen y Banská Bystrica con retornos seguros al servicio.',
+      'Transporte premium dedicado al personal militar español destacado en Eslovaquia. Traslados rápidos desde Slavia 1 de la base de Lešť a Zvolen y Banská Bystrica con retornos seguros al servicio.',
     descriptionHighlight: 'Servicio disponible en inglés y español bajo solicitud.',
     stats: [
       {

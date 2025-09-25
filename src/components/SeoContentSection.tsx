@@ -17,7 +17,7 @@ const translations: Record<
   en: {
     heading: 'Taxi for Spanish troops from Lešť base (Slavia 1)',
     intro:
-      'TaxiForce is a specialised transfer service based in central Slovakia. Since 2022 we have ensured safe and comfortable links between the Lešť training area, the Slavia 1 call point, the city of Zvolen and Banská Bystrica.',
+      'TaxiForce is a specialised transfer service based in central Slovakia. Since 2022 we have ensured safe and comfortable links between the Lešť training area, Slavia 1, the city of Zvolen and Banská Bystrica.',
     sections: [
       {
         title: 'Professional focus on NATO missions',
@@ -46,7 +46,7 @@ const translations: Record<
   es: {
     heading: 'Taxi para las tropas españolas desde la base de Lešť (Slavia 1)',
     intro:
-      'TaxiForce es un servicio de traslados especializado con base en el centro de Eslovaquia. Desde 2022 garantizamos conexiones seguras y cómodas entre el área de entrenamiento de Lešť, el punto de llamada Slavia 1, la ciudad de Zvolen y Banská Bystrica.',
+      'TaxiForce es un servicio de traslados especializado con base en el centro de Eslovaquia. Desde 2022 garantizamos conexiones seguras y cómodas entre el área de entrenamiento de Lešť, Slavia 1, la ciudad de Zvolen y Banská Bystrica.',
     sections: [
       {
         title: 'Profesionalidad enfocada en misiones de la OTAN',

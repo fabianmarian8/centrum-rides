@@ -9,7 +9,7 @@ const translations = {
   en: {
     heading: 'Why choose TaxiForce?',
     description:
-      'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base with dispatch anchored at the Slavia 1 call point.',
+      'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base with dispatch anchored at Slavia 1.',
     features: [
       {
         icon: '🚐',
@@ -64,7 +64,7 @@ const translations = {
   es: {
     heading: '¿Por qué elegir TaxiForce?',
     description:
-      'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť con central operativa en el punto de llamada Slavia 1.',
+      'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť con central operativa en Slavia 1.',
     features: [
       {
         icon: '🚐',
