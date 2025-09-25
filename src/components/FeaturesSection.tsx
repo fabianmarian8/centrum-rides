@@ -8,13 +8,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const translations = {
   en: {
     heading: 'Why choose TaxiForce?',
-    description: 'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base.',
+    description:
+      'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base with dispatch anchored at the Slavia 1 call point.',
     features: [
       {
         icon: '🚐',
         title: 'Direct connection Lešť → Zvolen / Banská Bystrica',
         description:
-          'We monitor troop movements and coordinate pick-ups at the base gate. Vehicles usually arrive within 30–40 minutes.',
+          'We monitor troop movements and coordinate pick-ups at the Slavia 1 gate. Vehicles usually arrive within 30–40 minutes.',
         image: taxiImage,
         badge: '24/7 dispatch',
       },
@@ -62,13 +63,14 @@ const translations = {
   },
   es: {
     heading: '¿Por qué elegir TaxiForce?',
-    description: 'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť.',
+    description:
+      'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť con central operativa en el punto de llamada Slavia 1.',
     features: [
       {
         icon: '🚐',
         title: 'Conexión directa Lešť → Zvolen / Banská Bystrica',
         description:
-          'Supervisamos los movimientos de la unidad y coordinamos recogidas en la puerta de la base. El vehículo llega en 30–40 minutos.',
+          'Supervisamos los movimientos de la unidad y coordinamos recogidas en la puerta Slavia 1. El vehículo llega en 30–40 minutos.',
         image: taxiImage,
         badge: 'Central 24/7',
       },
