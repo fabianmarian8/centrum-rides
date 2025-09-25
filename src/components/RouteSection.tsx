@@ -96,38 +96,38 @@ const RouteSection = () => {
   const content = translations[language];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-      <div className="max-w-6xl mx-auto space-y-10 sm:space-y-16">
-        <div className="text-center space-y-3 sm:space-y-4">
-          <Badge className="bg-secondary/20 text-secondary border-secondary/40 uppercase tracking-wide">
+    <section className="py-8 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <div className="max-w-6xl mx-auto space-y-6 sm:space-y-12">
+        <div className="text-center space-y-2 sm:space-y-3">
+          <Badge className="bg-secondary/20 text-secondary border-secondary/40 uppercase tracking-wide text-xs">
             {content.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-military">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-military">
             {content.heading}
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             {content.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
           {content.routes.map((route) => (
             <Card
               key={route.title}
               className="bg-card/70 backdrop-blur border border-secondary/30 hover:border-secondary/60 transition-all duration-300 hover-military"
             >
-              <CardContent className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-secondary">{route.title}</h3>
-                  <span className="text-xs sm:text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/30">
+              <CardContent className="p-3 sm:p-4 md:p-5 space-y-2 sm:space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-secondary">{route.title}</h3>
+                  <span className="text-[10px] sm:text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/30 whitespace-nowrap">
                     {route.duration}
                   </span>
                 </div>
-                <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <ul className="space-y-1 sm:space-y-2 text-[11px] sm:text-xs text-muted-foreground">
                   {route.highlights.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-secondary">•</span>
-                      <span>{item}</span>
+                    <li key={item} className="flex items-start gap-1.5">
+                      <span className="text-secondary mt-0.5">•</span>
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -136,15 +136,15 @@ const RouteSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 min-[460px]:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 min-[380px]:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
           {content.steps.map((step) => (
             <div
               key={step.title}
-              className="bg-black/30 border border-secondary/20 rounded-2xl p-4 sm:p-5 space-y-2 sm:space-y-3 text-center backdrop-blur hover:border-secondary/50 transition-all"
+              className="bg-black/30 border border-secondary/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 space-y-1 sm:space-y-2 text-center backdrop-blur hover:border-secondary/50 transition-all"
             >
-              <h3 className="text-base sm:text-lg font-semibold text-secondary uppercase tracking-wide">{step.title}</h3>
-              <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed">{step.detail}</p>
-              <p className="text-[11px] sm:text-xs text-muted-foreground">{step.sub}</p>
+              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-secondary uppercase tracking-wide">{step.title}</h3>
+              <p className="text-[10px] sm:text-xs text-foreground/90 leading-relaxed">{step.detail}</p>
+              <p className="text-[9px] sm:text-[10px] text-muted-foreground">{step.sub}</p>
             </div>
           ))}
         </div>
