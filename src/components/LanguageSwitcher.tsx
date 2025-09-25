@@ -11,7 +11,7 @@ const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex items-center gap-2 rounded-full bg-black/70 px-2 py-2 backdrop-blur">
+    <div className="flex items-center gap-2 rounded-full bg-black/70 px-2 py-2 backdrop-blur">
       {languages.map(({ label, value }) => (
         <Button
           key={value}
