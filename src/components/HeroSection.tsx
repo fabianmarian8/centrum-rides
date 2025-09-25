@@ -1,7 +1,78 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const translations = {
+  en: {
+    routeBadge: '🇪🇸 Base Training Area Lešť → Zvolen / Banská Bystrica',
+    serviceBadge: 'NATO vetted • Discreet 24/7',
+    heading: 'TaxiForce Military Transfers',
+    description:
+      'Premium transport dedicated to Spanish military personnel stationed in Slovakia. Fast transfers from Lešť base to Zvolen and Banská Bystrica with safe returns back to duty.',
+    descriptionHighlight: 'Service available in English and Spanish on request.',
+    stats: [
+      {
+        title: 'Average arrival time',
+        value: '30 – 40 minutes',
+        note: '24/7 dispatch confirms availability in real time',
+      },
+      {
+        title: 'Vehicle capacity',
+        value: 'Up to 4 passengers',
+        note: 'Luxury SUV or business sedan fleet',
+      },
+      {
+        title: 'Payment method',
+        value: 'Cash only',
+        note: 'Please prepare the fare before departure',
+      },
+    ],
+    callCta: 'Call TaxiForce',
+    whatsappCta: 'WhatsApp booking',
+    badges: [
+      { icon: '🛡️', text: 'NATO security-cleared drivers' },
+      { icon: '🗺️', text: 'Door-to-door between base and city' },
+      { icon: '🇪🇸', text: 'Spanish community recommendations' },
+    ],
+  },
+  es: {
+    routeBadge: '🇪🇸 Base de adiestramiento Lešť → Zvolen / Banská Bystrica',
+    serviceBadge: 'Aprobado por la OTAN • Discreto 24/7',
+    heading: 'TaxiForce Traslados Militares',
+    description:
+      'Transporte premium dedicado al personal militar español destacado en Eslovaquia. Traslados rápidos desde la base de Lešť a Zvolen y Banská Bystrica con retornos seguros al servicio.',
+    descriptionHighlight: 'Servicio disponible en inglés y español bajo solicitud.',
+    stats: [
+      {
+        title: 'Tiempo medio de llegada',
+        value: '30 – 40 minutos',
+        note: 'Central 24/7 confirma la disponibilidad en tiempo real',
+      },
+      {
+        title: 'Capacidad del vehículo',
+        value: 'Hasta 4 pasajeros',
+        note: 'Flota de SUV de lujo o sedanes ejecutivos',
+      },
+      {
+        title: 'Método de pago',
+        value: 'Solo efectivo',
+        note: 'Prepare el importe antes de la salida',
+      },
+    ],
+    callCta: 'Llamar a TaxiForce',
+    whatsappCta: 'Reserva por WhatsApp',
+    badges: [
+      { icon: '🛡️', text: 'Conductores acreditados por la OTAN' },
+      { icon: '🗺️', text: 'Puerta a puerta entre base y ciudad' },
+      { icon: '🇪🇸', text: 'Recomendaciones para la comunidad española' },
+    ],
+  },
+} as const;
 
 const HeroSection = () => {
+  const { language } = useLanguage();
+  const content = translations[language];
+
   return (
     <section
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
@@ -20,39 +91,25 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           <span className="bg-gradient-to-r from-primary to-secondary px-3 py-2 rounded-full text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-lg">
-            🇪🇸 Base Training Area Lešť → Zvolen / Banská Bystrica
+            {content.routeBadge}
           </span>
           <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-[11px] sm:text-sm font-semibold backdrop-blur">
-            Overené NATO • Diskrétne 24/7
+            {content.serviceBadge}
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black mb-5 sm:mb-6 text-gradient-military drop-shadow-2xl leading-tight">
-          TaxiForce Military Transfers
+          {content.heading}
         </h1>
 
         <p className="text-base sm:text-lg md:text-2xl mb-8 sm:mb-10 text-foreground/90 max-w-3xl mx-auto leading-relaxed">
-          Prémiová preprava pre španielsky vojenský personál na Slovensku. Rýchle transfery zo základne Lešť do Zvolena a Banskej Bystrice, bezpečné návraty späť.
+          {content.description}
           <br className="hidden md:block" />
-          <span className="text-secondary font-semibold">Servicio disponible también en español bajo požiadavke.</span>
+          <span className="text-secondary font-semibold">{content.descriptionHighlight}</span>
         </p>
 
         <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-10 text-left text-xs sm:text-sm">
-          {[{
-            title: 'Priemerný čas príchodu',
-            value: '30 – 40 minút',
-            note: 'Non-stop dispečing potvrdzuje dostupnosť v reálnom čase',
-          },
-          {
-            title: 'Kapacita jedného vozidla',
-            value: '4 pasažieri',
-            note: 'Luxusné SUV alebo business sedan',
-          },
-          {
-            title: 'Platba',
-            value: 'Len v hotovosti',
-            note: 'Prosíme pripraviť si sumu pred odjazdom',
-          }].map((item, index) => (
+          {content.stats.map((item, index) => (
             <div
               key={item.title}
               className="bg-black/30 border border-secondary/20 rounded-xl p-3 sm:p-4 backdrop-blur hover:border-secondary/40 transition-all duration-300"
@@ -77,7 +134,7 @@ const HeroSection = () => {
             asChild
           >
             <a href="tel:+421919040118">
-              📞 Zavolať TaxiForce
+              📞 {content.callCta}
             </a>
           </Button>
 
@@ -92,21 +149,20 @@ const HeroSection = () => {
             asChild
           >
             <a href="https://wa.me/421919040118">
-              💬 WhatsApp rezervácia
+              💬 {content.whatsappCta}
             </a>
           </Button>
         </div>
 
         <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs md:text-sm text-muted-foreground">
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-3 py-2">
-            <span>🛡️</span> <span>NATO security cleared drivers</span>
-          </div>
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-3 py-2">
-            <span>🗺️</span> <span>Door-to-door medzi mestom a základňou</span>
-          </div>
-          <div className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-3 py-2">
-            <span>🇪🇸</span> <span>Španielska komunita: odporúčané podniky</span>
-          </div>
+          {content.badges.map((badge) => (
+            <div
+              key={badge.text}
+              className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-3 py-2"
+            >
+              <span>{badge.icon}</span> <span>{badge.text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

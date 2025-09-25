@@ -8,10 +8,12 @@ import FaqSection from '@/components/FaqSection';
 import SeoContentSection from '@/components/SeoContentSection';
 import ContactSection from '@/components/ContactSection';
 import BlogSection from '@/components/BlogSection';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <LanguageSwitcher />
       <main>
         <HeroSection />
         <FeaturesSection />

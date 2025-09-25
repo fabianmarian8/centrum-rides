@@ -1,36 +1,99 @@
+import type { ReactNode } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+interface SeoSection {
+  title: string;
+  paragraphs: ReactNode[];
+}
+
+const translations: Record<
+  'en' | 'es',
+  {
+    heading: string;
+    intro: ReactNode;
+    sections: SeoSection[];
+  }
+> = {
+  en: {
+    heading: 'Taxi for Spanish troops from Lešť base',
+    intro:
+      'TaxiForce is a specialised transfer service based in central Slovakia. Since 2022 we have ensured safe and comfortable links between the Lešť training area, the city of Zvolen and Banská Bystrica.',
+    sections: [
+      {
+        title: 'Professional focus on NATO missions',
+        paragraphs: [
+          'Our vehicles meet strict maintenance standards and are equipped for long transfers and night returns. Every driver is vetted, experienced with international units and familiar with military terminology. The service is tailored to the Spanish contingent while respecting confidentiality protocols.',
+        ],
+      },
+      {
+        title: 'Coverage for Zvolen and Banská Bystrica',
+        paragraphs: [
+          'We frequently arrange transfers to Zvolen Castle, SNP Square, Europa Shopping Center, OC Terminal, downtown Banská Bystrica restaurants and popular venues such as Ministry of Fun, Klub 77 or Bar Murgaš. Upon request we organise trips to the Tatras or Budapest.',
+        ],
+      },
+      {
+        title: 'SEO and online visibility',
+        paragraphs: [
+          (
+            <>
+              TaxiForce targets key phrases such as <strong>taxi Lešť Zvolen</strong>, <strong>military taxi Slovakia</strong>, <strong>transport Spanish Army Slovakia</strong> and <strong>Lešť Banská Bystrica transfer</strong>. With optimised content, reviews and rapid contact, we provide a trusted logistics partner for international units in Slovakia.
+            </>
+          ),
+        ],
+      },
+    ],
+  },
+  es: {
+    heading: 'Taxi para las tropas españolas desde la base de Lešť',
+    intro:
+      'TaxiForce es un servicio de traslados especializado con base en el centro de Eslovaquia. Desde 2022 garantizamos conexiones seguras y cómodas entre el área de entrenamiento de Lešť, la ciudad de Zvolen y Banská Bystrica.',
+    sections: [
+      {
+        title: 'Profesionalidad enfocada en misiones de la OTAN',
+        paragraphs: [
+          'Nuestros vehículos cumplen exigentes estándares técnicos y están preparados para traslados largos y regresos nocturnos. Cada conductor está verificado, trabaja con unidades internacionales y domina la terminología militar. El servicio se adapta al contingente español respetando los protocolos de confidencialidad.',
+        ],
+      },
+      {
+        title: 'Cobertura para Zvolen y Banská Bystrica',
+        paragraphs: [
+          'Realizamos traslados frecuentes al Castillo de Zvolen, la Plaza SNP, Europa Shopping Center, OC Terminal, restaurantes del centro de Banská Bystrica y locales populares como Ministry of Fun, Klub 77 o Bar Murgaš. También organizamos excursiones a los Tatras o Budapest bajo solicitud.',
+        ],
+      },
+      {
+        title: 'SEO y visibilidad online',
+        paragraphs: [
+          (
+            <>
+              TaxiForce trabaja palabras clave como <strong>taxi Lešť Zvolen</strong>, <strong>military taxi Slovakia</strong>, <strong>transport Spanish Army Slovakia</strong> y <strong>Lešť Banská Bystrica transfer</strong>. Con contenido optimizado, reseñas y contacto inmediato, ofrecemos un socio logístico fiable para unidades internacionales en Eslovaquia.
+            </>
+          ),
+        ],
+      },
+    ],
+  },
+};
+
 const SeoContentSection = () => {
+  const { language } = useLanguage();
+  const content = translations[language];
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
       <article className="max-w-5xl mx-auto space-y-8 sm:space-y-10 text-muted-foreground leading-relaxed text-sm sm:text-base">
         <header className="space-y-3 sm:space-y-4 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-gold">
-            Taxi pre španielskych vojakov zo základne Lešť
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg">
-            TaxiForce je špecializovaná prepravná služba so sídlom v Banskobystrickom kraji. Už od roku 2022 zabezpečujeme komfortné a bezpečné spojenie medzi Výcvikovým priestorom Lešť, mestom Zvolen a Banskou Bystricou.
-          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-gold">{content.heading}</h2>
+          <p className="text-sm sm:text-base md:text-lg">{content.intro}</p>
         </header>
 
-        <section className="space-y-3 sm:space-y-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-secondary">Profesionalita so zameraním na NATO misie</h3>
-          <p>
-            Naše vozidlá spĺňajú prísne požiadavky na technický stav a sú vybavené na dlhé presuny aj nočné návraty. Každý vodič je preverovaný, má skúsenosti s medzinárodnými jednotkami a rozumie vojenskej terminológii. Služba je prispôsobená potrebám španielskeho kontingentu a rešpektuje režim utajenia.
-          </p>
-        </section>
-
-        <section className="space-y-3 sm:space-y-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-secondary">Pokrytie pre Zvolen aj Banskú Bystricu</h3>
-          <p>
-            Najčastejšie zabezpečujeme transfery na Zvolenský zámok, námestie vo Zvolene, Europa SC, OC Terminal, reštaurácie v centre Banskej Bystrice a populárne podniky ako Ministry of Fun, Klub 77 či Bar Murgaš. Po dohode vieme zabezpečiť aj výlety do Tatier alebo Budapešti.
-          </p>
-        </section>
-
-        <section className="space-y-3 sm:space-y-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-secondary">SEO a online viditeľnosť</h3>
-          <p>
-            TaxiForce sa zameriava na kľúčové frázy ako <strong>taxi Lešť Zvolen</strong>, <strong>vojenské taxi Slovensko</strong>, <strong>transport Spanish Army Slovakia</strong> a <strong>Lešť Banská Bystrica transfer</strong>. Vďaka optimalizovanému obsahu, recenziám a rýchlemu kontaktu získate spoľahlivého partnera pre logistiku medzinárodných jednotiek na Slovensku.
-          </p>
-        </section>
+        {content.sections.map((section) => (
+          <section key={section.title} className="space-y-3 sm:space-y-4">
+            <h3 className="text-xl sm:text-2xl font-semibold text-secondary">{section.title}</h3>
+            {section.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </section>
+        ))}
       </article>
     </section>
   );
