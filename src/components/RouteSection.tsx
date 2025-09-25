@@ -13,7 +13,7 @@ const translations = {
         title: 'Lešť → Zvolen',
         duration: '35 min',
         highlights: [
-          'Direct entry at the military gate',
+          'Direct entry at the Slavia 1 military gate',
           'Coordinated pick-up without unnecessary waiting',
           'Recommended bars: Quadra, Retro',
         ],
@@ -36,7 +36,7 @@ const translations = {
       },
       {
         title: '2. Pick-up',
-        detail: 'Driver waits at the Lešť gate. We track unit schedule changes in real time.',
+        detail: 'Driver waits at the Slavia 1 gate inside Lešť. We track unit schedule changes in real time.',
         sub: 'Vehicle and driver identification in advance',
       },
       {
@@ -56,7 +56,7 @@ const translations = {
         title: 'Lešť → Zvolen',
         duration: '35 min',
         highlights: [
-          'Acceso directo por la puerta militar',
+          'Acceso directo por la puerta militar Slavia 1',
           'Recogida coordinada sin esperas innecesarias',
           'Bares recomendados: Quadra, Retro',
         ],
@@ -79,7 +79,7 @@ const translations = {
       },
       {
         title: '2. Recogida',
-        detail: 'El conductor espera en la puerta de Lešť. Seguimos cambios en el programa en tiempo real.',
+        detail: 'El conductor espera en la puerta Slavia 1 de Lešť. Seguimos cambios en el programa en tiempo real.',
         sub: 'Identificación del vehículo y conductor por adelantado',
       },
       {
