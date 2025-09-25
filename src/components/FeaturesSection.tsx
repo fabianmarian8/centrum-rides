@@ -3,73 +3,137 @@ import militaryBadge from '@/assets/military-badge.jpg';
 import restaurantImage from '@/assets/restaurant-bb.jpg';
 import taxiImage from '@/assets/taxi-military.jpg';
 import cityImage from '@/assets/banska-bystrica-night.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const features = [
-  {
-    icon: '🚐',
-    title: 'Priame spojenie Lešť → Zvolen / Banská Bystrica',
-    description:
-      'Monitorujeme pohyb jednotiek a koordinujeme vyzdvihnutia priamo pri bráne základne. Vozidlo štandardne dorazí do 30 – 40 minút.',
-    image: taxiImage,
-    badge: 'Non-stop dispečing',
+const translations = {
+  en: {
+    heading: 'Why choose TaxiForce?',
+    description: 'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base.',
+    features: [
+      {
+        icon: '🚐',
+        title: 'Direct connection Lešť → Zvolen / Banská Bystrica',
+        description:
+          'We monitor troop movements and coordinate pick-ups at the base gate. Vehicles usually arrive within 30–40 minutes.',
+        image: taxiImage,
+        badge: '24/7 dispatch',
+      },
+      {
+        icon: '🛡️',
+        title: 'NATO security standards',
+        description:
+          'All drivers are vetted, bound by confidentiality agreements and trained for both duty and leisure transfers.',
+        image: militaryBadge,
+        badge: 'Security cleared',
+      },
+      {
+        icon: '🍻',
+        title: 'Local tips for the Spanish unit',
+        description:
+          'From tapas bars to nightclubs, we curate a trusted list of safe partner venues in both cities.',
+        image: restaurantImage,
+        badge: 'Insider tips',
+      },
+      {
+        icon: '🌙',
+        title: 'Operations 24/7 including late returns',
+        description:
+          'Coverage for evening outings and early training deployments. Waiting time is tailored individually to your plan.',
+        image: cityImage,
+        badge: 'Night ready',
+      },
+      {
+        icon: '💶',
+        title: 'Cash payments only',
+        description:
+          'Simple and transparent – pay in euros upon pick-up, card payments are not available.',
+        image: null,
+        badge: 'Payment info',
+      },
+      {
+        icon: '🇪🇸',
+        title: 'English and Spanish communication',
+        description:
+          'Dispatch understands military terminology; drivers are ready to handle English and essential Spanish phrases.',
+        image: null,
+        badge: 'Language support',
+      },
+    ],
   },
-  {
-    icon: '🛡️',
-    title: 'Bezpečnostné štandardy NATO',
-    description:
-      'Všetci vodiči sú preverení, zmluvne viazaní mlčanlivosťou a poznajú protokoly pre služobné aj voľnočasové presuny.',
-    image: militaryBadge,
-    badge: 'Security cleared',
+  es: {
+    heading: '¿Por qué elegir TaxiForce?',
+    description: 'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť.',
+    features: [
+      {
+        icon: '🚐',
+        title: 'Conexión directa Lešť → Zvolen / Banská Bystrica',
+        description:
+          'Supervisamos los movimientos de la unidad y coordinamos recogidas en la puerta de la base. El vehículo llega en 30–40 minutos.',
+        image: taxiImage,
+        badge: 'Central 24/7',
+      },
+      {
+        icon: '🛡️',
+        title: 'Estándares de seguridad OTAN',
+        description:
+          'Todos los conductores están verificados, sujetos a confidencialidad y formados para traslados de servicio y ocio.',
+        image: militaryBadge,
+        badge: 'Security cleared',
+      },
+      {
+        icon: '🍻',
+        title: 'Recomendaciones locales para la unidad',
+        description:
+          'Desde bares de tapas hasta discotecas: lista de socios segura y de confianza en ambas ciudades.',
+        image: restaurantImage,
+        badge: 'Insider tips',
+      },
+      {
+        icon: '🌙',
+        title: 'Operaciones 24/7 con regresos tardíos',
+        description:
+          'Cobertura para salidas nocturnas y despliegues tempranos. El tiempo de espera se ajusta a vuestro plan.',
+        image: cityImage,
+        badge: 'Night ready',
+      },
+      {
+        icon: '💶',
+        title: 'Pagos solo en efectivo',
+        description:
+          'Proceso sencillo y transparente: pagas en euros al subir, no disponible pago con tarjeta.',
+        image: null,
+        badge: 'Payment info',
+      },
+      {
+        icon: '🇪🇸',
+        title: 'Comunicación en inglés y español',
+        description:
+          'La central conoce la terminología militar y los conductores manejan inglés y las frases esenciales en español.',
+        image: null,
+        badge: 'Language support',
+      },
+    ],
   },
-  {
-    icon: '🍻',
-    title: 'Lokálne odporúčania pre španielsku jednotku',
-    description:
-      'Od tapas barov po nočné kluby – pripravili sme partnerský zoznam bezpečných a overených miest v oboch mestách.',
-    image: restaurantImage,
-    badge: 'Insider tips',
-  },
-  {
-    icon: '🌙',
-    title: 'Operácie 24/7 vrátane neskorých návratov',
-    description:
-      'Služba pokrýva nočné vychádzky aj skoré ranné presuny na cvičenia. Čakanie sa dohodne individuálne podľa tarify.',
-    image: cityImage,
-    badge: 'Night ready',
-  },
-  {
-    icon: '💶',
-    title: 'Platba výlučne v hotovosti',
-    description:
-      'Fakturácia je jednoduchá a transparentná – platíte pri nástupe v eurách, bez možnosti kartovej platby.',
-    image: null,
-    badge: 'Payment info',
-  },
-  {
-    icon: '🇪🇸',
-    title: 'Komunikácia v angličtine + základná španielčina',
-    description:
-      'Dispečing rozumie vojenským termínom, vodiči sú pripravení komunikovať v angličtine a najčastejších frázach po španielsky.',
-    image: null,
-    badge: 'Language support',
-  },
-];
+} as const;
 
 const FeaturesSection = () => {
+  const { language } = useLanguage();
+  const content = translations[language];
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-background to-muted">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
-            Prečo zvoliť TaxiForce?
+            {content.heading}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Špecializovaná prepravná jednotka pre španielsky vojenský personál pôsobiaci na základni Lešť
+            {content.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 min-[360px]:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {features.map((feature, index) => (
+          {content.features.map((feature, index) => (
             <Card
               key={feature.title}
               className="

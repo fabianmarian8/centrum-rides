@@ -1,45 +1,93 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const posts = [
-  {
-    city: 'Zvolen',
-    title: 'Prvý večer vo Zvolene: zámok, námestie a lokálne bary',
-    excerpt:
-      'Spojte si kultúru s oddychom – navštívte Zvolenský zámok, prejdite sa po Námestí SNP a zakončite večer v baroch Quadra alebo Retro.',
-    highlights: ['Historické centrum', 'Craft koktaily', 'Nočné taxi späť na základňu'],
-    readTime: '4 min čítanie',
+interface BlogPost {
+  city: string;
+  title: string;
+  excerpt: string;
+  highlights: string[];
+  readTime: string;
+}
+
+const translations: Record<'en' | 'es', { heading: string; description: string; posts: BlogPost[] }> = {
+  en: {
+    heading: 'TaxiForce blog',
+    description:
+      'Fresh recommendations for downtime in Zvolen and Banská Bystrica — from restaurants and bars to cultural highlights curated for Spanish troops.',
+    posts: [
+      {
+        city: 'Zvolen',
+        title: 'First night in Zvolen: castle, square and local bars',
+        excerpt:
+          'Combine culture with relaxation — visit Zvolen Castle, stroll along SNP Square and finish the evening in Quadra or Retro.',
+        highlights: ['Historic centre', 'Craft cocktails', 'Night taxi back to base'],
+        readTime: '4 min read',
+      },
+      {
+        city: 'Banská Bystrica',
+        title: 'Evening scene in Banská Bystrica for the Spanish contingent',
+        excerpt:
+          'Europa SC, the main square and lively streets — Ministry of Fun, Klub 77 or Bar Murgaš offer music and space for larger groups.',
+        highlights: ['Nightlife tips', 'Safe transfers', 'Group reservations'],
+        readTime: '5 min read',
+      },
+      {
+        city: 'Gastro picks',
+        title: 'Restaurants with Mediterranean menus and late kitchens',
+        excerpt:
+          'Try tapas at Bistro Chef in Zvolen, Italian classics at Alžbeta and Slovak specialities at Bystrická Klubovňa — all vetted by the community.',
+        highlights: ['Tapas & wine', 'Open after 22:00', 'Table reservations available'],
+        readTime: '3 min read',
+      },
+    ],
   },
-  {
-    city: 'Banská Bystrica',
-    title: 'Banskobystrická večerná scéna pre španielsky kontingent',
-    excerpt:
-      'Europa SC, námestie a ulice plné podnikov – Ministry of Fun, Klub 77 či Bar Murgaš ponúkajú hudbu aj zázemie pre väčšie skupiny.',
-    highlights: ['Nightlife odporúčania', 'Bezpečný presun', 'Rezervácie pre skupiny'],
-    readTime: '5 min čítanie',
+  es: {
+    heading: 'Blog de TaxiForce',
+    description:
+      'Recomendaciones actualizadas para el tiempo libre en Zvolen y Banská Bystrica: restaurantes, bares y planes culturales para las tropas españolas.',
+    posts: [
+      {
+        city: 'Zvolen',
+        title: 'Primera noche en Zvolen: castillo, plaza y bares locales',
+        excerpt:
+          'Une cultura y relax: visita el Castillo de Zvolen, pasea por la Plaza SNP y termina la noche en Quadra o Retro.',
+        highlights: ['Centro histórico', 'Cócteles de autor', 'Taxi nocturno de regreso a la base'],
+        readTime: 'Lectura de 4 min',
+      },
+      {
+        city: 'Banská Bystrica',
+        title: 'Escena nocturna en Banská Bystrica para el contingente español',
+        excerpt:
+          'Europa SC, la plaza principal y calles llenas de locales: Ministry of Fun, Klub 77 o Bar Murgaš ofrecen música y espacio para grupos grandes.',
+        highlights: ['Consejos de nightlife', 'Traslado seguro', 'Reservas para grupos'],
+        readTime: 'Lectura de 5 min',
+      },
+      {
+        city: 'Gastro',
+        title: 'Restaurantes con menú mediterráneo y cocina hasta tarde',
+        excerpt:
+          'Prueba tapas en Bistro Chef de Zvolen, clásicos italianos en Alžbeta y especialidades eslovacas en Bystrická Klubovňa — todo recomendado por la comunidad.',
+        highlights: ['Tapas y vino', 'Abierto después de las 22:00', 'Posibilidad de reservar mesa'],
+        readTime: 'Lectura de 3 min',
+      },
+    ],
   },
-  {
-    city: 'Gastro tipy',
-    title: 'Reštaurácie so stredomorským menu a neskorou kuchyňou',
-    excerpt:
-      'Skúste tapas v Bistro Chef vo Zvolene, talianske klasiky v Alžbete a slovenské špeciality v Bystrickej Klubovni – všetko overené komunitou.',
-    highlights: ['Tapas & víno', 'Otvorené po 22:00', 'Možnosť rezervácie stolov'],
-    readTime: '3 min čítanie',
-  },
-];
+};
 
 const BlogSection = () => {
+  const { language } = useLanguage();
+  const content = translations[language];
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-muted/40 via-background to-muted/40">
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12">
         <div className="text-center space-y-3 sm:space-y-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">Blog TaxiForce</h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Aktuálne tipy pre voľný čas v mestách Zvolen a Banská Bystrica vrátane barov, reštaurácií a kultúrnych zastávok.
-          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">{content.heading}</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">{content.description}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
-          {posts.map((post) => (
+          {content.posts.map((post) => (
             <Card
               key={post.title}
               className="bg-card/60 backdrop-blur border border-secondary/20 hover:border-secondary/50 transition-all duration-300"

@@ -1,57 +1,110 @@
-const metrics = [
-  {
-    value: '4.9/5',
-    label: 'Hodnotenie španielskeho kontingentu',
-    detail: 'Z reálnych feedback formulárov po nočných výjazdoch',
-  },
-  {
-    value: '120+',
-    label: 'mesačných transferov',
-    detail: 'Stála posádka vodičov so striedaním počas cvičení',
-  },
-  {
-    value: '0 incidentov',
-    label: 'za 24 mesiacov služby',
-    detail: 'Dodržiavame bezpečnostné protokoly NATO aj miestne zákony',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const pillars = [
-  {
-    title: 'Vojenská presnosť',
+const translations = {
+  en: {
+    heading: 'TaxiForce operational readiness',
     description:
-      'Pracujeme podľa operačných plánov. Každý transfer má pridelené číslo misie a potvrdený čas návratu.',
-    icon: '⏱️',
+      'We combine military-grade logistics with the comfort of a private chauffeur service. Every deployment is planned in detail.',
+    metrics: [
+      {
+        value: '4.9/5',
+        label: 'Spanish contingent rating',
+        detail: 'Based on real feedback reports after night deployments',
+      },
+      {
+        value: '120+',
+        label: 'monthly transfers',
+        detail: 'Dedicated driver roster with reinforcements during exercises',
+      },
+      {
+        value: '0 incidents',
+        label: 'in 24 months of service',
+        detail: 'Strict compliance with NATO security protocols and local law',
+      },
+    ],
+    pillars: [
+      {
+        title: 'Military precision',
+        description:
+          'We operate according to mission plans. Each transfer receives a mission number and confirmed return time.',
+        icon: '⏱️',
+      },
+      {
+        title: 'Discretion & security',
+        description:
+          'Non-disclosure agreements, anonymous payments and unmarked vehicles. Drivers are experienced with escorts and VIP transfers.',
+        icon: '🕶️',
+      },
+      {
+        title: 'Community support',
+        description:
+          'Local partnerships ensure Spanish troops have access to trusted services during downtime.',
+        icon: '🤝',
+      },
+    ],
   },
-  {
-    title: 'Diskrétnosť a bezpečnosť',
+  es: {
+    heading: 'Preparación operativa de TaxiForce',
     description:
-      'Zmluvná mlčanlivosť, anonymné platby a neoznačené vozidlá. Vodiči sú skúsení s eskortami aj VIP transfermi.',
-    icon: '🕶️',
+      'Combinamos logística de nivel militar con el confort de un servicio de chofer privado. Cada despliegue se planifica al detalle.',
+    metrics: [
+      {
+        value: '4.9/5',
+        label: 'Valoración del contingente español',
+        detail: 'Basada en informes reales tras salidas nocturnas',
+      },
+      {
+        value: '120+',
+        label: 'traslados mensuales',
+        detail: 'Equipo fijo de conductores con refuerzos durante ejercicios',
+      },
+      {
+        value: '0 incidentes',
+        label: 'en 24 meses de servicio',
+        detail: 'Cumplimos los protocolos de seguridad OTAN y la normativa local',
+      },
+    ],
+    pillars: [
+      {
+        title: 'Precisión militar',
+        description:
+          'Trabajamos siguiendo planes operativos. Cada traslado recibe número de misión y hora de regreso confirmada.',
+        icon: '⏱️',
+      },
+      {
+        title: 'Discreción y seguridad',
+        description:
+          'Acuerdos de confidencialidad, pagos anónimos y vehículos sin distintivos. Conductores expertos en escoltas y traslados VIP.',
+        icon: '🕶️',
+      },
+      {
+        title: 'Apoyo comunitario',
+        description:
+          'Colaboramos con socios locales para que la tropa española acceda a servicios fiables en su tiempo libre.',
+        icon: '🤝',
+      },
+    ],
   },
-  {
-    title: 'Komunitná podpora',
-    description:
-      'Spolupracujeme s miestnymi partnermi, aby španielske jednotky mali dostupné kvalitné služby počas voľna.',
-    icon: '🤝',
-  },
-];
+} as const;
 
 const OperationsSection = () => {
+  const { language } = useLanguage();
+  const content = translations[language];
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-black/60 via-background to-black/60">
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-16">
         <div className="text-center space-y-3 sm:space-y-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">
-            Operačná pripravenosť TaxiForce
+            {content.heading}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Kombinujeme logistiku vojenského štandardu s komfortom civilnej limuzínovej služby. Každé nasadenie plánujeme do detailu.
+            {content.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-          {metrics.map((metric) => (
+          {content.metrics.map((metric) => (
             <div
               key={metric.label}
               className="text-center bg-primary/10 border border-primary/30 rounded-2xl px-4 py-6 sm:px-5 sm:py-8 md:px-6 md:py-10 backdrop-blur hover:border-primary/60 transition-all"
@@ -64,7 +117,7 @@ const OperationsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {pillars.map((pillar) => (
+          {content.pillars.map((pillar) => (
             <div
               key={pillar.title}
               className="bg-card/70 border border-secondary/20 rounded-2xl p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4 backdrop-blur hover:border-secondary/50 transition-all"
