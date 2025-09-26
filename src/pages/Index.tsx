@@ -8,6 +8,7 @@ import FaqSection from '@/components/FaqSection';
 import SeoContentSection from '@/components/SeoContentSection';
 import ContactSection from '@/components/ContactSection';
 import Navigation from '@/components/Navigation';
+import FloatingActionButton from '@/components/FloatingActionButton';
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <SeoContentSection />
         <ContactSection />
       </main>
+      <FloatingActionButton />
     </div>
   );
 };
