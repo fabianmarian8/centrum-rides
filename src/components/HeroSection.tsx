@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -72,10 +73,41 @@ const translations = {
 const HeroSection = () => {
   const { language } = useLanguage();
   const content = translations[language];
+  const particlesContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = particlesContainerRef.current;
+    if (!container) {
+      return undefined;
+    }
+
+    container.innerHTML = '';
+    const particleCount = 60;
+    const createdParticles: HTMLDivElement[] = [];
+
+    for (let index = 0; index < particleCount; index += 1) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 20}s`;
+      particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+      particle.style.color = index % 2 === 0 ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 200, 0, 0.6)';
+      container.appendChild(particle);
+      createdParticles.push(particle);
+    }
+
+    return () => {
+      createdParticles.forEach((particle) => {
+        if (particle.parentNode === container) {
+          container.removeChild(particle);
+        }
+      });
+    };
+  }, []);
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern parallax-container"
       style={{
         backgroundImage: `
           linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
@@ -86,33 +118,37 @@ const HeroSection = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+      <div ref={particlesContainerRef} className="particles-container" aria-hidden />
 
-      <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <span className="bg-gradient-to-r from-primary to-secondary px-3 py-2 rounded-full text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-lg">
-            {content.routeBadge}
-          </span>
-          <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-[11px] sm:text-sm font-semibold backdrop-blur">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 parallax-element" data-speed="0.15" />
+
+      <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20 space-y-8 fade-in">
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <span
+            className="typewriter glass-card gradient-border px-4 py-2 rounded-full text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-lg"
+            data-text={content.routeBadge}
+          />
+          <span className="glass-card flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-sm font-semibold text-secondary">
+            <span className="pulse-dot bg-secondary" />
             {content.serviceBadge}
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black mb-5 sm:mb-6 text-gradient-military drop-shadow-2xl leading-tight">
+        <h1 className="glitch-text text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black drop-shadow-2xl leading-tight fade-in" data-speed="0.25">
           {content.heading}
         </h1>
 
-        <p className="text-base sm:text-lg md:text-2xl mb-8 sm:mb-10 text-foreground/90 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-2xl text-foreground/90 max-w-3xl mx-auto leading-relaxed fade-in">
           {content.description}
           <br className="hidden md:block" />
           <span className="text-secondary font-semibold">{content.descriptionHighlight}</span>
         </p>
 
-        <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-10 text-left text-xs sm:text-sm">
+        <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 text-left text-xs sm:text-sm">
           {content.stats.map((item, index) => (
             <div
               key={item.title}
-              className="bg-black/30 border border-secondary/20 rounded-xl p-3 sm:p-4 backdrop-blur hover:border-secondary/40 transition-all duration-300"
+              className="glass-card gradient-border hover-scale rounded-xl p-3 sm:p-4 fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <p className="text-secondary text-[10px] sm:text-xs uppercase tracking-wide mb-1">{item.title}</p>
@@ -122,11 +158,11 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
           <Button
             size="lg"
             className="
-              bg-gradient-to-r from-primary to-primary-glow
+              button-3d magnetic-button bg-gradient-to-r from-primary to-primary-glow
               hover:from-primary-glow hover:to-primary
               text-primary-foreground px-6 py-3 text-base sm:text-lg font-semibold
               rounded-full shadow-xl
@@ -141,7 +177,7 @@ const HeroSection = () => {
           <Button
             size="lg"
             className="
-              bg-[#25D366] text-white
+              button-3d magnetic-button bg-[#25D366] text-white
               hover:bg-[#1ebe5d]
               px-6 py-3 text-base sm:text-lg font-semibold rounded-full
               shadow-xl transition-all duration-300
@@ -154,11 +190,11 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs md:text-sm text-muted-foreground">
+        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs md:text-sm text-muted-foreground fade-in">
           {content.badges.map((badge) => (
             <div
               key={badge.text}
-              className="flex items-center gap-2 bg-black/40 border border-secondary/20 rounded-full px-3 py-2"
+              className="flex items-center gap-2 glass-card rounded-full px-3 py-2 hover-scale"
             >
               <span>{badge.icon}</span> <span>{badge.text}</span>
             </div>
