@@ -100,7 +100,7 @@ const HeroSection = () => {
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black mb-5 sm:mb-6 text-gradient-military drop-shadow-2xl leading-tight glitch-text">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black mb-5 sm:mb-6 text-gradient-military drop-shadow-2xl leading-tight">
           {content.heading}
         </h1>
 
