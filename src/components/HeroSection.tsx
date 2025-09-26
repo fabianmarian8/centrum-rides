@@ -115,7 +115,7 @@ const HeroSection = () => {
           {content.stats.map((item, index) => (
             <div
               key={item.title}
-              className="bg-black/30 border border-secondary/20 rounded-xl p-3 sm:p-4 backdrop-blur hover:border-secondary/40 transition-all duration-300"
+              className="neumorphic-military p-3 sm:p-4 backdrop-blur hover:shadow-[15px_15px_50px_hsl(var(--background)/0.9),-15px_-15px_50px_hsl(var(--border)/0.4)] transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <p className="text-secondary text-[10px] sm:text-xs uppercase tracking-wide mb-1">{item.title}</p>

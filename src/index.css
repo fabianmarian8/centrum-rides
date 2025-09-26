@@ -201,6 +201,32 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
       0 3px 3px hsl(var(--background) / 0.3);
   }
 
+  /* Neumorphism Effects - Dark Military Theme */
+  .neumorphic {
+    border-radius: 12px;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    box-shadow: 
+      20px 20px 60px hsl(var(--background)),
+      -20px -20px 60px hsl(var(--border));
+  }
+
+  .neumorphic-inset {
+    border-radius: 12px;
+    background: linear-gradient(145deg, hsl(var(--muted)), hsl(var(--card)));
+    box-shadow: 
+      inset 20px 20px 60px hsl(var(--background)),
+      inset -20px -20px 60px hsl(var(--border));
+  }
+
+  .neumorphic-military {
+    border-radius: 12px;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--background)));
+    box-shadow: 
+      15px 15px 40px hsl(var(--background) / 0.8),
+      -15px -15px 40px hsl(var(--border) / 0.3);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
   .text-gradient-military {
     background: var(--gradient-military);
     background-clip: text;
