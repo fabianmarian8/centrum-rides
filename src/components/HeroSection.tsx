@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ParticlesBackground from '@/components/ParticlesBackground';
 
 const translations = {
   en: {
@@ -76,7 +75,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern overflow-hidden"
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
       style={{
         backgroundImage: `
           linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
@@ -87,7 +86,6 @@ const HeroSection = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <ParticlesBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
 
       <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
