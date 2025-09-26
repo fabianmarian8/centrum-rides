@@ -129,6 +129,7 @@ const HeroSection = () => {
           <Button
             size="lg"
             className="
+              button-3d
               bg-gradient-to-r from-primary to-primary-glow
               hover:from-primary-glow hover:to-primary
               text-primary-foreground px-6 py-3 text-base sm:text-lg font-semibold
@@ -144,6 +145,7 @@ const HeroSection = () => {
           <Button
             size="lg"
             className="
+              button-3d
               bg-[#25D366] text-white
               hover:bg-[#1ebe5d]
               px-6 py-3 text-base sm:text-lg font-semibold rounded-full
