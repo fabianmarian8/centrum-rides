@@ -6,7 +6,7 @@ import { useSmoothReveal } from '@/hooks/useSmoothReveal';
 import { cn } from '@/lib/utils';
 
 const Navigation = () => {
-  const { isVisible } = useSmoothReveal({ threshold: 80 });
+  const { isVisible } = useSmoothReveal({ threshold: 80, hideOnScrollDown: false });
 
   return (
     <nav className={cn(
