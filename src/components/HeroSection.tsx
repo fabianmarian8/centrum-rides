@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ParticlesBackground from './ParticlesBackground';
 
 const translations = {
   en: {
@@ -87,6 +88,7 @@ const HeroSection = () => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+      <ParticlesBackground />
 
       <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
