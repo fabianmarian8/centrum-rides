@@ -219,6 +219,27 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
     animation: floatUp 20s infinite linear;
   }
 
+  /* Pulse indicator */
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--secondary));
+    border-radius: 50%;
+    animation: military-pulse-dot 2s infinite;
+  }
+
+  @keyframes military-pulse-dot {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--secondary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px hsl(var(--secondary) / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--secondary) / 0);
+    }
+  }
+
   @keyframes floatUp {
     from {
       transform: translateY(100vh) translateX(0);

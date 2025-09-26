@@ -95,7 +95,8 @@ const HeroSection = () => {
           <span className="bg-gradient-to-r from-primary to-secondary px-3 py-2 rounded-full text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-lg">
             {content.routeBadge}
           </span>
-          <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-[11px] sm:text-sm font-semibold backdrop-blur">
+          <span className="bg-secondary/10 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-[11px] sm:text-sm font-semibold backdrop-blur flex items-center gap-2">
+            <div className="pulse-dot"></div>
             {content.serviceBadge}
           </span>
         </div>
