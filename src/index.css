@@ -235,4 +235,29 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
       opacity: 0;
     }
   }
+
+  /* Glitch text effect */
+  .glitch-text {
+    position: relative;
+    font-weight: 900;
+    animation: glitch 3s infinite;
+  }
+
+  @keyframes glitch {
+    0%, 100% {
+      text-shadow: 
+        0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14%, 86% {
+      text-shadow: 
+        0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15%, 85% {
+      text-shadow: none;
+    }
+  }
 }
