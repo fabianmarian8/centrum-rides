@@ -123,13 +123,13 @@ const FeaturesSection = () => {
   const content = translations[language];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-background to-muted">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-background via-background/95 to-muted relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-10 sm:mb-16 fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient-gold glitch-text">
             {content.heading}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
             {content.description}
           </p>
         </div>
@@ -139,9 +139,7 @@ const FeaturesSection = () => {
             <Card
               key={feature.title}
               className="
-                relative bg-card/60 backdrop-blur-md border-border/50
-                hover:border-secondary/60 transition-all duration-300
-                hover-military slide-up group overflow-hidden
+                relative glass-card hover-scale group overflow-hidden fade-in
               "
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -154,7 +152,7 @@ const FeaturesSection = () => {
               <CardContent className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4">
                 {feature.image && (
                   <div
-                    className="w-full h-24 sm:h-28 md:h-32 bg-cover bg-center rounded-lg border border-secondary/20"
+                    className="w-full h-24 sm:h-28 md:h-32 bg-cover bg-center rounded-lg gradient-border skeleton"
                     style={{ backgroundImage: `url(${feature.image})` }}
                   />
                 )}
