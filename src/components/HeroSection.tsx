@@ -11,7 +11,7 @@ const translations = {
     heading: 'TaxiForce Military Transfers',
     description:
       'Premium transport dedicated to Spanish military personnel stationed in Slovakia. Fast transfers from Slavia 1 at Lešť base to Zvolen and Banská Bystrica with safe returns back to duty.',
-    descriptionHighlight: 'Professional English-speaking service.',
+    descriptionHighlight: '',
     stats: [
       {
         title: 'Average arrival time',
@@ -43,7 +43,7 @@ const translations = {
     heading: 'TaxiForce Traslados Militares',
     description:
       'Transporte premium dedicado al personal militar español destacado en Eslovaquia. Traslados rápidos desde Slavia 1 de la base de Lešť a Zvolen y Banská Bystrica con retornos seguros al servicio.',
-    descriptionHighlight: 'Servicio profesional en inglés.',
+    descriptionHighlight: '',
     stats: [
       {
         title: 'Tiempo medio de llegada',
