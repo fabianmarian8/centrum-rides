@@ -23,6 +23,11 @@ const useVisualEffects = (dependencies: unknown[] = []) => {
 
     elements.forEach((element) => observer.observe(element));
 
+    // Force visibility for critical content sections to prevent them from being hidden
+    setTimeout(() => {
+      elements.forEach((element) => element.classList.add('visible'));
+    }, 100);
+
     return () => {
       observer.disconnect();
     };
