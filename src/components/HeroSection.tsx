@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-military.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ParticlesBackground from './ParticlesBackground';
+import { AnimatedCounter } from './AnimatedCounter';
 
 const translations = {
   en: {
@@ -14,12 +15,12 @@ const translations = {
     stats: [
       {
         title: 'Average arrival time',
-        value: '30 – 40 minutes',
+        value: <><AnimatedCounter target={30} suffix=" – " formatNumber={false} /><AnimatedCounter target={40} suffix=" minutes" formatNumber={false} /></>,
         note: '24/7 dispatch confirms availability in real time',
       },
       {
         title: 'Vehicle capacity',
-        value: 'Up to 4 passengers',
+        value: <>Up to <AnimatedCounter target={4} suffix=" passengers" formatNumber={false} /></>,
         note: 'Luxury SUV or business sedan fleet',
       },
       {
@@ -46,12 +47,12 @@ const translations = {
     stats: [
       {
         title: 'Tiempo medio de llegada',
-        value: '30 – 40 minutos',
+        value: <><AnimatedCounter target={30} suffix=" – " formatNumber={false} /><AnimatedCounter target={40} suffix=" minutos" formatNumber={false} /></>,
         note: 'Central 24/7 confirma la disponibilidad en tiempo real',
       },
       {
         title: 'Capacidad del vehículo',
-        value: 'Hasta 4 pasajeros',
+        value: <>Hasta <AnimatedCounter target={4} suffix=" pasajeros" formatNumber={false} /></>,
         note: 'Flota de SUV de lujo o sedanes ejecutivos',
       },
       {
