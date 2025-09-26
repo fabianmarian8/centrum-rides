@@ -428,4 +428,14 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
     opacity: 1;
     transform: translateX(0);
   }
+
+  .parallax-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax-element {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
 }
