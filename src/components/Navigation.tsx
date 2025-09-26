@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import DriverStatus from '@/components/DriverStatus';
 import { useSmoothReveal } from '@/hooks/useSmoothReveal';
 import { cn } from '@/lib/utils';
 
@@ -13,6 +14,7 @@ const Navigation = () => {
       "fixed top-4 right-4 z-50 flex items-center gap-3 transition-transform duration-300 ease-in-out",
       isVisible ? "nav-visible" : "nav-hidden"
     )}>
+      <DriverStatus />
       <Link to="/blog">
         <Button 
           variant="ghost" 
