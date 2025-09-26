@@ -438,4 +438,27 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
     will-change: transform;
     transition: transform 0.1s ease-out;
   }
+
+  .hover-scale {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-scale:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 20px 40px hsl(var(--background) / 0.4),
+        0 15px 12px hsl(var(--background) / 0.3);
+  }
+
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: blink-caret 1s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: hsl(var(--primary)); }
+    50% { border-color: transparent; }
+  }
 }
