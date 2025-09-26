@@ -76,7 +76,7 @@ const translations: Record<
         whatsapp: 'Or message us on WhatsApp: ',
       },
     ],
-    badges: ['🛡️ NATO verified', '📱 Instant confirmation', '⭐ 4.9/5 rating', '🇪🇸 Spanish friendly'],
+    badges: ['🛡️ NATO verified', '📱 Instant confirmation', '⭐ 4.9/5 rating', '🎯 Military focused'],
   },
   es: {
     heading: 'Tarifas del servicio',
@@ -127,7 +127,7 @@ const translations: Record<
         whatsapp: 'O escríbenos por WhatsApp: ',
       },
     ],
-    badges: ['🛡️ Verificado por la OTAN', '📱 Confirmación inmediata', '⭐ Valoración 4.9/5', '🇪🇸 Atención en español'],
+    badges: ['🛡️ Verificado por la OTAN', '📱 Confirmación inmediata', '⭐ Valoración 4.9/5', '🎯 Enfoque militar'],
   },
 };
 

@@ -5,7 +5,7 @@ const translations = {
   en: {
     heading: 'Frequently asked questions',
     description:
-      'Clear answers in English and Spanish for the Spanish contingent operating from Lešť. Here are the most common questions we receive.',
+      'Clear answers in English for the military contingent operating from Lešť. Here are the most common questions we receive.',
     faqs: [
       {
         question: 'How fast can you reach Lešť base?',
@@ -35,7 +35,7 @@ const translations = {
   es: {
     heading: 'Preguntas frecuentes',
     description:
-      'Respuestas claras en inglés y español para el contingente destacado en Lešť. Estas son las consultas que recibimos con más frecuencia.',
+      'Respuestas claras en inglés para el contingente destacado en Lešť. Estas son las consultas que recibimos con más frecuencia.',
     faqs: [
       {
         question: '¿En cuánto tiempo pueden llegar a la base de Lešť?',

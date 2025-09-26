@@ -51,11 +51,11 @@ const translations = {
         image: null,
         badge: 'Payment info',
       },
-      {
-        icon: '🇪🇸',
-        title: 'English and Spanish communication',
-        description:
-          'Dispatch understands military terminology; drivers are ready to handle English and essential Spanish phrases.',
+       {
+         icon: '💬',
+         title: 'English communication',
+         description:
+           'Dispatch understands military terminology; drivers are ready to handle English communication professionally.',
         image: null,
         badge: 'Language support',
       },
@@ -106,11 +106,11 @@ const translations = {
         image: null,
         badge: 'Payment info',
       },
-      {
-        icon: '🇪🇸',
-        title: 'Comunicación en inglés y español',
-        description:
-          'La central conoce la terminología militar y los conductores manejan inglés y las frases esenciales en español.',
+       {
+         icon: '💬',
+         title: 'Comunicación en inglés',
+         description:
+           'La central conoce la terminología militar y los conductores manejan inglés de forma profesional.',
         image: null,
         badge: 'Language support',
       },

@@ -8,7 +8,7 @@ const translations = {
     metrics: [
       {
         value: '4.9/5',
-        label: 'Spanish contingent rating',
+        label: 'Military contingent rating',
         detail: 'Based on real feedback reports after night deployments',
       },
       {
@@ -38,7 +38,7 @@ const translations = {
       {
         title: 'Community support',
         description:
-          'Local partnerships ensure Spanish troops have access to trusted services during downtime.',
+          'Local partnerships ensure military troops have access to trusted services during downtime.',
         icon: '🤝',
       },
     ],
@@ -50,7 +50,7 @@ const translations = {
     metrics: [
       {
         value: '4.9/5',
-        label: 'Valoración del contingente español',
+        label: 'Valoración del contingente militar',
         detail: 'Basada en informes reales tras salidas nocturnas',
       },
       {
@@ -80,7 +80,7 @@ const translations = {
       {
         title: 'Apoyo comunitario',
         description:
-          'Colaboramos con socios locales para que la tropa española acceda a servicios fiables en su tiempo libre.',
+          'Colaboramos con socios locales para que la tropa militar acceda a servicios fiables en su tiempo libre.',
         icon: '🤝',
       },
     ],

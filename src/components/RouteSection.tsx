@@ -32,7 +32,7 @@ const translations = {
       {
         title: '1. Booking',
         detail: 'Call or WhatsApp. We confirm pick-up time and passenger count.',
-        sub: 'English & Español friendly',
+        sub: 'English-speaking service',
       },
       {
         title: '2. Pick-up',
@@ -75,7 +75,7 @@ const translations = {
       {
         title: '1. Reserva',
         detail: 'Llamada o WhatsApp. Confirmamos hora de recogida y número de pasajeros.',
-        sub: 'Atención en inglés y español',
+        sub: 'Atención en inglés',
       },
       {
         title: '2. Recogida',

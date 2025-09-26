@@ -13,7 +13,7 @@ const translations: Record<'en' | 'es', { heading: string; description: string; 
   en: {
     heading: 'TaxiForce blog',
     description:
-      'Fresh recommendations for downtime in Zvolen and Banská Bystrica — from restaurants and bars to cultural highlights curated for Spanish troops.',
+      'Fresh recommendations for downtime in Zvolen and Banská Bystrica — from restaurants and bars to cultural highlights curated for military troops.',
     posts: [
       {
         city: 'Zvolen',
@@ -25,7 +25,7 @@ const translations: Record<'en' | 'es', { heading: string; description: string; 
       },
       {
         city: 'Banská Bystrica',
-        title: 'Evening scene in Banská Bystrica for the Spanish contingent',
+        title: 'Evening scene in Banská Bystrica for the military contingent',
         excerpt:
           'Europa SC, the main square and lively streets — Ministry of Fun, Klub 77 or Bar Murgaš offer music and space for larger groups.',
         highlights: ['Nightlife tips', 'Safe transfers', 'Group reservations'],
@@ -44,7 +44,7 @@ const translations: Record<'en' | 'es', { heading: string; description: string; 
   es: {
     heading: 'Blog de TaxiForce',
     description:
-      'Recomendaciones actualizadas para el tiempo libre en Zvolen y Banská Bystrica: restaurantes, bares y planes culturales para las tropas españolas.',
+      'Recomendaciones actualizadas para el tiempo libre en Zvolen y Banská Bystrica: restaurantes, bares y planes culturales para las tropas militares.',
     posts: [
       {
         city: 'Zvolen',
@@ -56,7 +56,7 @@ const translations: Record<'en' | 'es', { heading: string; description: string; 
       },
       {
         city: 'Banská Bystrica',
-        title: 'Escena nocturna en Banská Bystrica para el contingente español',
+        title: 'Escena nocturna en Banská Bystrica para el contingente militar',
         excerpt:
           'Europa SC, la plaza principal y calles llenas de locales: Ministry of Fun, Klub 77 o Bar Murgaš ofrecen música y espacio para grupos grandes.',
         highlights: ['Consejos de nightlife', 'Traslado seguro', 'Reservas para grupos'],
