@@ -15,28 +15,28 @@ const translations: Record<
   }
 > = {
   en: {
-    heading: 'Taxi for Spanish troops from Lešť base (Slavia 1)',
+    heading: 'Military taxi service from Lešť Slavia NATO base',
     intro:
-      'TaxiForce is a specialised transfer service based in central Slovakia. Since 2022 we have ensured safe and comfortable links between the Lešť training area, Slavia 1, the city of Zvolen and Banská Bystrica.',
+      'TaxiForce is a dedicated military taxi service in Slovakia supporting Spanish personnel stationed at the Lešť military base (Slavia 1) and nearby NATO facilities in central Slovakia.',
     sections: [
       {
-        title: 'Professional focus on NATO missions',
+        title: 'Taxi Lešť military base specialists',
         paragraphs: [
-          'Our vehicles meet strict maintenance standards and are equipped for long transfers and night returns. Every driver is vetted, experienced with international units and familiar with military terminology. The service is tailored to the Spanish contingent while respecting confidentiality protocols.',
+          'Our taxi Lešť military base operations follow NATO security procedures, offering vetted English- and Spanish-speaking drivers familiar with duty schedules. The team understands the requirements of every taxi Slavia NATO base Slovakia assignment, ensuring secure pick-ups and discreet returns to the barracks.',
         ],
       },
       {
-        title: 'Coverage for Zvolen and Banská Bystrica',
+        title: 'Coverage for Zvolen, Banská Bystrica and Bratislava airport',
         paragraphs: [
-          'We frequently arrange transfers to Zvolen Castle, SNP Square, Europa Shopping Center, OC Terminal, downtown Banská Bystrica restaurants and popular venues such as Ministry of Fun, Klub 77 or Bar Murgaš. Upon request we organise trips to the Tatras or Budapest.',
+          'We coordinate daily missions to Zvolen Castle, SNP Square, Europa Shopping Center, OC Terminal and the main dining zones in Banská Bystrica. Dedicated coordinators also arrange airport transfer Bratislava military requests with fixed pricing, flight monitoring and standby return rides back to the training area.',
         ],
       },
       {
-        title: 'SEO and online visibility',
+        title: 'Focused NATO base transportation in Slovakia',
         paragraphs: [
           (
             <>
-              TaxiForce targets key phrases such as <strong>taxi Lešť Zvolen</strong>, <strong>military taxi Slovakia</strong>, <strong>transport Spanish Army Slovakia</strong>, <strong>Lešť Banská Bystrica transfer</strong> and <strong>Slavia 1 taxi pickup</strong>. With optimised content, reviews and rapid contact, we provide a trusted logistics partner for international units in Slovakia.
+              TaxiForce actively optimises content around <strong>military taxi service Slovakia</strong> and <strong>NATO base transportation Slovakia</strong>, combining field experience with rapid WhatsApp communication. The result is a trusted logistics partner for allied troops requiring reliable movements between Lešť, Slavia 1, Zvolen and other mission-critical locations.
             </>
           ),
         ],
@@ -44,28 +44,28 @@ const translations: Record<
     ],
   },
   es: {
-    heading: 'Taxi para las tropas españolas desde la base de Lešť (Slavia 1)',
+    heading: 'Taxi militar desde la base Lešť Slavia para tropas españolas',
     intro:
-      'TaxiForce es un servicio de traslados especializado con base en el centro de Eslovaquia. Desde 2022 garantizamos conexiones seguras y cómodas entre el área de entrenamiento de Lešť, Slavia 1, la ciudad de Zvolen y Banská Bystrica.',
+      'TaxiForce es un servicio de taxi base militar en Eslovaquia que acompaña al personal español desplegado en la base NATO Lešť-Slavia y en las instalaciones aliadas del centro del país.',
     sections: [
       {
-        title: 'Profesionalidad enfocada en misiones de la OTAN',
+        title: 'Transporte militar Lešť Slavia con protocolos OTAN',
         paragraphs: [
-          'Nuestros vehículos cumplen exigentes estándares técnicos y están preparados para traslados largos y regresos nocturnos. Cada conductor está verificado, trabaja con unidades internacionales y domina la terminología militar. El servicio se adapta al contingente español respetando los protocolos de confidencialidad.',
+          'Nuestros coordinadores gestionan cada transporte militar Lešť Slavia siguiendo procedimientos de seguridad, con conductores acreditados y bilingües. El equipo conoce las necesidades de los destacamentos españoles y ofrece discreción total en cada trayecto puerta a puerta.',
         ],
       },
       {
-        title: 'Cobertura para Zvolen y Banská Bystrica',
+        title: 'Cobertura hacia Zvolen, Banská Bystrica y aeropuerto de Bratislava',
         paragraphs: [
-          'Realizamos traslados frecuentes al Castillo de Zvolen, la Plaza SNP, Europa Shopping Center, OC Terminal, restaurantes del centro de Banská Bystrica y locales populares como Ministry of Fun, Klub 77 o Bar Murgaš. También organizamos excursiones a los Tatras o Budapest bajo solicitud.',
+          'Organizamos traslados diarios al Castillo de Zvolen, Plaza SNP, Europa Shopping Center, OC Terminal y los restaurantes clave de Banská Bystrica. Para cada taxi aeropuerto Bratislava militar realizamos seguimiento de vuelos, tarifas cerradas y coordinación del viaje de regreso a la base de instrucción.',
         ],
       },
       {
-        title: 'SEO y visibilidad online',
+        title: 'Visibilidad online enfocada al personal español',
         paragraphs: [
           (
             <>
-              TaxiForce trabaja palabras clave como <strong>taxi Lešť Zvolen</strong>, <strong>military taxi Slovakia</strong>, <strong>transport Spanish Army Slovakia</strong>, <strong>Lešť Banská Bystrica transfer</strong> y <strong>taxi Slavia 1 base</strong>. Con contenido optimizado, reseñas y contacto inmediato, ofrecemos un socio logístico fiable para unidades internacionales en Eslovaquia.
+              TaxiForce posiciona expresiones como <strong>taxi base militar Eslovaquia</strong>, <strong>transporte militar Lešť Slavia</strong> y <strong>taxi aeropuerto Bratislava militar</strong>, reforzando testimonios reales y contacto inmediato por WhatsApp. Así garantizamos un aliado logístico fiable para las misiones españolas en territorio eslovaco.
             </>
           ),
         ],
