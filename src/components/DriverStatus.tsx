@@ -7,18 +7,12 @@ const translations = {
   en: {
     drivers: 'drivers',
     driver: 'driver', 
-    online: 'online',
-    driversMobile: 'drv',
-    driverMobile: 'drv',
-    onlineMobile: 'on'
+    online: 'online'
   },
   es: {
     drivers: 'conductores',
     driver: 'conductor',
-    online: 'disponibles',
-    driversMobile: 'cond',
-    driverMobile: 'cond',
-    onlineMobile: 'disp'
+    online: 'disponibles'
   }
 };
 
@@ -28,11 +22,8 @@ const DriverStatus = () => {
   const isMobile = useIsMobile();
   const t = translations[language as keyof typeof translations];
 
-  const plural = isMobile 
-    ? (currentCount === 1 ? t.driverMobile : t.driversMobile)
-    : (currentCount === 1 ? t.driver : t.drivers);
-  const online = isMobile ? t.onlineMobile : t.online;
-  const statusText = `${currentCount} ${plural} ${online}`;
+  const plural = currentCount === 1 ? t.driver : t.drivers;
+  const statusText = `${currentCount} ${plural} ${t.online}`;
 
   return (
     <div className={cn(
