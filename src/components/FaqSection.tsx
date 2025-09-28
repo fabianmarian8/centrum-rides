@@ -14,12 +14,6 @@ const translations = {
         note: '¿Cuánto tardan en llegar a la base de Lešť? — Salimos en un máximo de 8 minutos tras la confirmación, incluso durante maniobras.',
       },
       {
-        question: 'Can we pay by card or invoice?',
-        answer:
-          'Yes, we accept military cards, cash and unit invoicing. Monthly ride summaries are available on request.',
-        note: '¿Se puede pagar con tarjeta o por factura? — Aceptamos tarjetas, efectivo y facturación mensual para la unidad.',
-      },
-      {
         question: 'What if the unit schedule changes?',
         answer:
           'We stay in touch with logistics officers and adjust transfers without extra fees. Drivers remain on standby in town.',
@@ -42,12 +36,6 @@ const translations = {
         answer:
           'Salimos normalmente en un máximo de 8 minutos tras confirmar la reserva. El conductor permanece ubicado junto a Slavia 1 y en grandes maniobras activamos vehículos de refuerzo.',
         note: 'How fast can you reach Lešť base? — We depart within 8 minutes after confirmation, even during exercises.',
-      },
-      {
-        question: '¿Se puede pagar con tarjeta o por factura?',
-        answer:
-          'Sí, aceptamos tarjetas militares, efectivo y facturación para la unidad. Podemos preparar resúmenes mensuales.',
-        note: 'Can we pay by card or invoice? — We accept cards, cash and monthly invoicing for the unit.',
       },
       {
         question: '¿Qué ocurre si cambia el horario de la unidad?',
