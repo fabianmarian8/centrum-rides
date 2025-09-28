@@ -10,8 +10,8 @@ const translations = {
       {
         question: 'How fast can you reach Lešť base?',
         answer:
-          'We usually depart within 8 minutes after confirmation. Drivers remain staged near Slavia 1 and we activate additional vehicles during large exercises.',
-        note: '¿Cuánto tardan en llegar a la base de Lešť? — Salimos en un máximo de 8 minutos tras la confirmación, incluso durante maniobras.',
+          'We usually depart within 30-40 minutes after confirmation. Drivers remain staged near Slavia 1 and we activate additional vehicles during large exercises.',
+        note: '¿Cuánto tardan en llegar a la base de Lešť? — Salimos en un máximo de 30-40 minutos tras la confirmación, incluso durante maniobras.',
       },
       {
         question: 'What if the unit schedule changes?',
@@ -34,8 +34,8 @@ const translations = {
       {
         question: '¿En cuánto tiempo pueden llegar a la base de Lešť?',
         answer:
-          'Salimos normalmente en un máximo de 8 minutos tras confirmar la reserva. El conductor permanece ubicado junto a Slavia 1 y en grandes maniobras activamos vehículos de refuerzo.',
-        note: 'How fast can you reach Lešť base? — We depart within 8 minutes after confirmation, even during exercises.',
+          'Salimos normalmente en un máximo de 30-40 minutos tras confirmar la reserva. El conductor permanece ubicado junto a Slavia 1 y en grandes maniobras activamos vehículos de refuerzo.',
+        note: 'How fast can you reach Lešť base? — We depart within 30-40 minutes after confirmation, even during exercises.',
       },
       {
         question: '¿Qué ocurre si cambia el horario de la unidad?',
