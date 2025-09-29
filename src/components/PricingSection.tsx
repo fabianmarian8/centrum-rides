@@ -197,7 +197,7 @@ const PricingSection = () => {
                   <div className="text-center">
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {card.whatsapp}
-                      <span className="text-secondary font-bold">+421902048583</span>
+                      <a href="https://wa.me/421902048583" className="text-secondary font-bold hover:underline">+421902048583</a>
                     </p>
                   </div>
                 </div>
