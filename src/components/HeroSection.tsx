@@ -138,7 +138,7 @@ const HeroSection = () => {
             "
             asChild
           >
-            <a href="tel:+421919040118">
+            <a href="tel:+421902048583">
               📞 {content.callCta}
             </a>
           </Button>
@@ -154,7 +154,7 @@ const HeroSection = () => {
             "
             asChild
           >
-            <a href="https://wa.me/421919040118">
+            <a href="https://wa.me/421902048583">
               💬 {content.whatsappCta}
             </a>
           </Button>

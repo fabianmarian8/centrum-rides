@@ -81,7 +81,7 @@ const ContactSection = () => {
           <CardContent className="space-y-5 sm:space-y-6">
             <div className="text-center">
               <div className="text-3xl sm:text-5xl md:text-6xl font-black text-gradient-gold mb-3 sm:mb-4">
-                📞 +421919040118
+                📞 +421902048583
               </div>
               <p className="text-sm sm:text-lg text-muted-foreground">{content.phoneNote}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2">{content.arrivalInfo}</p>
@@ -99,7 +99,7 @@ const ContactSection = () => {
                 "
                 asChild
               >
-                <a href="tel:+421919040118">📞 {content.callButton}</a>
+                <a href="tel:+421902048583">📞 {content.callButton}</a>
               </Button>
 
               <Button
@@ -111,7 +111,7 @@ const ContactSection = () => {
                 "
                 asChild
               >
-                <a href="https://wa.me/421919040118">💬 {content.whatsappButton}</a>
+                <a href="https://wa.me/421902048583">💬 {content.whatsappButton}</a>
               </Button>
             </div>
           </CardContent>
