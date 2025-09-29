@@ -32,11 +32,31 @@ const translations: Record<
         ],
       },
       {
+        title: 'English speaking taxi near Lešť military base',
+        paragraphs: [
+          (
+            <>
+              Our <strong>English speaking taxi Slovakia</strong> service bridges communication gaps for international NATO personnel. Every <strong>Spanish speaking driver Slovakia</strong> assignment includes multilingual support, ensuring clear coordination for complex military schedules and secure transportation protocols.
+            </>
+          ),
+        ],
+      },
+      {
+        title: '24/7 military taxi service central Slovakia',
+        paragraphs: [
+          (
+            <>
+              Operating as a <strong>24 hour military taxi</strong> service, TaxiForce maintains round-the-clock readiness for urgent deployments, late-night returns, and early morning missions. Our <strong>cash taxi military</strong> options provide flexibility for personnel without card payment systems.
+            </>
+          ),
+        ],
+      },
+      {
         title: 'Focused NATO base transportation in Slovakia',
         paragraphs: [
           (
             <>
-              TaxiForce actively optimises content around <strong>military taxi service Slovakia</strong> and <strong>NATO base transportation Slovakia</strong>, combining field experience with rapid WhatsApp communication. The result is a trusted logistics partner for allied troops requiring reliable movements between Lešť, Slavia 1, Zvolen and other mission-critical locations.
+              TaxiForce actively optimises content around <strong>military taxi service Slovakia</strong> and <strong>NATO base transportation Slovakia</strong>, combining field experience with rapid <strong>WhatsApp taxi booking</strong>. The result is a trusted logistics partner for allied troops requiring reliable movements between Lešť, Slavia 1, Zvolen and other mission-critical locations.
             </>
           ),
         ],
@@ -58,6 +78,26 @@ const translations: Record<
         title: 'Cobertura hacia Zvolen, Banská Bystrica y aeropuerto de Bratislava',
         paragraphs: [
           'Organizamos traslados diarios al Castillo de Zvolen, Plaza SNP, Europa Shopping Center, OC Terminal y los restaurantes clave de Banská Bystrica. Para cada taxi aeropuerto Bratislava militar realizamos seguimiento de vuelos, tarifas cerradas y coordinación del viaje de regreso a la base de instrucción.',
+        ],
+      },
+      {
+        title: 'Conductor español base OTAN Eslovaquia',
+        paragraphs: [
+          (
+            <>
+              Nuestro servicio de <strong>taxi militar español</strong> elimina barreras idiomáticas para el personal destacado. Cada <strong>conductor habla español</strong> y entiende protocolos militares, garantizando comunicación fluida en cada <strong>taxi para militares</strong> y <strong>servicio taxi soldados</strong>.
+            </>
+          ),
+        ],
+      },
+      {
+        title: 'Taxi 24 horas militar con precio fijo',
+        paragraphs: [
+          (
+            <>
+              Operando como <strong>taxi 24 horas militar</strong>, TaxiForce mantiene disponibilidad continua para despliegues urgentes y misiones tempranas. Nuestro <strong>precio fijo taxi militar</strong> y <strong>reserva WhatsApp taxi</strong> proporcionan transparencia total en costos y booking instantáneo.
+            </>
+          ),
         ],
       },
       {

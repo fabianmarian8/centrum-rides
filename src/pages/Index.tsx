@@ -8,6 +8,7 @@ import SeoContentSection from '@/components/SeoContentSection';
 import ContactSection from '@/components/ContactSection';
 import Navigation from '@/components/Navigation';
 import SeoMetadata from '@/components/SeoMetadata';
+import LocalSeoKeywords from '@/components/LocalSeoKeywords';
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <FaqSection />
         <SeoContentSection />
         <ContactSection />
+        <LocalSeoKeywords />
       </main>
     </div>
   );
