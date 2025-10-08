@@ -156,6 +156,8 @@ const FeaturesSection = () => {
                   <div
                     className="w-full h-24 sm:h-28 md:h-32 bg-cover bg-center rounded-lg border border-secondary/20"
                     style={{ backgroundImage: `url(${feature.image})` }}
+                    role="img"
+                    aria-label={feature.title}
                   />
                 )}
 

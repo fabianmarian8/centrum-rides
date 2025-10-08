@@ -77,6 +77,7 @@ const HeroSection = () => {
 
   return (
     <section
+      aria-label="Hero section - Military taxi service"
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
       style={{
         backgroundImage: `
@@ -87,6 +88,7 @@ const HeroSection = () => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
+      role="banner"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
       <ParticlesBackground />

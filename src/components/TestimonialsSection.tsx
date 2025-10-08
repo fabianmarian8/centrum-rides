@@ -103,7 +103,10 @@ const TestimonialsSection = () => {
                 <div className="flex items-start gap-3 sm:gap-4 mb-4">
                   <Avatar className="w-12 h-12 sm:w-16 sm:h-16 border-2 border-secondary">
                     {testimonial.avatar && (
-                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarImage 
+                        src={testimonial.avatar} 
+                        alt={`${testimonial.name} - ${testimonial.rank}`}
+                      />
                     )}
                     <AvatarFallback className={`${testimonial.bgColor} text-white font-bold`}>
                       {testimonial.fallback}
