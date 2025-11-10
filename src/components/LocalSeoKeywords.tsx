@@ -68,7 +68,7 @@ const LocalSeoKeywords = () => {
   const keywords = keywordsByLanguage[language];
 
   return (
-    <div className="sr-only" aria-hidden="true">
+    <div className="sr-only">
       <h2>Local SEO Keywords</h2>
       <p>
         {keywords.join(', ')}. Professional military transportation services for NATO personnel in Slovakia. 
