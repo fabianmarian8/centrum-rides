@@ -80,8 +80,8 @@ const ContactSection = () => {
         <Card className="bg-card/50 backdrop-blur-md border border-secondary/30 p-6 sm:p-8 mb-8">
           <CardContent className="space-y-5 sm:space-y-6">
             <div className="text-center">
-              <div className="text-3xl sm:text-5xl md:text-6xl font-black text-gradient-gold mb-3 sm:mb-4">
-                📞 +421902048583
+              <div className="text-3xl sm:text-5xl md:text-6xl font-black text-gradient-gold mb-3 sm:mb-4" aria-label={`${content.callButton}: +421902048583`}>
+                <span aria-hidden="true">📞</span> <a href="tel:+421902048583" className="hover:opacity-80 transition-opacity">+421902048583</a>
               </div>
               <p className="text-sm sm:text-lg text-muted-foreground">{content.phoneNote}</p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2">{content.arrivalInfo}</p>
@@ -150,12 +150,22 @@ const ContactSection = () => {
           
           {/* Discreet cross-linking for SEO */}
           <p className="text-xs text-muted-foreground/50 mt-4">
-            Pôsobíme aj v týchto lokalitách:{" "}
-            <a href="https://www.lesttaxi.com" className="hover:text-muted-foreground/70 transition-colors">Lešť</a>
-            {" | "}
-            <a href="https://zvolen-taxi.sk" className="hover:text-muted-foreground/70 transition-colors">Zvolen</a>
-            {" | "}
-            <a href="https://lest-slavia-taxi.com" className="hover:text-muted-foreground/70 transition-colors">Slavia</a>
+            {language === 'en' 
+              ? <>We also operate in these locations:{" "}
+                  <a href="https://www.lesttaxi.com" className="hover:text-muted-foreground/70 transition-colors">Lešť</a>
+                  {" | "}
+                  <a href="https://zvolen-taxi.sk" className="hover:text-muted-foreground/70 transition-colors">Zvolen</a>
+                  {" | "}
+                  <a href="https://lest-slavia-taxi.com" className="hover:text-muted-foreground/70 transition-colors">Slavia</a>
+                </>
+              : <>También operamos en estas localidades:{" "}
+                  <a href="https://www.lesttaxi.com" className="hover:text-muted-foreground/70 transition-colors">Lešť</a>
+                  {" | "}
+                  <a href="https://zvolen-taxi.sk" className="hover:text-muted-foreground/70 transition-colors">Zvolen</a>
+                  {" | "}
+                  <a href="https://lest-slavia-taxi.com" className="hover:text-muted-foreground/70 transition-colors">Slavia</a>
+                </>
+            }
           </p>
         </div>
       </div>
