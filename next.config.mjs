@@ -8,8 +8,8 @@ const nextConfig = {
       },
     ],
   },
-  // Enable static export if deploying to GitHub Pages
-  // output: 'export',
+  // Enable static export for GitHub Pages
+  output: 'export',
 };
 
 export default nextConfig;
