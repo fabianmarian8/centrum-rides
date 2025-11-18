@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 import militaryBadge from '@/assets/military-badge.jpg';
 import restaurantImage from '@/assets/restaurant-bb.jpg';
 import taxiImage from '@/assets/taxi-military.jpg';
@@ -155,12 +156,16 @@ const FeaturesSection = () => {
 
               <CardContent className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4">
                 {feature.image && (
-                  <div
-                    className="w-full h-24 sm:h-28 md:h-32 bg-cover bg-center rounded-lg border border-secondary/20"
-                    style={{ backgroundImage: `url(${feature.image.src})` }}
-                    role="img"
-                    aria-label={feature.title}
-                  />
+                  <div className="w-full h-24 sm:h-28 md:h-32 rounded-lg border border-secondary/20 overflow-hidden relative">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      quality={80}
+                    />
+                  </div>
                 )}
 
                 <div className="text-center space-y-2 sm:space-y-3">
