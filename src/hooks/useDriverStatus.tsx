@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface DriverStatus {
   isActive: boolean;
@@ -12,6 +12,13 @@ export const useDriverStatus = () => {
     currentCount: 0,
     statusText: ''
   });
+
+  const statusRef = useRef(status);
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
 
   const checkTime = () => {
     const hour = new Date().getHours();
@@ -27,7 +34,7 @@ export const useDriverStatus = () => {
       const weights = [0.15, 0.25, 0.35, 0.25]; // 1, 2, 3, 4 drivers
       const random = Math.random();
       let sum = 0;
-      
+
       for (let i = 0; i < weights.length; i++) {
         sum += weights[i];
         if (random < sum) {
@@ -55,9 +62,9 @@ export const useDriverStatus = () => {
 
     // Check time every minute (in case it crosses 6:00 or 21:00)
     const timeCheckInterval = setInterval(() => {
-      const wasActive = status.isActive;
+      const wasActive = statusRef.current.isActive;
       const isActive = checkTime();
-      
+
       // Only update display if active status changed
       if (wasActive !== isActive) {
         updateStatus();
@@ -68,6 +75,7 @@ export const useDriverStatus = () => {
       clearInterval(updateInterval);
       clearInterval(timeCheckInterval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return status;
