@@ -1,73 +1,178 @@
-# Welcome to your Lovable project
+# Centro Rides - Next.js 14
 
-## Project info
+Premium taxi service for Spanish military personnel at Lešť Slavia NATO base in Slovakia.
 
-**URL**: https://lovable.dev/projects/cc0a4fa1-ae7b-45ba-95a0-bedf23fe1ca8
+## 🚀 Quick Start
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+- Node.js 18.x or higher
+- npm, yarn, pnpm, or bun
 
-**Use Lovable**
+### Installation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cc0a4fa1-ae7b-45ba-95a0-bedf23fe1ca8) and start prompting.
+```bash
+npm install
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+### Development
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Production Build
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm run start
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Linting
 
-## What technologies are used for this project?
+```bash
+npm run lint
+```
 
-This project is built with:
+## 📁 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+centrum-rides/
+├── app/                      # Next.js App Router
+│   ├── layout.tsx           # Root layout with SEO & metadata
+│   ├── page.tsx             # Homepage
+│   ├── blog/page.tsx        # Blog page
+│   ├── not-found.tsx        # 404 page
+│   ├── providers.tsx        # Client-side providers
+│   └── globals.css          # Global styles
+├── src/
+│   ├── components/          # React components
+│   │   ├── ui/             # shadcn/ui components
+│   │   └── ...             # Feature components
+│   ├── contexts/            # React contexts (Language)
+│   ├── hooks/               # Custom hooks
+│   ├── lib/                 # Utilities
+│   └── assets/              # Images and static assets
+├── public/                  # Public static files
+│   ├── favicon.png
+│   ├── hero-image.jpg
+│   └── ...
+├── next.config.mjs          # Next.js configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+└── tsconfig.json            # TypeScript configuration
+```
 
-## How can I deploy this project?
+## 🛠️ Tech Stack
 
-Simply open [Lovable](https://lovable.dev/projects/cc0a4fa1-ae7b-45ba-95a0-bedf23fe1ca8) and click on Share -> Publish.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI)
+- **State Management**: TanStack Query + React Context
+- **Forms**: React Hook Form + Zod
+- **Analytics**: Google Analytics 4 + Microsoft Clarity
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Features
 
-Yes, you can!
+- ✅ **Multi-language support** (English/Spanish)
+- ✅ **SEO optimized** with Next.js Metadata API
+- ✅ **Responsive design** for all devices
+- ✅ **Animated UI** with custom hooks
+- ✅ **Analytics integration** (GA4 + Clarity)
+- ✅ **Performance optimized** with Next.js Image & Font
+- ✅ **Accessibility** (WCAG compliant)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔍 SEO & Meta Tags
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+All SEO is handled via Next.js Metadata API in `app/layout.tsx`:
+
+- Title & Description
+- Open Graph tags (Facebook, LinkedIn)
+- Twitter Card
+- JSON-LD structured data
+- Canonical URLs
+- Language alternates
+- Geo tags
+
+## 📊 Analytics
+
+- **Google Analytics 4**: Configured in `app/layout.tsx`
+- **Microsoft Clarity**: Session recording and heatmaps
+
+## 🌍 Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm i -g vercel
+vercel --prod
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+### Other Platforms
+
+Build the production bundle:
+
+```bash
+npm run build
+```
+
+Deploy the `.next` folder to your hosting provider.
+
+### Static Export (GitHub Pages)
+
+To export as static HTML:
+
+1. Update `next.config.mjs`:
+```js
+const nextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+};
+```
+
+2. Build:
+```bash
+npm run build
+```
+
+3. Deploy the `out/` folder.
+
+## 🧪 Testing
+
+See `MIGRATION_TESTING.md` for a comprehensive testing checklist.
+
+## 📝 Migration Notes
+
+This project was migrated from Vite + React Router to Next.js 14. Key changes:
+
+- **Routing**: File-based routing in `app/` directory
+- **SEO**: Static meta tags → Next.js Metadata API
+- **Components**: Added `'use client'` to interactive components
+- **Build**: Vite → Next.js build system
+- **Performance**: Image & font optimization
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Test locally (`npm run dev`)
+4. Build for production (`npm run build`)
+5. Submit a pull request
+
+## 📄 License
+
+Private project for TaxiForce military transport services.
+
+## 📞 Contact
+
+- **Phone**: +421 902 048 583
+- **WhatsApp**: Available for bookings
+- **Service Area**: Lešť Slavia NATO base, Zvolen, Banská Bystrica
+
+---
+
+**Built with ❤️ for Spanish military personnel in Slovakia**
