@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 <blockquote className="text-muted-foreground italic leading-relaxed text-sm">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </blockquote>
               </CardContent>
             </Card>
