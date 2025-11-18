@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import militaryBadge from '@/assets/military-badge.jpg';
 import restaurantImage from '@/assets/restaurant-bb.jpg';

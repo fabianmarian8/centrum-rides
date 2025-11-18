@@ -1,3 +1,5 @@
+'use client';
+
 import { useParallax } from '@/hooks/useParallax';
 import { cn } from '@/lib/utils';
 import { ReactNode, CSSProperties } from 'react';

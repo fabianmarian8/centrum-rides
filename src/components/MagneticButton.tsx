@@ -1,3 +1,5 @@
+'use client';
+
 import { useMagnetic } from '@/hooks/useMagnetic';
 import { cn } from '@/lib/utils';
 import { ReactNode, ButtonHTMLAttributes } from 'react';

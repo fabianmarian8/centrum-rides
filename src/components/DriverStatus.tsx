@@ -1,3 +1,5 @@
+'use client';
+
 import { useDriverStatus } from '@/hooks/useDriverStatus';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';

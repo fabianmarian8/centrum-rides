@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -20,7 +22,7 @@ const Navigation = () => {
       isVisible ? "nav-visible" : "nav-hidden"
     )}>
       <DriverStatus />
-      <Link to="/blog">
+      <Link href="/blog">
         <Button 
           variant="ghost" 
           size="sm" 

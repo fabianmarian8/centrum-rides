@@ -1,3 +1,5 @@
+'use client';
+
 import { useTypewriter } from '@/hooks/useTypewriter';
 import { cn } from '@/lib/utils';
 
