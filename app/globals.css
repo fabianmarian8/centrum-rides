@@ -123,6 +123,10 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
     @apply border-border;
   }
 
+  html {
+    font-size: 90%;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
