@@ -59,8 +59,28 @@ const FaqSection = () => {
   const { language } = useLanguage();
   const content = translations[language];
 
+  // FAQPage Schema.org JSON-LD
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: content.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-secondary/5 via-background to-primary/5">
+      {/* JSON-LD Schema for FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 space-y-3">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-military">{content.heading}</h2>

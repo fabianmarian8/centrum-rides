@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import heroImage from '@/assets/hero-military.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -79,20 +80,25 @@ const HeroSection = () => {
     <section
       aria-label="Hero section - Military taxi service"
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
-      style={{
-        backgroundImage: `
-          linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
-          url(${heroImage.src})
-        `,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
       role="banner"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+      {/* Optimized background image with next/image */}
+      <Image
+        src={heroImage}
+        alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
+        fill
+        priority
+        quality={85}
+        className="object-cover object-center"
+        style={{ position: 'absolute', zIndex: 0 }}
+        sizes="100vw"
+      />
 
-      <div className="relative z-10 max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/85 to-black/85 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 z-[2]" />
+
+      <div className="relative z-[10] max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           <span className="bg-gradient-to-r from-primary to-secondary px-3 py-2 rounded-full text-[11px] sm:text-sm font-bold uppercase tracking-wide shadow-lg">
             {content.routeBadge}

@@ -108,8 +108,44 @@ const BlogSection = () => {
   const { language } = useLanguage();
   const content = translations[language];
 
+  // BlogPosting Schema for each post
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: content.posts.map((post, index) => ({
+      '@type': 'BlogPosting',
+      position: index + 1,
+      headline: post.title,
+      description: post.excerpt,
+      articleSection: post.city,
+      author: {
+        '@type': 'Organization',
+        name: 'TaxiForce',
+        url: 'https://lest-slavia-taxi.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'TaxiForce',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://lest-slavia-taxi.com/hero-image.jpg',
+        },
+      },
+      datePublished: '2025-01-27',
+      dateModified: '2025-01-27',
+      inLanguage: language === 'en' ? 'en-US' : 'es-ES',
+      keywords: post.highlights.join(', '),
+    })),
+  };
+
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-muted/40 via-background to-muted/40">
+      {/* JSON-LD Schema for Blog Posts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12">
         <div className="text-center space-y-3 sm:space-y-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">{content.heading}</h2>

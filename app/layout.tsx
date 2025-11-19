@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import Script from 'next/script';
+import HtmlLangUpdater from '@/components/HtmlLangUpdater';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -161,7 +162,10 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <HtmlLangUpdater />
+          {children}
+        </Providers>
       </body>
     </html>
   );
