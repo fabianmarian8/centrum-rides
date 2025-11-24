@@ -149,26 +149,6 @@ const ContactSection = () => {
 
         <div className="mt-10 sm:mt-12 text-center">
           <p className="text-xs sm:text-sm text-muted-foreground">{content.footer}</p>
-          
-          {/* Discreet cross-linking for SEO */}
-          <p className="text-xs text-muted-foreground/50 mt-4">
-            {language === 'en' 
-              ? <>We also operate in these locations:{" "}
-                  <a href="https://www.lesttaxi.com" className="hover:text-muted-foreground/70 transition-colors">Lešť</a>
-                  {" | "}
-                  <a href="https://zvolen-taxi.sk" className="hover:text-muted-foreground/70 transition-colors">Zvolen</a>
-                  {" | "}
-                  <a href="https://lest-slavia-taxi.com" className="hover:text-muted-foreground/70 transition-colors">Slavia</a>
-                </>
-              : <>También operamos en estas localidades:{" "}
-                  <a href="https://www.lesttaxi.com" className="hover:text-muted-foreground/70 transition-colors">Lešť</a>
-                  {" | "}
-                  <a href="https://zvolen-taxi.sk" className="hover:text-muted-foreground/70 transition-colors">Zvolen</a>
-                  {" | "}
-                  <a href="https://lest-slavia-taxi.com" className="hover:text-muted-foreground/70 transition-colors">Slavia</a>
-                </>
-            }
-          </p>
         </div>
       </div>
     </section>
