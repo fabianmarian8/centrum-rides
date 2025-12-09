@@ -107,8 +107,8 @@ const ContactSection = () => {
               <Button
                 size="lg"
                 className="
-                  bg-[#128C7E] text-white
-                  hover:bg-[#0d6b61]
+                  bg-[#075E54] text-white
+                  hover:bg-[#054C44]
                   font-bold py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl
                 "
                 asChild
@@ -120,7 +120,7 @@ const ContactSection = () => {
         </Card>
 
         <div className="bg-primary/10 backdrop-blur-md border border-primary/30 rounded-xl p-5 sm:p-6 mb-8">
-          <p className="text-base sm:text-lg font-semibold text-primary mb-3 sm:mb-4">
+          <p className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">
             {content.availabilityTitle}
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">

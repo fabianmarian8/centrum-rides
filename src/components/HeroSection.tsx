@@ -1,9 +1,6 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import heroImage from '@/assets/hero-military.webp';
-import heroImageSm from '@/assets/optimized/hero-military-sm.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
@@ -83,27 +80,28 @@ const HeroSection = () => {
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
       role="banner"
     >
-      {/* Responsive hero images - mobile version for faster LCP */}
-      <Image
-        src={heroImageSm}
-        alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
-        fill
-        priority
-        quality={75}
-        className="object-cover object-center md:hidden"
-        style={{ position: 'absolute', zIndex: 0 }}
-        sizes="(max-width: 768px) 100vw, 0vw"
-      />
-      <Image
-        src={heroImage}
-        alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
-        fill
-        priority
-        quality={85}
-        className="object-cover object-center hidden md:block"
-        style={{ position: 'absolute', zIndex: 0 }}
-        sizes="(min-width: 769px) 100vw, 0vw"
-      />
+      {/* Native picture element for true responsive images - browser loads only the appropriate size */}
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcSet="/images/hero-military-sm.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 769px)"
+          srcSet="/images/hero-military.webp"
+          type="image/webp"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/hero-military.webp"
+          alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ zIndex: 0 }}
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
 
       {/* Single combined overlay for better performance */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/90 z-[1]" />
@@ -164,8 +162,8 @@ const HeroSection = () => {
             size="lg"
             className="
               button-3d
-              bg-[#128C7E] text-white
-              hover:bg-[#0d6b61]
+              bg-[#075E54] text-white
+              hover:bg-[#054C44]
               px-6 py-3 text-base sm:text-lg font-semibold rounded-full
               shadow-xl transition-all duration-300
             "

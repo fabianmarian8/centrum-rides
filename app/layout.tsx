@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
-import Script from 'next/script';
 import HtmlLangUpdater from '@/components/HtmlLangUpdater';
 
 const inter = Inter({
@@ -140,36 +139,39 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Preload hero images for faster LCP */}
+        <link
+          rel="preload"
+          href="/images/hero-military-sm.webp"
+          as="image"
+          type="image/webp"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          href="/images/hero-military.webp"
+          as="image"
+          type="image/webp"
+          media="(min-width: 769px)"
+        />
+
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Microsoft Clarity - lazyOnload for better performance */}
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "ticgkk8s3r");
-          `}
-        </Script>
+        {/* Analytics disabled for performance - saves ~165KB
+            Re-enable with consent banner if needed:
 
-        {/* Google Analytics 4 - lazyOnload for better performance */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-7HSBJ31EG7"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-7HSBJ31EG7');
-          `}
+        <Script id="microsoft-clarity" strategy="lazyOnload">
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ticgkk8s3r");`}
         </Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-7HSBJ31EG7" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7HSBJ31EG7');`}
+        </Script>
+        */}
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <Providers>

@@ -161,9 +161,10 @@ const FeaturesSection = () => {
                       src={feature.image}
                       alt={feature.title}
                       fill
+                      loading="lazy"
                       className="object-cover object-center"
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      quality={80}
+                      quality={75}
                     />
                   </div>
                 )}
