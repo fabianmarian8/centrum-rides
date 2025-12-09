@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import sergeantImage from '@/assets/sergeant-testimonial.jpg';
+import sergeantImage from '@/assets/sergeant-testimonial.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {

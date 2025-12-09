@@ -8,7 +8,6 @@ import FaqSection from '@/components/FaqSection';
 import SeoContentSection from '@/components/SeoContentSection';
 import ContactSection from '@/components/ContactSection';
 import Navigation from '@/components/Navigation';
-import LocalSeoKeywords from '@/components/LocalSeoKeywords';
 
 export const metadata: Metadata = {
   title: 'Military Taxi Lešť Base Slovakia | 24/7 NATO Transport Service | TaxiForce',
@@ -93,7 +92,6 @@ export default function HomePage() {
         <FaqSection />
         <SeoContentSection />
         <ContactSection />
-        <LocalSeoKeywords />
       </main>
     </div>
   );

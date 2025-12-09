@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import heroImage from '@/assets/hero-military.jpg';
+import heroImage from '@/assets/hero-military.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
@@ -94,9 +94,8 @@ const HeroSection = () => {
         sizes="100vw"
       />
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/85 to-black/85 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 z-[2]" />
+      {/* Single combined overlay for better performance */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/90 z-[1]" />
 
       <div className="relative z-[10] max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
@@ -12,11 +12,19 @@ const inter = Inter({
 });
 
 const poppins = Poppins({
-  weight: ['600', '700', '800', '900'],
+  weight: ['600', '700'],
   subsets: ['latin'],
   variable: '--font-poppins',
   display: 'swap',
 });
+
+// Viewport configuration (themeColor moved here from metadata)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#C41C24',
+};
 
 export const metadata: Metadata = {
   title: 'Taxi Militar Base Lešť Slavia | Transporte 24/7 NATO',
@@ -67,27 +75,33 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'SK-BC',
-    'geo.placename': 'Lešť Slavia 1, Zvolen, Pliešovce',
-    'geo.position': '48.4167;19.1667',
-    ICBM: '48.4167, 19.1667',
+    'geo.placename': 'Pliešovce',
+    'geo.position': '48.4388;19.2052',
+    ICBM: '48.4388, 19.2052',
     'google-site-verification': '9b5AMY6T17hcs6tpUJEAp940R_qxiXGSs587VkU2i8o',
   },
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',
   },
-  themeColor: '#C41C24',
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://lest-slavia-taxi.com/#business',
   name: 'TaxiForce',
   image: 'https://lest-slavia-taxi.com/hero-image.jpg',
   description:
     'Servicio de taxi para personal militar español en base NATO Lešť-Slavia. Traslados aeropuerto, servicio 24/7.',
   url: 'https://lest-slavia-taxi.com',
   telephone: '+421902048583',
+  email: 'fabianmarian8@gmail.com',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 48.4388,
+    longitude: 19.2052,
+  },
   areaServed: [
     'Lešť Slavia 1',
     'Zvolen',
@@ -105,13 +119,9 @@ const jsonLd = {
     'Spanish speaking driver',
   ],
   paymentAccepted: ['Cash'],
-  availableLanguage: ['English', 'Spanish'],
+  availableLanguage: ['English', 'Spanish', 'Slovak'],
   openingHours: 'Mo-Su 00:00-23:59',
   priceRange: '€€',
-  sameAs: [
-    'https://www.facebook.com/taxiforce',
-    'https://www.instagram.com/taxiforce',
-  ],
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'SK',
@@ -136,8 +146,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        {/* Microsoft Clarity - lazyOnload for better performance */}
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -147,12 +157,12 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Analytics 4 */}
+        {/* Google Analytics 4 - lazyOnload for better performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7HSBJ31EG7"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

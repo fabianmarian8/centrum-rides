@@ -2,10 +2,10 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import militaryBadge from '@/assets/military-badge.jpg';
-import restaurantImage from '@/assets/restaurant-bb.jpg';
-import taxiImage from '@/assets/taxi-military.jpg';
-import cityImage from '@/assets/banska-bystrica-night.jpg';
+import militaryBadge from '@/assets/military-badge.webp';
+import restaurantImage from '@/assets/restaurant-bb.webp';
+import taxiImage from '@/assets/taxi-military.webp';
+import cityImage from '@/assets/banska-bystrica-night.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
