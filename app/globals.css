@@ -2,119 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TaxiForce Design System - Spanish Military Theme
-All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
+/* TaxiForce - Friendly Local Taxi Service
+   Organic & Warm Design System
+   Font: Satoshi (characterful, friendly)
 */
+
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 
 @layer base {
   :root {
-    /* Base Colors - Dark military theme */
-    --background: 222 20% 8%;
-    --foreground: 48 100% 95%;
+    /* Warm, inviting palette */
+    --background: 40 33% 98%;
+    --foreground: 25 25% 15%;
 
-    /* Card System */
-    --card: 222 15% 12%;
-    --card-foreground: 48 100% 95%;
+    /* Card System - soft, warm */
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 222 15% 12%;
-    --popover-foreground: 48 100% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
 
-    /* Spanish Military Colors */
-    --primary: 356 76% 44%; /* Spanish Red #C41C24 */
-    --primary-foreground: 48 100% 95%;
-    --primary-glow: 356 85% 55%;
+    /* Primary - Warm olive green (trust, reliability) */
+    --primary: 85 35% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 48 100% 50%; /* Spanish Gold #FFC400 */
-    --secondary-foreground: 222 20% 8%;
+    /* Secondary - Warm amber/orange (friendly, approachable) */
+    --secondary: 35 90% 55%;
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 222 10% 20%;
-    --muted-foreground: 48 30% 70%;
+    /* Accent - Soft terracotta for CTAs */
+    --accent: 15 70% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 48 100% 50%;
-    --accent-foreground: 222 20% 8%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 25 15% 45%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 48 100% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 15% 25%;
-    --input: 222 15% 25%;
-    --ring: 48 100% 50%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 85 35% 35%;
 
-    --radius: 0.75rem;
-
-    /* Custom TaxiForce Variables */
-    --military-green: 120 60% 25%;
-    --military-blue: 210 100% 35%;
-    --military-navy: 220 100% 15%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%);
-    --gradient-military: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-gold: linear-gradient(45deg, hsl(var(--secondary)), hsl(48 100% 65%));
-    --gradient-urgent: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--primary)));
-
-    /* Shadows */
-    --shadow-military: 0 10px 30px -10px hsl(var(--primary) / 0.4);
-    --shadow-gold: 0 8px 25px hsl(var(--secondary) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-
-    /* Animations */
-    --transition-military: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 1rem;
   }
 }
 
@@ -125,14 +55,16 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
 
   html {
     font-size: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-feature-settings: 'ss01' on, 'ss02' on;
   }
 
-  /* Disable animations and heavy effects for users who prefer reduced motion */
+  /* Respect user preferences */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -140,370 +72,181 @@ All colors MUST be HSL. Spanish flag inspired: Red (#C41C24) + Gold (#FFC400)
       transition-duration: 0.01ms !important;
     }
   }
-
-  /* Disable backdrop-blur on mobile for better performance */
-  @media (max-width: 768px) {
-    .backdrop-blur,
-    .backdrop-blur-sm,
-    .backdrop-blur-md,
-    .backdrop-blur-lg,
-    .backdrop-blur-xl {
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-    }
-  }
 }
 
 @layer components {
-  /* Military-themed animations */
-  @keyframes military-pulse {
+  /* Soft, organic card style */
+  .card-warm {
+    @apply bg-card rounded-2xl border border-border/50;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-warm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Friendly button style */
+  .btn-friendly {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3;
+    @apply font-semibold rounded-full;
+    @apply transition-all duration-300;
+  }
+
+  .btn-friendly:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-friendly:active {
+    transform: translateY(0);
+  }
+
+  /* Primary CTA */
+  .btn-primary {
+    @apply btn-friendly bg-accent text-accent-foreground;
+    box-shadow: 0 4px 14px -2px hsl(var(--accent) / 0.4);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 20px -2px hsl(var(--accent) / 0.5);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply btn-friendly bg-primary text-primary-foreground;
+    box-shadow: 0 4px 14px -2px hsl(var(--primary) / 0.3);
+  }
+
+  /* WhatsApp button */
+  .btn-whatsapp {
+    @apply btn-friendly text-white;
+    background-color: #25D366;
+    box-shadow: 0 4px 14px -2px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #22c55e;
+    box-shadow: 0 8px 20px -2px rgba(37, 211, 102, 0.5);
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-8 sm:py-12 md:py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Heading styles */
+  .heading-xl {
+    @apply text-3xl sm:text-4xl md:text-5xl font-black tracking-tight;
+    line-height: 1.1;
+  }
+
+  .heading-lg {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-lg sm:text-xl font-bold;
+  }
+
+  /* Organic blob decoration */
+  .blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blob-morph 8s ease-in-out infinite;
+  }
+
+  @keyframes blob-morph {
     0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
     50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     }
   }
 
-  @keyframes urgent-flash {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  /* Subtle fade in */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
-  @keyframes slide-up {
-    0% {
+  @keyframes fadeIn {
+    from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
-    100% {
+    to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  @keyframes loading {
-    0% {
-      background-position: 200% 0;
+  /* Status indicator */
+  .status-dot {
+    @apply w-2.5 h-2.5 rounded-full bg-green-500;
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
     }
-    100% {
-      background-position: -200% 0;
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
     }
   }
 
-  /* Component classes */
-  .military-pulse {
-    animation: military-pulse 2s infinite;
+  /* Badge style */
+  .badge-warm {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-secondary/10 text-secondary border border-secondary/20;
   }
 
-  .urgent-flash {
-    animation: urgent-flash 3s ease-in-out infinite;
-    background-size: 200% 200%;
+  /* Feature icon container */
+  .icon-container {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center;
+    @apply bg-primary/10 text-primary;
   }
 
-  .slide-up {
-    animation: slide-up 0.6s ease-out;
+  /* Testimonial card */
+  .testimonial-card {
+    @apply bg-card rounded-2xl p-6 border-l-4 border-secondary;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
   }
 
-  .hover-military {
-    @apply transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--primary-glow)/0.4)] hover:-translate-y-1;
-  }
+  /* Striped Logo Text Style - like LEST TAXI */
+  .striped-logo {
+    font-family: 'Satoshi', 'Arial Black', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    line-height: 1;
+    transform: scaleY(1.3);
+    transform-origin: center;
 
-  /* 3D Button Effects */
-  .button-3d {
-    cursor: pointer;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow:
-      0 10px 20px hsl(var(--background) / 0.4),
-      0 6px 6px hsl(var(--background) / 0.3);
-  }
-
-  .button-3d:hover {
-    transform: translateY(-3px) rotateX(-10deg);
-    box-shadow:
-      0 15px 30px hsl(var(--background) / 0.5),
-      0 10px 15px hsl(var(--background) / 0.4);
-  }
-
-  .button-3d:active {
-    transform: translateY(0);
-    box-shadow:
-      0 5px 10px hsl(var(--background) / 0.4),
-      0 3px 3px hsl(var(--background) / 0.3);
-  }
-
-  /* Neumorphism Effects - Dark Military Theme */
-  .neumorphic {
-    border-radius: 12px;
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    box-shadow:
-      20px 20px 60px hsl(var(--background)),
-      -20px -20px 60px hsl(var(--border));
-  }
-
-  .neumorphic-inset {
-    border-radius: 12px;
-    background: linear-gradient(145deg, hsl(var(--muted)), hsl(var(--card)));
-    box-shadow:
-      inset 20px 20px 60px hsl(var(--background)),
-      inset -20px -20px 60px hsl(var(--border));
-  }
-
-  /* Gradient Border Animation */
-  .gradient-border {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg,
-      transparent,
-      hsl(var(--secondary)),
-      hsl(var(--primary)),
-      hsl(var(--secondary)),
-      transparent
+    /* Create striped background with smaller stripes - white text with thin dark lines */
+    background: repeating-linear-gradient(
+      to bottom,
+      white 0px,
+      white 3px,
+      transparent 3px,
+      transparent 6px
     );
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-  }
 
-  .gradient-border:hover::before {
-    transform: translateX(100%);
-  }
-
-  .gradient-border-military {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gradient-border-military::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg,
-      transparent,
-      hsl(var(--primary)),
-      hsl(var(--secondary)),
-      hsl(var(--primary)),
-      transparent
-    );
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-    z-index: 1;
-  }
-
-  .gradient-border-military:hover::before {
-    transform: translateX(100%);
-  }
-
-  .neumorphic-military {
-    border-radius: 12px;
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--background)));
-    box-shadow:
-      15px 15px 40px hsl(var(--background) / 0.8),
-      -15px -15px 40px hsl(var(--border) / 0.3);
-    border: 1px solid hsl(var(--border) / 0.2);
-  }
-
-  .text-gradient-military {
-    background: var(--gradient-military);
-    background-clip: text;
+    /* Clip background to text shape */
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .text-gradient-gold {
-    background: var(--gradient-gold);
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+    /* Make text transparent to show background */
+    color: transparent;
+
+    display: inline-block;
   }
 
-  .bg-hero-pattern {
-    background-image:
-      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.3) 0%, transparent 50%);
-  }
-
-  .spanish-flag-border {
-    border-image: linear-gradient(90deg, hsl(var(--primary)) 33%, hsl(var(--secondary)) 33%, hsl(var(--secondary)) 66%, hsl(var(--primary)) 66%) 1;
-  }
-
-  /* Particles animation */
-  .particles-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: hsl(var(--secondary));
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: floatUp 20s infinite linear;
-  }
-
-  /* Pulse indicator */
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: hsl(var(--secondary));
-    border-radius: 50%;
-    animation: military-pulse-dot 2s infinite;
-  }
-
-  @keyframes military-pulse-dot {
-    0% {
-      box-shadow: 0 0 0 0 hsl(var(--secondary) / 0.7);
+  @media (min-width: 640px) {
+    .striped-logo {
+      font-size: 2.25rem;
     }
-    70% {
-      box-shadow: 0 0 0 10px hsl(var(--secondary) / 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 hsl(var(--secondary) / 0);
-    }
-  }
-
-  @keyframes floatUp {
-    from {
-      transform: translateY(100vh) translateX(0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.3;
-    }
-    90% {
-      opacity: 0.3;
-    }
-    to {
-      transform: translateY(-10vh) translateX(100px);
-      opacity: 0;
-    }
-  }
-
-  .skeleton {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1) 25%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.1) 75%
-    );
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .fade-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .fade-in-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .parallax-container {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .parallax-element {
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-  }
-
-  .hover-scale {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-scale:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow:
-        0 20px 40px hsl(var(--background) / 0.4),
-        0 15px 12px hsl(var(--background) / 0.3);
-  }
-
-  .typewriter {
-    overflow: hidden;
-    border-right: 2px solid hsl(var(--primary));
-    white-space: nowrap;
-    animation: blink-caret 1s step-end infinite;
-  }
-
-  @keyframes blink-caret {
-    from, to { border-color: hsl(var(--primary)); }
-    50% { border-color: transparent; }
-  }
-
-  .nav-hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-visible {
-    transform: translateY(0);
-    transition: transform 0.3s ease;
-  }
-
-  .magnetic-button {
-    position: relative;
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-
-  .magnetic-button:hover {
-    z-index: 10;
   }
 }

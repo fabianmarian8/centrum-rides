@@ -1,89 +1,58 @@
 'use client';
 
+import { Target, ShieldCheck, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    heading: 'TaxiForce operational readiness',
-    description:
-      'We combine military-grade logistics with the comfort of a private chauffeur service. Every deployment is planned in detail.',
+    heading: 'Our track record',
+    description: 'Numbers that speak for themselves. We have been serving military personnel since day one.',
     metrics: [
-      {
-        value: '4.9/5',
-        label: 'Military contingent rating',
-        detail: 'Based on real feedback reports after night deployments',
-      },
-      {
-        value: '120+',
-        label: 'monthly transfers',
-        detail: 'Dedicated driver roster with reinforcements during exercises',
-      },
-      {
-        value: '0 incidents',
-        label: 'in 24 months of service',
-        detail: 'Strict compliance with NATO security protocols and local law',
-      },
+      { value: '4.9/5', label: 'Average rating', detail: 'Based on real feedback from riders' },
+      { value: '120+', label: 'Monthly transfers', detail: 'Regular service for the military community' },
+      { value: '0', label: 'Incidents', detail: '24 months of safe, reliable service' },
     ],
     pillars: [
       {
-        title: 'Military precision',
-        description:
-          'We operate according to mission plans. Each transfer receives a mission number and confirmed return time.',
-        icon: '⏱️',
+        icon: Target,
+        title: 'Precision',
+        description: 'Every transfer is planned. We confirm pickup time, route, and return - no surprises.',
       },
       {
-        title: 'Discretion & security',
-        description:
-          'Non-disclosure agreements, anonymous payments and unmarked vehicles. Drivers are experienced with escorts and VIP transfers.',
-        icon: '🕶️',
+        icon: ShieldCheck,
+        title: 'Discretion',
+        description: 'What happens on the ride stays on the ride. Professional, confidential service.',
       },
       {
-        title: 'Community support',
-        description:
-          'Local partnerships ensure military troops have access to trusted services during downtime.',
-        icon: '🤝',
+        icon: Users,
+        title: 'Community',
+        description: 'We work with local businesses to give you access to trusted venues and services.',
       },
     ],
   },
   es: {
-    heading: 'Preparación operativa de TaxiForce',
-    description:
-      'Combinamos logística de nivel militar con el confort de un servicio de chofer privado. Cada despliegue se planifica al detalle.',
+    heading: 'Nuestro historial',
+    description: 'Números que hablan por sí solos. Servimos al personal militar desde el primer día.',
     metrics: [
-      {
-        value: '4.9/5',
-        label: 'Valoración del contingente militar',
-        detail: 'Basada en informes reales tras salidas nocturnas',
-      },
-      {
-        value: '120+',
-        label: 'traslados mensuales',
-        detail: 'Equipo fijo de conductores con refuerzos durante ejercicios',
-      },
-      {
-        value: '0 incidentes',
-        label: 'en 24 meses de servicio',
-        detail: 'Cumplimos los protocolos de seguridad OTAN y la normativa local',
-      },
+      { value: '4.9/5', label: 'Valoración media', detail: 'Basada en opiniones reales de pasajeros' },
+      { value: '120+', label: 'Traslados mensuales', detail: 'Servicio regular para la comunidad militar' },
+      { value: '0', label: 'Incidentes', detail: '24 meses de servicio seguro y fiable' },
     ],
     pillars: [
       {
-        title: 'Precisión militar',
-        description:
-          'Trabajamos siguiendo planes operativos. Cada traslado recibe número de misión y hora de regreso confirmada.',
-        icon: '⏱️',
+        icon: Target,
+        title: 'Precisión',
+        description: 'Cada traslado está planificado. Confirmamos hora, ruta y regreso - sin sorpresas.',
       },
       {
-        title: 'Discreción y seguridad',
-        description:
-          'Acuerdos de confidencialidad, pagos anónimos y vehículos sin distintivos. Conductores expertos en escoltas y traslados VIP.',
-        icon: '🕶️',
+        icon: ShieldCheck,
+        title: 'Discreción',
+        description: 'Lo que pasa en el viaje, se queda en el viaje. Servicio profesional y confidencial.',
       },
       {
-        title: 'Apoyo comunitario',
-        description:
-          'Colaboramos con socios locales para que la tropa militar acceda a servicios fiables en su tiempo libre.',
-        icon: '🤝',
+        icon: Users,
+        title: 'Comunidad',
+        description: 'Colaboramos con negocios locales para darte acceso a lugares de confianza.',
       },
     ],
   },
@@ -94,39 +63,34 @@ const OperationsSection = () => {
   const content = translations[language];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-black/60 via-background to-black/60">
-      <div className="max-w-6xl mx-auto space-y-10 sm:space-y-16">
-        <div className="text-center space-y-3 sm:space-y-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-gold">
-            {content.heading}
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-            {content.description}
-          </p>
+    <section className="section-padding">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-6 sm:mb-10">
+          <h2 className="heading-lg text-foreground mb-2">{content.heading}</h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">{content.description}</p>
         </div>
 
-        <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+        {/* Metrics */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-6 sm:mb-10">
           {content.metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="text-center bg-primary/10 border border-primary/30 rounded-2xl px-4 py-6 sm:px-5 sm:py-8 md:px-6 md:py-10 backdrop-blur hover:border-primary/60 transition-all"
-            >
-              <p className="text-2xl sm:text-3xl md:text-5xl font-black text-gradient-military mb-2">{metric.value}</p>
-              <p className="text-[11px] sm:text-sm uppercase tracking-wide text-secondary mb-2">{metric.label}</p>
-              <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{metric.detail}</p>
+            <div key={metric.label} className="text-center">
+              <p className="text-2xl sm:text-4xl font-black text-primary mb-1">{metric.value}</p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground">{metric.label}</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block">{metric.detail}</p>
             </div>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        {/* Pillars */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {content.pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="bg-card/70 border border-secondary/20 rounded-2xl p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4 backdrop-blur hover:border-secondary/50 transition-all"
-            >
-              <div className="text-3xl sm:text-4xl">{pillar.icon}</div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary">{pillar.title}</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{pillar.description}</p>
+            <div key={pillar.title} className="card-warm p-3 sm:p-5 text-center">
+              <div className="icon-container w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 sm:mb-3">
+                <pillar.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <h3 className="text-xs sm:text-base font-bold text-foreground mb-1">{pillar.title}</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-sm hidden sm:block">{pillar.description}</p>
             </div>
           ))}
         </div>

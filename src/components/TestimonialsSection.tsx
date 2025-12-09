@@ -1,77 +1,77 @@
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import sergeantImage from '@/assets/sergeant-testimonial.webp';
+import { Star, Quote } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    heading: 'What our Spanish military partners say',
-    subheading: 'More than 200 Spanish service members rely on TaxiForce.',
-    stats: ['Rating: 4.9/5', '200+ satisfied soldiers', 'NATO verified'],
+    heading: 'What our riders say',
+    subheading: 'Real feedback from military personnel who use our service regularly',
     testimonials: [
       {
-        name: 'Sergeant M. Rodriguez',
-        rank: 'Spanish Army',
-        avatar: sergeantImage,
-        fallback: 'MR',
+        name: 'Miguel R.',
+        role: 'Spanish Army',
+        text: 'Finally a taxi that understands our schedule. Professional, always on time, and they know all the good spots in town.',
         rating: 5,
-        text: 'Finally a taxi service that gets it. Professional, discreet and they know every great tapas spot in Banská Bystrica!',
-        bgColor: 'bg-military-green',
+        initials: 'MR',
+        color: 'bg-primary',
       },
       {
-        name: 'Captain A. García',
-        rank: 'Spanish Air Force',
-        avatar: null,
-        fallback: 'AG',
+        name: 'Antonio G.',
+        role: 'Air Force',
+        text: 'Used them for a night out in Zvolen. Driver waited while we had dinner, then got us back to base safely. Exactly what we needed.',
         rating: 5,
-        text: 'Used them for an evening in Zvolen. The driver waited while we enjoyed dinner, then brought us back to base safely. Military efficiency!',
-        bgColor: 'bg-military-blue',
+        initials: 'AG',
+        color: 'bg-secondary',
       },
       {
-        name: 'Lieutenant C. Fernández',
-        rank: 'Spanish Navy',
-        avatar: null,
-        fallback: 'CF',
+        name: 'Carlos F.',
+        role: 'Navy',
+        text: 'No worries about driving after a few beers. They are reliable, discreet, and the price is fair. Highly recommend.',
         rating: 5,
-        text: 'Best investment for downtime. No worries about driving after a few cervezas. ¡Excellent service!',
-        bgColor: 'bg-military-navy',
+        initials: 'CF',
+        color: 'bg-accent',
       },
+    ],
+    stats: [
+      { value: '200+', label: 'Happy riders' },
+      { value: '4.9', label: 'Average rating' },
+      { value: '24/7', label: 'Available' },
     ],
   },
   es: {
-    heading: 'Opiniones de nuestros aliados españoles',
-    subheading: 'Más de 200 militares españoles confían en TaxiForce.',
-    stats: ['Valoración: 4.9/5', '200+ soldados satisfechos', 'Verificado por la OTAN'],
+    heading: 'Lo que dicen nuestros pasajeros',
+    subheading: 'Opiniones reales del personal militar que usa nuestro servicio regularmente',
     testimonials: [
       {
-        name: 'Sargento M. Rodriguez',
-        rank: 'Ejército de Tierra',
-        avatar: sergeantImage,
-        fallback: 'MR',
+        name: 'Miguel R.',
+        role: 'Ejército de Tierra',
+        text: 'Por fin un taxi que entiende nuestros horarios. Profesional, siempre puntual, y conocen todos los buenos sitios de la ciudad.',
         rating: 5,
-        text: 'Por fin un taxi que lo entiende. Profesional, discreto y conocen todos los mejores sitios de tapas en Banská Bystrica.',
-        bgColor: 'bg-military-green',
+        initials: 'MR',
+        color: 'bg-primary',
       },
       {
-        name: 'Capitán A. García',
-        rank: 'Ejército del Aire',
-        avatar: null,
-        fallback: 'AG',
+        name: 'Antonio G.',
+        role: 'Ejército del Aire',
+        text: 'Los usé para salir por Zvolen. El conductor esperó mientras cenábamos y nos llevó de vuelta a la base con seguridad.',
         rating: 5,
-        text: 'Los contraté para una noche en Zvolen. El chofer esperó mientras cenábamos y nos llevó de vuelta a la base con seguridad. ¡Eficiencia militar!',
-        bgColor: 'bg-military-blue',
+        initials: 'AG',
+        color: 'bg-secondary',
       },
       {
-        name: 'Teniente C. Fernández',
-        rank: 'Armada Española',
-        avatar: null,
-        fallback: 'CF',
+        name: 'Carlos F.',
+        role: 'Armada',
+        text: 'Sin preocupaciones por conducir después de unas cervezas. Son fiables, discretos y el precio es justo. Muy recomendable.',
         rating: 5,
-        text: 'La mejor inversión para el tiempo libre. Sin preocupaciones por conducir después de unas cervezas. ¡Servicio excelente!',
-        bgColor: 'bg-military-navy',
+        initials: 'CF',
+        color: 'bg-accent',
       },
+    ],
+    stats: [
+      { value: '200+', label: 'Pasajeros satisfechos' },
+      { value: '4.9', label: 'Valoración media' },
+      { value: '24/7', label: 'Disponible' },
     ],
   },
 } as const;
@@ -81,71 +81,52 @@ const TestimonialsSection = () => {
   const content = translations[language];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient-military">
-            {content.heading}
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground">{content.subheading}</p>
+    <section className="section-padding bg-muted/30">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-4 sm:mb-8">
+          <h2 className="heading-lg text-foreground mb-2">{content.heading}</h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">{content.subheading}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {content.testimonials.map((testimonial, index) => (
-            <Card
-              key={testimonial.name}
-              className="
-                bg-card/80 backdrop-blur-md border-l-4 border-secondary
-                hover:border-l-primary transition-all duration-300
-                hover-military slide-up
-              "
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <CardContent className="p-5 sm:p-6">
-                <div className="flex items-start gap-3 sm:gap-4 mb-4">
-                  <Avatar className="w-12 h-12 sm:w-16 sm:h-16 border-2 border-secondary">
-                    {testimonial.avatar && (
-                      <AvatarImage
-                        src={testimonial.avatar.src}
-                        alt={`${testimonial.name} - ${testimonial.rank}`}
-                      />
-                    )}
-                    <AvatarFallback className={`${testimonial.bgColor} text-white font-bold`}>
-                      {testimonial.fallback}
-                    </AvatarFallback>
-                  </Avatar>
+        {/* Testimonials - horizontal scroll on mobile */}
+        <div className="flex gap-3 overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 sm:gap-4 mb-6 sm:mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+          {content.testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="testimonial-card min-w-[280px] sm:min-w-0 p-4 sm:p-5">
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-2">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-secondary text-secondary" />
+                ))}
+              </div>
 
-                  <div className="flex-1">
-                    <div className="flex mb-1 sm:mb-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <span key={i} className="text-secondary text-base sm:text-xl">⭐</span>
-                      ))}
-                    </div>
+              {/* Text */}
+              <p className="text-foreground text-sm sm:text-base mb-3 leading-relaxed line-clamp-4 sm:line-clamp-none">
+                &ldquo;{testimonial.text}&rdquo;
+              </p>
 
-                    <p className="font-semibold sm:font-bold text-foreground text-sm sm:text-base">{testimonial.name}</p>
-                    <p className="text-xs sm:text-sm text-secondary font-medium">{testimonial.rank}</p>
-                  </div>
+              {/* Author */}
+              <div className="flex items-center gap-2">
+                <div className={`w-8 h-8 rounded-full ${testimonial.color} text-white font-bold flex items-center justify-center text-xs`}>
+                  {testimonial.initials}
                 </div>
-
-                <blockquote className="text-muted-foreground italic leading-relaxed text-sm">
-                  &ldquo;{testimonial.text}&rdquo;
-                </blockquote>
-              </CardContent>
-            </Card>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
+                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-10 sm:mt-12">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 bg-secondary/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-secondary/30 text-xs sm:text-sm">
-            {content.stats.map((stat, index) => (
-              <span key={stat} className="flex items-center gap-2 text-secondary font-semibold sm:font-bold">
-                {stat}
-                {index < content.stats.length - 1 && (
-                  <span className="hidden sm:inline w-px h-4 bg-secondary/30" aria-hidden="true" />
-                )}
-              </span>
-            ))}
-          </div>
+        {/* Stats */}
+        <div className="flex justify-center gap-6 sm:gap-12">
+          {content.stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="text-2xl sm:text-3xl font-black text-primary mb-0.5">{stat.value}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,121 +1,90 @@
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
-import militaryBadge from '@/assets/military-badge.webp';
-import restaurantImage from '@/assets/restaurant-bb.webp';
-import taxiImage from '@/assets/taxi-military.webp';
-import cityImage from '@/assets/banska-bystrica-night.webp';
+import { Car, Shield, Beer, Moon, Wallet, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    heading: 'Why choose TaxiForce?',
-    description:
-      'Specialised transfer unit dedicated to Spanish military personnel deployed at Lešť base with dispatch anchored at Slavia 1.',
+    heading: 'Why locals trust us',
+    description: 'We are not just another taxi. We understand military schedules, respect discretion, and know every road between the base and the cities.',
     features: [
       {
-        icon: '🚐',
-        title: 'Direct connection Lešť → Zvolen / Banská Bystrica',
-        description:
-          'We monitor troop movements and coordinate pick-ups at the Slavia 1 gate. Vehicles usually arrive within 30–40 minutes.',
-        image: taxiImage,
-        badge: '24/7 dispatch',
+        icon: Car,
+        title: 'Direct connection',
+        description: 'Lešť base to Zvolen in 35 min, Banská Bystrica in 50 min. We pick you up right at Slavia 1 gate.',
+        highlight: '24/7 dispatch',
       },
       {
-        icon: '🛡️',
-        title: 'NATO security standards',
-        description:
-          'All drivers are vetted, bound by confidentiality agreements and trained for both duty and leisure transfers.',
-        image: militaryBadge,
-        badge: 'Security cleared',
+        icon: Shield,
+        title: 'Security first',
+        description: 'All drivers are vetted and trained. Confidentiality is guaranteed for every ride.',
+        highlight: 'NATO standards',
       },
       {
-        icon: '🍻',
-        title: 'Local tips for the Spanish unit',
-        description:
-          'From tapas bars to nightclubs, we curate a trusted list of safe partner venues in both cities.',
-        image: restaurantImage,
-        badge: 'Insider tips',
+        icon: Beer,
+        title: 'Local knowledge',
+        description: 'Best tapas bars, nightclubs, restaurants - we know them all and can recommend the safe ones.',
+        highlight: 'Insider tips',
       },
       {
-        icon: '🌙',
-        title: 'Operations 24/7 including late returns',
-        description:
-          'Coverage for evening outings and early training deployments. Waiting time is tailored individually to your plan.',
-        image: cityImage,
-        badge: 'Night ready',
+        icon: Moon,
+        title: 'Night service',
+        description: 'Late returns, early morning pickups - we adapt to your schedule, not the other way around.',
+        highlight: 'Flexible hours',
       },
       {
-        icon: '💶',
-        title: 'Cash payments only',
-        description:
-          'Simple and transparent – pay in euros upon pick-up, card payments are not available.',
-        image: null,
-        badge: 'Payment info',
+        icon: Wallet,
+        title: 'Simple payment',
+        description: 'Cash only in EUR. No complicated apps, no hidden fees. You know the price upfront.',
+        highlight: 'Transparent',
       },
-       {
-         icon: '💬',
-         title: 'English communication',
-         description:
-           'Dispatch understands military terminology; drivers are ready to handle English communication professionally.',
-        image: null,
-        badge: 'Language support',
+      {
+        icon: MessageSquare,
+        title: 'English support',
+        description: 'Our dispatchers speak English and understand military terminology. Communication is never a problem.',
+        highlight: 'Clear comms',
       },
     ],
   },
   es: {
-    heading: '¿Por qué elegir TaxiForce?',
-    description:
-      'Unidad de traslados especializada para el personal militar español destacado en la base de Lešť con central operativa en Slavia 1.',
+    heading: 'Por qué confían en nosotros',
+    description: 'No somos solo un taxi. Entendemos los horarios militares, respetamos la discreción y conocemos cada carretera entre la base y las ciudades.',
     features: [
       {
-        icon: '🚐',
-        title: 'Conexión directa Lešť → Zvolen / Banská Bystrica',
-        description:
-          'Supervisamos los movimientos de la unidad y coordinamos recogidas en la puerta Slavia 1. El vehículo llega en 30–40 minutos.',
-        image: taxiImage,
-        badge: 'Central 24/7',
+        icon: Car,
+        title: 'Conexión directa',
+        description: 'Base de Lešť a Zvolen en 35 min, Banská Bystrica en 50 min. Te recogemos en la puerta Slavia 1.',
+        highlight: 'Central 24/7',
       },
       {
-        icon: '🛡️',
-        title: 'Estándares de seguridad OTAN',
-        description:
-          'Todos los conductores están verificados, sujetos a confidencialidad y formados para traslados de servicio y ocio.',
-        image: militaryBadge,
-        badge: 'Security cleared',
+        icon: Shield,
+        title: 'Seguridad primero',
+        description: 'Todos los conductores están verificados y formados. La confidencialidad está garantizada.',
+        highlight: 'Estándares OTAN',
       },
       {
-        icon: '🍻',
-        title: 'Recomendaciones locales para la unidad',
-        description:
-          'Desde bares de tapas hasta discotecas: lista de socios segura y de confianza en ambas ciudades.',
-        image: restaurantImage,
-        badge: 'Insider tips',
+        icon: Beer,
+        title: 'Conocimiento local',
+        description: 'Los mejores bares de tapas, discotecas, restaurantes - los conocemos todos y recomendamos los seguros.',
+        highlight: 'Tips locales',
       },
       {
-        icon: '🌙',
-        title: 'Operaciones 24/7 con regresos tardíos',
-        description:
-          'Cobertura para salidas nocturnas y despliegues tempranos. El tiempo de espera se ajusta a vuestro plan.',
-        image: cityImage,
-        badge: 'Night ready',
+        icon: Moon,
+        title: 'Servicio nocturno',
+        description: 'Regresos tardíos, recogidas de madrugada - nos adaptamos a tu horario.',
+        highlight: 'Horarios flexibles',
       },
       {
-        icon: '💶',
-        title: 'Pagos solo en efectivo',
-        description:
-          'Proceso sencillo y transparente: pagas en euros al subir, no disponible pago con tarjeta.',
-        image: null,
-        badge: 'Payment info',
+        icon: Wallet,
+        title: 'Pago simple',
+        description: 'Solo efectivo en EUR. Sin apps complicadas, sin cargos ocultos. Precio claro desde el inicio.',
+        highlight: 'Transparente',
       },
-       {
-         icon: '💬',
-         title: 'Comunicación en inglés',
-         description:
-           'La central conoce la terminología militar y los conductores manejan inglés de forma profesional.',
-        image: null,
-        badge: 'Language support',
+      {
+        icon: MessageSquare,
+        title: 'Soporte en inglés',
+        description: 'Nuestros operadores hablan inglés y entienden terminología militar. La comunicación nunca es un problema.',
+        highlight: 'Comunicación clara',
       },
     ],
   },
@@ -126,66 +95,42 @@ const FeaturesSection = () => {
   const content = translations[language];
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-background to-muted">
+    <section className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient-gold">
-            {content.heading}
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-6 sm:mb-10">
+          <h2 className="heading-lg text-foreground mb-2">{content.heading}</h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">
             {content.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 min-[360px]:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        {/* Features grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {content.features.map((feature, index) => (
-            <Card
+            <div
               key={feature.title}
-              className="
-                relative bg-card/60 backdrop-blur-md border-border/50
-                hover:border-secondary/60 transition-all duration-300
-                hover-military slide-up group overflow-hidden
-              "
+              className="card-warm p-3 sm:p-5 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {feature.badge && (
-                <span className="absolute top-3 right-3 text-[9px] sm:text-[10px] font-bold tracking-widest uppercase bg-secondary/20 text-secondary px-2 py-1 rounded-full border border-secondary/40">
-                  {feature.badge}
-                </span>
-              )}
-
-              <CardContent className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4">
-                {feature.image && (
-                  <div className="w-full h-24 sm:h-28 md:h-32 rounded-lg border border-secondary/20 overflow-hidden relative">
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      loading="lazy"
-                      className="object-cover object-center"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      quality={75}
-                    />
-                  </div>
-                )}
-
-                <div className="text-center space-y-2 sm:space-y-3">
-                  <div className="text-2xl sm:text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
-                  </div>
-
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-secondary leading-snug">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  <div className="h-1 bg-gradient-to-r from-primary via-secondary to-primary mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Icon and highlight */}
+              <div className="flex items-start justify-between mb-2 sm:mb-3">
+                <div className="icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-lg">
+                  <feature.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-              </CardContent>
-            </Card>
+                <span className="text-[10px] sm:text-xs font-semibold text-secondary bg-secondary/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                  {feature.highlight}
+                </span>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-sm sm:text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed hidden sm:block">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

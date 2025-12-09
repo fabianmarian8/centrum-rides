@@ -1,55 +1,59 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    heading: 'Frequently asked questions',
-    description:
-      'Clear answers in English for the military contingent operating from Lešť. Here are the most common questions we receive.',
+    heading: 'Common questions',
+    description: 'Everything you need to know about booking a ride with us.',
     faqs: [
       {
         question: 'How fast can you reach Lešť base?',
-        answer:
-          'We usually depart within 30-40 minutes after confirmation. Drivers remain staged near Slavia 1 and we activate additional vehicles during large exercises.',
-        note: '¿Cuánto tardan en llegar a la base de Lešť? — Salimos en un máximo de 30-40 minutos tras la confirmación, incluso durante maniobras.',
+        answer: 'We usually depart within 30-40 minutes after confirmation. Our drivers stay near Slavia 1 gate, ready to go.',
       },
       {
-        question: 'What if the unit schedule changes?',
-        answer:
-          'We stay in touch with logistics officers and adjust transfers without extra fees. Drivers remain on standby in town.',
-        note: '¿Qué pasa si cambia el horario? — Coordinamos con logística y ajustamos la vuelta sin coste adicional.',
+        question: 'What if our schedule changes?',
+        answer: 'No problem. We stay in touch with your unit and adjust the transfer without extra fees. Flexibility is part of our service.',
       },
       {
-        question: 'How much is waiting time during dinner?',
-        answer: 'Thirty minutes are included. Each additional hour is €15, with the driver waiting close to the venue.',
-        note: '¿Cuál es el precio por la espera? — 30 minutos incluidos; cada hora adicional 15 €, con el chofer cerca del restaurante.',
+        question: 'How much for waiting time?',
+        answer: 'First 30 minutes are included. After that, it is 15 EUR per hour. The driver waits nearby.',
+      },
+      {
+        question: 'Do you accept card payments?',
+        answer: 'We only accept cash in EUR. Simple, no complications. You will know the price before we start.',
+      },
+      {
+        question: 'Can you recommend places to go?',
+        answer: 'Absolutely. We know all the good spots in Zvolen and Banská Bystrica - bars, restaurants, clubs. Just ask.',
       },
     ],
   },
   es: {
     heading: 'Preguntas frecuentes',
-    description:
-      'Respuestas claras en inglés para el contingente destacado en Lešť. Estas son las consultas que recibimos con más frecuencia.',
+    description: 'Todo lo que necesitas saber para reservar con nosotros.',
     faqs: [
       {
-        question: '¿En cuánto tiempo pueden llegar a la base de Lešť?',
-        answer:
-          'Salimos normalmente en un máximo de 30-40 minutos tras confirmar la reserva. El conductor permanece ubicado junto a Slavia 1 y en grandes maniobras activamos vehículos de refuerzo.',
-        note: 'How fast can you reach Lešť base? — We depart within 30-40 minutes after confirmation, even during exercises.',
+        question: '¿En cuánto tiempo pueden llegar a la base?',
+        answer: 'Normalmente salimos en 30-40 minutos tras confirmar. Nuestros conductores están cerca de la puerta Slavia 1.',
       },
       {
-        question: '¿Qué ocurre si cambia el horario de la unidad?',
-        answer:
-          'Estamos en contacto con logística y reajustamos el traslado sin cargos adicionales. El conductor permanece en la ciudad en espera.',
-        note: 'What if the unit schedule changes? — We coordinate with logistics and reschedule without extra fees.',
+        question: '¿Y si cambia nuestro horario?',
+        answer: 'Sin problema. Coordinamos con tu unidad y ajustamos el traslado sin cargos extra. La flexibilidad es parte del servicio.',
       },
       {
-        question: '¿Cuál es el precio por el tiempo de espera durante la cena?',
-        answer:
-          'Incluimos 30 minutos. Cada hora adicional son 15 €, con el chofer esperando cerca del lugar.',
-        note: 'How much is waiting time during dinner? — 30 minutes included; each extra hour is €15 with the driver nearby.',
+        question: '¿Cuánto cuesta el tiempo de espera?',
+        answer: 'Los primeros 30 minutos están incluidos. Después, 15 EUR por hora. El conductor espera cerca.',
+      },
+      {
+        question: '¿Aceptáis pago con tarjeta?',
+        answer: 'Solo efectivo en EUR. Simple, sin complicaciones. Sabrás el precio antes de empezar.',
+      },
+      {
+        question: '¿Podéis recomendar sitios?',
+        answer: 'Por supuesto. Conocemos todos los buenos sitios en Zvolen y Banská Bystrica - bares, restaurantes, discotecas. Solo pregunta.',
       },
     ],
   },
@@ -58,6 +62,7 @@ const translations = {
 const FaqSection = () => {
   const { language } = useLanguage();
   const content = translations[language];
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   // FAQPage Schema.org JSON-LD
   const faqSchema = {
@@ -74,36 +79,45 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-secondary/5 via-background to-primary/5">
-      {/* JSON-LD Schema for FAQPage */}
+    <section className="section-padding bg-muted/30">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12 space-y-3">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-military">{content.heading}</h2>
-          <p className="text-base sm:text-lg text-muted-foreground">{content.description}</p>
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-4 sm:mb-8">
+          <h2 className="heading-lg text-foreground mb-2">{content.heading}</h2>
+          <p className="text-muted-foreground text-sm sm:text-base">{content.description}</p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+        {/* FAQ items */}
+        <div className="space-y-2">
           {content.faqs.map((faq, index) => (
-            <AccordionItem
+            <div
               key={faq.question}
-              value={`faq-${index}`}
-              className="border border-secondary/30 rounded-2xl overflow-hidden bg-card/60 backdrop-blur"
+              className="card-warm overflow-hidden"
             >
-              <AccordionTrigger className="px-4 sm:px-6 text-left text-sm sm:text-lg font-semibold text-secondary">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="px-4 sm:px-6 pb-5 sm:pb-6 space-y-2 sm:space-y-3">
-                <p className="text-sm text-muted-foreground leading-relaxed sm:text-base">{faq.answer}</p>
-                <p className="text-[11px] sm:text-sm text-secondary/80 italic">{faq.note}</p>
-              </AccordionContent>
-            </AccordionItem>
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-3 sm:p-4 text-left"
+              >
+                <span className="font-semibold text-foreground pr-3 text-sm sm:text-base">{faq.question}</span>
+                <ChevronDown
+                  className={`w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0 transition-transform duration-200 ${
+                    openIndex === index ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {openIndex === index && (
+                <div className="px-3 pb-3 sm:px-4 sm:pb-4">
+                  <p className="text-muted-foreground leading-relaxed text-sm">{faq.answer}</p>
+                </div>
+              )}
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

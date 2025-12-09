@@ -1,40 +1,31 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage, type Language } from '@/contexts/LanguageContext';
-import { useIsMobile } from '@/hooks/use-mobile';
 
-const languages: { label: string; labelShort: string; value: Language }[] = [
-  { label: 'English', labelShort: 'EN', value: 'en' },
-  { label: 'Español', labelShort: 'ES', value: 'es' },
+const languages: { label: string; value: Language }[] = [
+  { label: 'EN', value: 'en' },
+  { label: 'ES', value: 'es' },
 ];
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
-  const isMobile = useIsMobile();
 
   return (
-    <div className={cn(
-      "flex items-center rounded-full bg-black/70 backdrop-blur",
-      isMobile ? "gap-1 px-1 py-2" : "gap-2 px-2 py-2"
-    )}>
-      {languages.map(({ label, labelShort, value }) => (
-        <Button
+    <div className="flex items-center gap-1 bg-white/10 rounded-full p-1">
+      {languages.map(({ label, value }) => (
+        <button
           key={value}
-          variant="ghost"
-          size="sm"
           className={cn(
-            'rounded-full border border-transparent font-semibold uppercase tracking-wide text-white transition-all',
-            isMobile ? 'text-xs px-2' : 'text-xs px-3',
+            'px-3 py-1.5 rounded-full text-sm font-medium transition-all',
             language === value
-              ? 'bg-secondary text-secondary-foreground shadow-lg'
-              : 'hover:bg-white/10 hover:text-white'
+              ? 'bg-yellow-500 text-black'
+              : 'text-white/70 hover:text-white'
           )}
           onClick={() => setLanguage(value)}
         >
-          {isMobile ? labelShort : label}
-        </Button>
+          {label}
+        </button>
       ))}
     </div>
   );
