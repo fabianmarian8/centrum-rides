@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import heroImage from '@/assets/hero-military.webp';
+import heroImageSm from '@/assets/optimized/hero-military-sm.webp';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
@@ -82,16 +83,26 @@ const HeroSection = () => {
       className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center text-center bg-hero-pattern"
       role="banner"
     >
-      {/* Optimized background image with next/image */}
+      {/* Responsive hero images - mobile version for faster LCP */}
+      <Image
+        src={heroImageSm}
+        alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
+        fill
+        priority
+        quality={75}
+        className="object-cover object-center md:hidden"
+        style={{ position: 'absolute', zIndex: 0 }}
+        sizes="(max-width: 768px) 100vw, 0vw"
+      />
       <Image
         src={heroImage}
         alt="Military taxi service at Lešť NATO base - Professional transport for Spanish military personnel"
         fill
         priority
         quality={85}
-        className="object-cover object-center"
+        className="object-cover object-center hidden md:block"
         style={{ position: 'absolute', zIndex: 0 }}
-        sizes="100vw"
+        sizes="(min-width: 769px) 100vw, 0vw"
       />
 
       {/* Single combined overlay for better performance */}
@@ -153,14 +164,14 @@ const HeroSection = () => {
             size="lg"
             className="
               button-3d
-              bg-[#25D366] text-white
-              hover:bg-[#1ebe5d]
+              bg-[#128C7E] text-white
+              hover:bg-[#0d6b61]
               px-6 py-3 text-base sm:text-lg font-semibold rounded-full
               shadow-xl transition-all duration-300
             "
             asChild
           >
-            <a href="https://wa.me/421902048583">
+            <a href="https://wa.me/421902048583" aria-label="WhatsApp booking">
               💬 {content.whatsappCta}
             </a>
           </Button>

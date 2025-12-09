@@ -107,13 +107,13 @@ const ContactSection = () => {
               <Button
                 size="lg"
                 className="
-                  bg-[#25D366] text-white
-                  hover:bg-[#1ebe5d]
+                  bg-[#128C7E] text-white
+                  hover:bg-[#0d6b61]
                   font-bold py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl
                 "
                 asChild
               >
-                <a href="https://wa.me/421902048583">💬 {content.whatsappButton}</a>
+                <a href="https://wa.me/421902048583" aria-label="WhatsApp booking">💬 {content.whatsappButton}</a>
               </Button>
             </div>
           </CardContent>

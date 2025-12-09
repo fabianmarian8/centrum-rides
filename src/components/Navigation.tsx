@@ -22,16 +22,17 @@ const Navigation = () => {
       isVisible ? "nav-visible" : "nav-hidden"
     )}>
       <DriverStatus />
-      <Link href="/blog">
-        <Button 
-          variant="ghost" 
-          size="sm" 
+      <Link href="/blog" aria-label="Blog">
+        <Button
+          variant="ghost"
+          size="sm"
+          aria-label={isMobile ? "Blog" : undefined}
           className={cn(
             "rounded-full bg-black/70 backdrop-blur text-white hover:bg-white/10",
             isMobile ? "px-2 py-2" : "px-3 py-2"
           )}
         >
-          <FileText className={cn("w-4 h-4", !isMobile && "mr-2")} />
+          <FileText className={cn("w-4 h-4", !isMobile && "mr-2")} aria-hidden="true" />
           {!isMobile && "Blog"}
         </Button>
       </Link>

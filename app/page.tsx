@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import RouteSection from '@/components/RouteSection';
-import OperationsSection from '@/components/OperationsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import FaqSection from '@/components/FaqSection';
-import SeoContentSection from '@/components/SeoContentSection';
-import ContactSection from '@/components/ContactSection';
 import Navigation from '@/components/Navigation';
+
+// Dynamic imports for below-fold components - reduces initial JS bundle
+const FeaturesSection = dynamic(() => import('@/components/FeaturesSection'));
+const RouteSection = dynamic(() => import('@/components/RouteSection'));
+const OperationsSection = dynamic(() => import('@/components/OperationsSection'));
+const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection'));
+const FaqSection = dynamic(() => import('@/components/FaqSection'));
+const SeoContentSection = dynamic(() => import('@/components/SeoContentSection'));
+const ContactSection = dynamic(() => import('@/components/ContactSection'));
 
 export const metadata: Metadata = {
   title: 'Military Taxi Lešť Base Slovakia | 24/7 NATO Transport Service | TaxiForce',

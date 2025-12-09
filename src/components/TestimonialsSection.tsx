@@ -122,7 +122,7 @@ const TestimonialsSection = () => {
                       ))}
                     </div>
 
-                    <h4 className="font-semibold sm:font-bold text-foreground text-sm sm:text-base">{testimonial.name}</h4>
+                    <p className="font-semibold sm:font-bold text-foreground text-sm sm:text-base">{testimonial.name}</p>
                     <p className="text-xs sm:text-sm text-secondary font-medium">{testimonial.rank}</p>
                   </div>
                 </div>
