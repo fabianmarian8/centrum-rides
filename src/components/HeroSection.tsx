@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, MessageCircle, Clock, Users, Banknote, MapPin } from 'lucide-react';
+import { Phone, MessageCircle, Clock, MapPin, Plane } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
@@ -14,8 +14,8 @@ const translations = {
     stats: [
       { icon: MapPin, label: 'Zvolen', value: '40 €' },
       { icon: MapPin, label: 'B. Bystrica', value: '65 €' },
-      { icon: Users, label: 'Capacity', value: 'Up to 4' },
-      { icon: Banknote, label: 'Payment', value: 'Cash EUR' },
+      { icon: Plane, label: 'Budapest', value: '160 €' },
+      { icon: Plane, label: 'Vienna airport', value: '240 €' },
     ],
     available: 'Available 24/7',
   },
@@ -29,8 +29,8 @@ const translations = {
     stats: [
       { icon: MapPin, label: 'Zvolen', value: '40 €' },
       { icon: MapPin, label: 'B. Bystrica', value: '65 €' },
-      { icon: Users, label: 'Capacidad', value: 'Hasta 4' },
-      { icon: Banknote, label: 'Pago', value: 'Efectivo EUR' },
+      { icon: Plane, label: 'Budapest', value: '160 €' },
+      { icon: Plane, label: 'Aeropuerto Viena', value: '240 €' },
     ],
     available: 'Disponible 24/7',
   },

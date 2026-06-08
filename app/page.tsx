@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 
 // Dynamic imports for below-fold components - reduces initial JS bundle
 const FeaturesSection = dynamic(() => import('@/components/FeaturesSection'));
+const FleetSection = dynamic(() => import('@/components/FleetSection'));
 const RouteSection = dynamic(() => import('@/components/RouteSection'));
 const OperationsSection = dynamic(() => import('@/components/OperationsSection'));
 const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection'));
@@ -86,8 +87,9 @@ export default function HomePage() {
       />
 
       <Navigation />
-      <main>
+      <main className="pt-16">
         <HeroSection />
+        <FleetSection />
         <FeaturesSection />
         <RouteSection />
         <OperationsSection />
