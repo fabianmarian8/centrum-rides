@@ -2,56 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TaxiForce - Friendly Local Taxi Service
-   Organic & Warm Design System
-   Font: Satoshi (characterful, friendly)
-*/
-
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 
 @layer base {
   :root {
-    /* Warm, inviting palette */
-    --background: 40 33% 98%;
-    --foreground: 25 25% 15%;
-
-    /* Card System - soft, warm */
-    --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
-
-    /* Primary - Warm olive green (trust, reliability) */
-    --primary: 85 35% 35%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary - Warm amber/orange (friendly, approachable) */
-    --secondary: 35 90% 55%;
-    --secondary-foreground: 25 25% 15%;
-
-    /* Accent - Soft terracotta for CTAs */
-    --accent: 15 70% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 40 20% 94%;
-    --muted-foreground: 25 15% 45%;
-
+    --background: 165 18% 4%;
+    --foreground: 48 30% 94%;
+    --card: 150 14% 8%;
+    --card-foreground: 48 30% 94%;
+    --popover: 150 14% 8%;
+    --popover-foreground: 48 30% 94%;
+    --primary: 46 92% 53%;
+    --primary-foreground: 30 16% 7%;
+    --secondary: 85 25% 32%;
+    --secondary-foreground: 48 30% 94%;
+    --accent: 31 92% 51%;
+    --accent-foreground: 30 16% 7%;
+    --muted: 150 12% 12%;
+    --muted-foreground: 48 12% 68%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 85 35% 35%;
-
+    --border: 48 30% 18%;
+    --input: 48 30% 18%;
+    --ring: 46 92% 53%;
+    --military-green: 88 27% 25%;
+    --military-blue: 210 20% 24%;
+    --military-navy: 160 18% 6%;
     --radius: 1rem;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   html {
     font-size: 100%;
@@ -62,191 +42,125 @@
     @apply bg-background text-foreground;
     font-family: 'Satoshi', system-ui, sans-serif;
     font-feature-settings: 'ss01' on, 'ss02' on;
-  }
-
-  /* Respect user preferences */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+    background: #050606;
+    min-height: 100vh;
   }
 }
 
 @layer components {
-  /* Soft, organic card style */
   .card-warm {
-    @apply bg-card rounded-2xl border border-border/50;
-    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @apply rounded-2xl border border-yellow-400/15 bg-card/80 text-card-foreground backdrop-blur;
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
   .card-warm:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.1);
+    border-color: rgba(246, 194, 26, 0.35);
+    box-shadow: 0 26px 58px -28px rgba(0, 0, 0, 0.95);
   }
 
-  /* Friendly button style */
   .btn-friendly {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3;
-    @apply font-semibold rounded-full;
-    @apply transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-black rounded-xl transition-all duration-300;
   }
 
-  .btn-friendly:hover {
-    transform: translateY(-2px);
-  }
+  .btn-friendly:hover { transform: translateY(-2px); }
+  .btn-friendly:active { transform: translateY(0); }
 
-  .btn-friendly:active {
-    transform: translateY(0);
-  }
-
-  /* Primary CTA */
   .btn-primary {
-    @apply btn-friendly bg-accent text-accent-foreground;
-    box-shadow: 0 4px 14px -2px hsl(var(--accent) / 0.4);
+    @apply btn-friendly bg-primary text-primary-foreground;
+    box-shadow: 0 0 26px rgba(246, 194, 26, 0.28);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 8px 20px -2px hsl(var(--accent) / 0.5);
+    box-shadow: 0 0 34px rgba(246, 194, 26, 0.4);
+    filter: brightness(1.05);
   }
 
-  /* Secondary button */
   .btn-secondary {
-    @apply btn-friendly bg-primary text-primary-foreground;
-    box-shadow: 0 4px 14px -2px hsl(var(--primary) / 0.3);
+    @apply btn-friendly bg-secondary text-secondary-foreground;
+    box-shadow: 0 4px 18px -6px rgba(92, 111, 63, 0.65);
   }
 
-  /* WhatsApp button */
   .btn-whatsapp {
     @apply btn-friendly text-white;
     background-color: #25D366;
-    box-shadow: 0 4px 14px -2px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 0 24px rgba(37, 211, 102, 0.28);
   }
 
   .btn-whatsapp:hover {
     background-color: #22c55e;
-    box-shadow: 0 8px 20px -2px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 34px rgba(37, 211, 102, 0.38);
   }
 
-  /* Section spacing */
-  .section-padding {
-    @apply py-8 sm:py-12 md:py-20 px-4 sm:px-6 lg:px-8;
-  }
+  .section-padding { @apply py-10 sm:py-14 md:py-24 px-4 sm:px-6 lg:px-8; }
 
-  /* Heading styles */
   .heading-xl {
     @apply text-3xl sm:text-4xl md:text-5xl font-black tracking-tight;
-    line-height: 1.1;
+    line-height: 1.08;
   }
 
-  .heading-lg {
-    @apply text-2xl sm:text-3xl font-bold tracking-tight;
-  }
+  .heading-lg { @apply text-2xl sm:text-3xl md:text-4xl font-black tracking-tight; }
+  .heading-md { @apply text-lg sm:text-xl font-black; }
 
-  .heading-md {
-    @apply text-lg sm:text-xl font-bold;
-  }
-
-  /* Organic blob decoration */
   .blob {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: blob-morph 8s ease-in-out infinite;
   }
 
   @keyframes blob-morph {
-    0%, 100% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    50% {
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    }
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
   }
 
-  /* Subtle fade in */
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
+  .fade-in { animation: fadeIn 0.6s ease-out forwards; }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Status indicator */
   .status-dot {
     @apply w-2.5 h-2.5 rounded-full bg-green-500;
     animation: pulse-soft 2s ease-in-out infinite;
   }
 
   @keyframes pulse-soft {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.7;
-      transform: scale(1.1);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
   }
 
-  /* Badge style */
   .badge-warm {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
-    @apply bg-secondary/10 text-secondary border border-secondary/20;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold bg-yellow-400/10 text-yellow-300 border border-yellow-400/25;
   }
 
-  /* Feature icon container */
   .icon-container {
-    @apply w-12 h-12 rounded-xl flex items-center justify-center;
-    @apply bg-primary/10 text-primary;
+    @apply w-12 h-12 rounded-xl flex items-center justify-center bg-yellow-400/10 text-yellow-300 border border-yellow-400/20;
   }
 
-  /* Testimonial card */
   .testimonial-card {
-    @apply bg-card rounded-2xl p-6 border-l-4 border-secondary;
-    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+    @apply bg-card/80 rounded-2xl p-6 border-l-4 border-primary backdrop-blur;
+    box-shadow: 0 18px 44px -28px rgba(0, 0, 0, 0.95);
   }
 
-  /* Striped Logo Text Style - like LEST TAXI */
   .striped-logo {
     font-family: 'Satoshi', 'Arial Black', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.75rem;
     line-height: 1;
-    transform: scaleY(1.3);
+    transform: scaleY(1.28);
     transform-origin: center;
-
-    /* Create striped background with smaller stripes - white text with thin dark lines */
-    background: repeating-linear-gradient(
-      to bottom,
-      white 0px,
-      white 3px,
-      transparent 3px,
-      transparent 6px
-    );
-
-    /* Clip background to text shape */
+    letter-spacing: 0.05em;
+    background: repeating-linear-gradient(to bottom, #f7c51d 0px, #f7c51d 3px, transparent 3px, transparent 6px);
     -webkit-background-clip: text;
     background-clip: text;
-
-    /* Make text transparent to show background */
     color: transparent;
-
     display: inline-block;
+    filter: drop-shadow(0 0 16px rgba(246, 194, 26, 0.22));
   }
 
   @media (min-width: 640px) {
-    .striped-logo {
-      font-size: 2.25rem;
-    }
+    .striped-logo { font-size: 2.25rem; }
   }
 }
