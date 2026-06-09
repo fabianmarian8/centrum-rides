@@ -44,12 +44,25 @@ const HeroSection = () => {
     <section className="relative min-h-[90vh] flex items-center" role="banner">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-bg.webp"
-          alt="Professional taxi service for military personnel"
-          className="w-full h-full object-cover object-[center_60%] brightness-[0.7]"
-          fetchPriority="high"
-        />
+        <picture className="block w-full h-full">
+          {/* Mobil: vertikálny (portrait) výrez – autá + hrad, aby kompozícia nezanikla */}
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/hero-bg-portrait-sm.webp 720w, /images/hero-bg-portrait.webp 1080w"
+            sizes="100vw"
+          />
+          {/* Tablet/desktop: landscape 16:9 */}
+          <source
+            srcSet="/images/hero-bg-sm.webp 1280w, /images/hero-bg-1920.webp 1920w, /images/hero-bg.webp 3840w"
+            sizes="100vw"
+          />
+          <img
+            src="/images/hero-bg.webp"
+            alt="Professional taxi service for military personnel"
+            className="w-full h-full object-cover object-center md:object-[center_60%] brightness-[0.7]"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
 
       {/* Decorative blob */}
