@@ -80,7 +80,7 @@ const HeroSection = () => {
           </p>
 
           {/* Description */}
-          <p className="text-lg text-white/90 mb-32 sm:mb-8 max-w-xl leading-relaxed fade-in drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-white/90 mb-52 sm:mb-8 max-w-xl leading-relaxed fade-in drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.2s' }}>
             {content.description}
           </p>
 
