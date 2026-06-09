@@ -1,36 +1,44 @@
 'use client';
 
-import { Phone, MessageCircle, Clock, MapPin, Plane } from 'lucide-react';
+import { Phone, MessageCircle, Clock, ShieldCheck, UserCheck, Route, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    badge: 'Trusted by 200+ military personnel',
     heading: 'Your reliable ride from Lešť base',
     subheading: 'to Zvolen & Banská Bystrica',
-    description: 'Professional taxi service for NATO personnel. Safe, discreet, available 24/7. We know the routes, we respect the schedule.',
     callCta: 'Call now',
     whatsappCta: 'WhatsApp',
-    stats: [
-      { icon: MapPin, label: 'Zvolen', value: '40 €' },
-      { icon: MapPin, label: 'B. Bystrica', value: '65 €' },
-      { icon: Plane, label: 'Budapest', value: '160 €' },
-      { icon: Plane, label: 'Vienna airport', value: '240 €' },
+    features: [
+      { icon: Clock, label: 'Available 24/7' },
+      { icon: ShieldCheck, label: 'Discreet & professional' },
+      { icon: UserCheck, label: 'Trusted drivers' },
+      { icon: Route, label: 'Known routes, always on time' },
+    ],
+    routes: [
+      { to: 'Zvolen', price: '40 €' },
+      { to: 'B. Bystrica', price: '65 €' },
+      { to: 'Budapest', price: '160 €' },
+      { to: 'Vienna', price: '240 €' },
     ],
     available: 'Available 24/7',
   },
   es: {
-    badge: 'Más de 200 militares confían en nosotros',
     heading: 'Tu transporte fiable desde la base de Lešť',
     subheading: 'a Zvolen y Banská Bystrica',
-    description: 'Servicio de taxi profesional para personal de la OTAN. Seguro, discreto, disponible 24/7. Conocemos las rutas, respetamos el horario.',
     callCta: 'Llamar ahora',
     whatsappCta: 'WhatsApp',
-    stats: [
-      { icon: MapPin, label: 'Zvolen', value: '40 €' },
-      { icon: MapPin, label: 'B. Bystrica', value: '65 €' },
-      { icon: Plane, label: 'Budapest', value: '160 €' },
-      { icon: Plane, label: 'Aeropuerto Viena', value: '240 €' },
+    features: [
+      { icon: Clock, label: 'Disponible 24/7' },
+      { icon: ShieldCheck, label: 'Discreto y profesional' },
+      { icon: UserCheck, label: 'Conductores de confianza' },
+      { icon: Route, label: 'Rutas conocidas, siempre a tiempo' },
+    ],
+    routes: [
+      { to: 'Zvolen', price: '40 €' },
+      { to: 'B. Bystrica', price: '65 €' },
+      { to: 'Budapest', price: '160 €' },
+      { to: 'Viena', price: '240 €' },
     ],
     available: 'Disponible 24/7',
   },
@@ -41,7 +49,7 @@ const HeroSection = () => {
   const content = translations[language];
 
   return (
-    <section className="relative min-h-[88vh] flex items-start md:items-center" role="banner">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col" role="banner">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <picture className="block w-full h-full">
@@ -65,27 +73,36 @@ const HeroSection = () => {
         </picture>
       </div>
 
-      {/* Decorative blob */}
-      <div className="absolute top-20 right-10 w-64 h-64 bg-secondary/20 blob opacity-60 blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-48 h-48 bg-primary/20 blob opacity-40 blur-2xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:py-20">
+      {/* Content column */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center pt-8 pb-4">
         <div className="max-w-2xl">
+          {/* Decorative gold line (rebrand 2026) */}
+          <span className="gold-line mb-5 fade-in" style={{ animationDelay: '0.05s' }} />
+
           {/* Main heading */}
-          <h1 className="heading-xl text-white mb-2 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.1s' }}>
+          <h1 className="heading-military text-4xl sm:text-5xl lg:text-6xl text-white mb-3 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.1s' }}>
             {content.heading}
           </h1>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-4 sm:mb-6 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.15s' }}>
+          <p className="heading-military text-xl sm:text-2xl md:text-3xl text-yellow-400 mb-6 sm:mb-8 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.15s' }}>
             {content.subheading}
           </p>
 
-          {/* Description */}
-          <p className="text-lg text-white/90 mb-52 sm:mb-8 max-w-xl leading-relaxed fade-in drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.2s' }}>
-            {content.description}
-          </p>
+          {/* Feature icons */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-5 mb-40 sm:mb-10 max-w-xl fade-in" style={{ animationDelay: '0.2s' }}>
+            {content.features.map((f) => (
+              <div key={f.label} className="flex flex-col items-center text-center gap-2">
+                <span className="w-12 h-12 rounded-full border border-yellow-500/40 bg-black/30 backdrop-blur-sm flex items-center justify-center text-yellow-500 shrink-0">
+                  <f.icon className="w-5 h-5" />
+                </span>
+                <span className="text-[11px] leading-tight uppercase tracking-wide text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                  {f.label}
+                </span>
+              </div>
+            ))}
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-6 sm:gap-4 sm:mb-10 fade-in" style={{ animationDelay: '0.25s' }}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 fade-in" style={{ animationDelay: '0.25s' }}>
             <a href="tel:+421919040118" className="btn-primary text-base sm:text-lg py-2.5 sm:py-3">
               <Phone className="w-5 h-5" />
               {content.callCta}
@@ -95,32 +112,35 @@ const HeroSection = () => {
               {content.whatsappCta}
             </a>
           </div>
+        </div>
+      </div>
 
-          {/* Quick stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 fade-in" style={{ animationDelay: '0.3s' }}>
-            {content.stats.map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left bg-black/40 backdrop-blur-sm rounded-xl p-3">
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-yellow-400 mb-1">
-                  <stat.icon className="w-4 h-4" />
-                  <span className="text-xs text-white/80 uppercase tracking-wide">{stat.label}</span>
-                </div>
-                <p className="text-lg font-bold text-white">{stat.value}</p>
+      {/* Price cards pinned to bottom of hero */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl fade-in" style={{ animationDelay: '0.3s' }}>
+          {content.routes.map((r) => (
+            <div key={r.to} className="bg-black/55 backdrop-blur-sm rounded-xl border border-yellow-500/25 px-4 py-3">
+              <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wide mb-1">
+                <span className="text-yellow-500 font-semibold">Lešť</span>
+                <ArrowRight className="w-3 h-3 text-yellow-500/70" />
+                <span className="text-white/70">{r.to}</span>
               </div>
-            ))}
-          </div>
+              <p className="heading-military text-2xl sm:text-3xl text-white">{r.price}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Floating availability badge - bottom right on desktop */}
-      <div className="hidden lg:flex absolute bottom-10 right-10 items-center gap-3 bg-card/90 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-lg border border-border/50 fade-in" style={{ animationDelay: '0.4s' }}>
+      <div className="hidden lg:flex absolute bottom-10 right-8 z-10 items-center gap-3 bg-black/55 backdrop-blur-sm rounded-2xl px-5 py-3 border border-yellow-500/25 fade-in" style={{ animationDelay: '0.4s' }}>
         <div className="flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-primary" />
-          <span className="font-medium">Lešť, Slavia 1</span>
+          <MapPin className="w-5 h-5 text-yellow-500" />
+          <span className="font-medium text-white">Lešť, Slavia 1</span>
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-white/20" />
         <div className="flex items-center gap-2">
           <span className="status-dot" />
-          <span className="font-medium text-primary">{content.available}</span>
+          <span className="font-medium text-yellow-400">{content.available}</span>
         </div>
       </div>
     </section>

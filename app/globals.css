@@ -30,9 +30,9 @@
     --secondary: 35 90% 55%;
     --secondary-foreground: 25 25% 15%;
 
-    /* Accent - Soft terracotta for CTAs */
-    --accent: 15 70% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Military gold for CTAs (rebrand 2026) */
+    --accent: 43 74% 49%;
+    --accent-foreground: 30 35% 10%;
 
     --muted: 40 20% 94%;
     --muted-foreground: 25 15% 45%;
@@ -139,6 +139,19 @@
   .heading-xl {
     @apply text-3xl sm:text-4xl md:text-5xl font-black tracking-tight;
     line-height: 1.1;
+  }
+
+  /* Military condensed display heading (rebrand 2026) */
+  .heading-military {
+    font-family: var(--font-oswald), 'Oswald', 'Arial Narrow', sans-serif;
+    @apply font-bold uppercase tracking-wide;
+    line-height: 1.02;
+  }
+
+  /* Decorative gold accent line above hero heading */
+  .gold-line {
+    @apply block h-[3px] w-16 rounded-full;
+    background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent) / 0.15));
   }
 
   .heading-lg {

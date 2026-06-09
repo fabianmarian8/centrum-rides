@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Inter, Poppins, Oswald } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import HtmlLangUpdater from '@/components/HtmlLangUpdater';
@@ -14,6 +14,14 @@ const poppins = Poppins({
   weight: ['600', '700'],
   subsets: ['latin'],
   variable: '--font-poppins',
+  display: 'swap',
+});
+
+// Military condensed display font for headings + logo (rebrand 2026)
+const oswald = Oswald({
+  weight: ['500', '600', '700'],
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-oswald',
   display: 'swap',
 });
 
@@ -173,7 +181,7 @@ export default function RootLayout({
         </Script>
         */}
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <body className={`${inter.variable} ${poppins.variable} ${oswald.variable} font-sans`}>
         <Providers>
           <HtmlLangUpdater />
           {children}

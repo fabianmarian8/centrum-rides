@@ -87,16 +87,16 @@ export default function HomePage() {
       />
 
       <Navigation />
-      <main className="pt-14 sm:pt-16">
+      <main id="top" className="pt-16 sm:pt-20">
         <HeroSection />
         <FleetSection />
-        <FeaturesSection />
-        <RouteSection />
-        <OperationsSection />
+        <div id="servicios" className="scroll-mt-24"><FeaturesSection /></div>
+        <div id="rutas" className="scroll-mt-24"><RouteSection /></div>
+        <div id="nosotros" className="scroll-mt-24"><OperationsSection /></div>
         <TestimonialsSection />
         <FaqSection />
         <SeoContentSection />
-        <ContactSection />
+        <div id="contacto" className="scroll-mt-24"><ContactSection /></div>
       </main>
     </div>
   );
