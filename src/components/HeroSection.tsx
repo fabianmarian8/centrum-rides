@@ -41,7 +41,7 @@ const HeroSection = () => {
   const content = translations[language];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center" role="banner">
+    <section className="relative min-h-[88vh] flex items-start md:items-center" role="banner">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <picture className="block w-full h-full">
@@ -69,28 +69,28 @@ const HeroSection = () => {
       <div className="absolute top-20 right-10 w-64 h-64 bg-secondary/20 blob opacity-60 blur-3xl" />
       <div className="absolute bottom-20 left-10 w-48 h-48 bg-primary/20 blob opacity-40 blur-2xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:py-20">
         <div className="max-w-2xl">
           {/* Main heading */}
           <h1 className="heading-xl text-white mb-2 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.1s' }}>
             {content.heading}
           </h1>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-6 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.15s' }}>
+          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-4 sm:mb-6 fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.15s' }}>
             {content.subheading}
           </p>
 
           {/* Description */}
-          <p className="text-lg text-white/90 mb-8 max-w-xl leading-relaxed fade-in drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-white/90 mb-6 sm:mb-8 max-w-xl leading-relaxed fade-in drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ animationDelay: '0.2s' }}>
             {content.description}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-10 fade-in" style={{ animationDelay: '0.25s' }}>
-            <a href="tel:+421902048583" className="btn-primary text-lg">
+          <div className="flex flex-col sm:flex-row gap-3 mb-6 sm:gap-4 sm:mb-10 fade-in" style={{ animationDelay: '0.25s' }}>
+            <a href="tel:+421902048583" className="btn-primary text-base sm:text-lg py-2.5 sm:py-3">
               <Phone className="w-5 h-5" />
               {content.callCta}
             </a>
-            <a href="https://wa.me/421902048583" className="btn-whatsapp text-lg">
+            <a href="https://wa.me/421902048583" className="btn-whatsapp text-base sm:text-lg py-2.5 sm:py-3">
               <MessageCircle className="w-5 h-5" />
               {content.whatsappCta}
             </a>

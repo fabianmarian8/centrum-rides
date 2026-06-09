@@ -87,7 +87,7 @@ export default function HomePage() {
       />
 
       <Navigation />
-      <main className="pt-16">
+      <main className="pt-14 sm:pt-16">
         <HeroSection />
         <FleetSection />
         <FeaturesSection />
