@@ -193,13 +193,13 @@ const PricingSection = () => {
                     className={`w-full font-bold py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl hover-military bg-gradient-to-r ${card.buttonClass}`}
                     asChild
                   >
-                    <a href="tel:+421902048583">📞 {card.button}</a>
+                    <a href="tel:+421919040118">📞 {card.button}</a>
                   </Button>
 
                   <div className="text-center">
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {card.whatsapp}
-                      <a href="https://wa.me/421902048583" className="text-secondary font-bold hover:underline">+421902048583</a>
+                      <a href="https://wa.me/421919040118" className="text-secondary font-bold hover:underline">+421919040118</a>
                     </p>
                   </div>
                 </div>

@@ -136,11 +136,11 @@ const RouteSection = () => {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
-            <a href="tel:+421902048583" className="btn-primary text-sm py-2 px-4">
+            <a href="tel:+421919040118" className="btn-primary text-sm py-2 px-4">
               <Phone className="w-4 h-4" />
               {content.cta}
             </a>
-            <a href="https://wa.me/421902048583" className="btn-whatsapp text-sm py-2 px-4">
+            <a href="https://wa.me/421919040118" className="btn-whatsapp text-sm py-2 px-4">
               <MessageCircle className="w-4 h-4" />
               WhatsApp
             </a>

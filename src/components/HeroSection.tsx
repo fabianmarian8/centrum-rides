@@ -86,11 +86,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 mb-6 sm:gap-4 sm:mb-10 fade-in" style={{ animationDelay: '0.25s' }}>
-            <a href="tel:+421902048583" className="btn-primary text-base sm:text-lg py-2.5 sm:py-3">
+            <a href="tel:+421919040118" className="btn-primary text-base sm:text-lg py-2.5 sm:py-3">
               <Phone className="w-5 h-5" />
               {content.callCta}
             </a>
-            <a href="https://wa.me/421902048583" className="btn-whatsapp text-base sm:text-lg py-2.5 sm:py-3">
+            <a href="https://wa.me/421919040118" className="btn-whatsapp text-base sm:text-lg py-2.5 sm:py-3">
               <MessageCircle className="w-5 h-5" />
               {content.whatsappCta}
             </a>

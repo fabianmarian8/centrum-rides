@@ -7,7 +7,7 @@ const translations = {
   en: {
     heading: 'Ready to book your ride?',
     description: 'Call us directly or send a WhatsApp message. We respond within minutes.',
-    phone: '+421 902 048 583',
+    phone: '+421 919 040 118',
     callButton: 'Call now',
     whatsappButton: 'WhatsApp',
     info: [
@@ -21,7 +21,7 @@ const translations = {
   es: {
     heading: 'Listo para reservar?',
     description: 'Llámanos directamente o envía un mensaje de WhatsApp. Respondemos en minutos.',
-    phone: '+421 902 048 583',
+    phone: '+421 919 040 118',
     callButton: 'Llamar ahora',
     whatsappButton: 'WhatsApp',
     info: [
@@ -47,7 +47,7 @@ const ContactSection = () => {
 
         {/* Phone number */}
         <a
-          href="tel:+421902048583"
+          href="tel:+421919040118"
           className="inline-block text-2xl sm:text-4xl md:text-5xl font-black mb-4 hover:opacity-80 transition-opacity"
         >
           {content.phone}
@@ -56,14 +56,14 @@ const ContactSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center mb-6">
           <a
-            href="tel:+421902048583"
+            href="tel:+421919040118"
             className="inline-flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-bold text-sm sm:text-base hover:bg-white/90 transition-colors shadow-lg"
           >
             <Phone className="w-4 h-4" />
             {content.callButton}
           </a>
           <a
-            href="https://wa.me/421902048583"
+            href="https://wa.me/421919040118"
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-bold text-sm sm:text-base hover:bg-[#22c55e] transition-colors shadow-lg"
           >
             <MessageCircle className="w-4 h-4" />

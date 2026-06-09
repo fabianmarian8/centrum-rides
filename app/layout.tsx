@@ -94,7 +94,7 @@ const jsonLd = {
   description:
     'Servicio de taxi para personal militar español en base NATO Lešť-Slavia. Traslados aeropuerto, servicio 24/7.',
   url: 'https://lest-slavia-taxi.com',
-  telephone: '+421902048583',
+  telephone: '+421919040118',
   email: 'fabianmarian8@gmail.com',
   geo: {
     '@type': 'GeoCoordinates',
