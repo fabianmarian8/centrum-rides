@@ -2,7 +2,6 @@
 
 import {
   BadgeCheck,
-  Car,
   Clock3,
   MapPin,
   MessageCircle,
@@ -191,7 +190,7 @@ const HeroSection = () => {
             <p className="mt-4 text-2xl font-black uppercase tracking-tight text-yellow-400 drop-shadow-[0_5px_14px_rgba(0,0,0,0.75)] sm:text-3xl lg:text-4xl">
               {content.subheading}
             </p>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/82 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
               {content.description}
             </p>
 
@@ -233,9 +232,9 @@ const HeroSection = () => {
           <CamryIllustration />
         </div>
 
-        <div className="relative z-30 -mt-16 flex items-end justify-center gap-[-20px] lg:hidden">
-          <div className="-mr-14"><Rav4Illustration /></div>
-          <div className="-ml-10 translate-y-2 scale-90"><CamryIllustration /></div>
+        <div className="relative z-30 -mt-16 flex items-end justify-center -space-x-16 lg:hidden">
+          <Rav4Illustration />
+          <div className="translate-y-2 scale-90"><CamryIllustration /></div>
         </div>
 
         <div className="relative z-40 grid gap-3 rounded-2xl border border-yellow-400/20 bg-black/55 p-3 shadow-[0_22px_60px_rgba(0,0,0,.45)] backdrop-blur-md sm:grid-cols-2 lg:grid-cols-5">
@@ -257,7 +256,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative z-40 mt-5 flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/8 px-5 py-4 text-sm font-semibold text-white/85 backdrop-blur-md sm:flex-row sm:items-center sm:justify-end lg:absolute lg:bottom-8 lg:right-8 lg:mt-0">
+        <div className="relative z-40 mt-5 flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.08] px-5 py-4 text-sm font-semibold text-white/85 backdrop-blur-md sm:flex-row sm:items-center sm:justify-end lg:absolute lg:bottom-8 lg:right-8 lg:mt-0">
           <span className="flex items-center gap-2"><MapPin className="h-5 w-5 text-yellow-400" /> {content.location}</span>
           <span className="hidden h-6 w-px bg-white/20 sm:block" />
           <span className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_14px_rgba(34,197,94,.75)]" /> {content.availability}</span>
